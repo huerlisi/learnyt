@@ -35,6 +35,8 @@ end
 
 # Standard helpers
 # ================
+gem 'styleyt', :git => 'http://github.com/CyTeam/styleyt.git'
+
 gem 'haml'
 gem 'compass', '>= 0.10.4'
 gem 'fancy-buttons'
@@ -48,3 +50,8 @@ gem 'has_scope'
 gem 'i18n_rails_helpers', '~> 0.8.0'
 
 gem 'jquery-rails'
+
+# learnyt
+# =======
+# Authentication
+gem 'devise', '>= 1.1'
