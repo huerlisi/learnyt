@@ -27,14 +27,27 @@ module Learnyt
     # config.time_zone = 'Central Time (US & Canada)'
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
-    # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    # config.i18n.default_locale = :de
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', 'formtastic', '*.{rb,yml}').to_s]
+    config.i18n.fallbacks = [:'de-CH', :de]
+    config.i18n.default_locale = 'de-CH'
+
+    # Configure generators values. Many other options are available, be sure to check the documentation.
+    config.generators do |g|
+      g.stylesheets false
+      g.test_framework :rspec
+      g.template_engine :haml
+      g.fixture_replacement :factory_girl
+    end
 
     # JavaScript files you want as :defaults (application.js is always included).
-    config.action_view.javascript_expansions[:defaults] = %w()
+    config.action_view.javascript_expansions[:defaults] += %w(cyt)
+
+    # Configure to log the deprecation notices
+    config.active_support.deprecation = :log
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
+
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]

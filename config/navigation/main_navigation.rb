@@ -63,6 +63,6 @@ SimpleNavigation::Configuration.run do |navigation|
     # primary.auto_highlight = false
 
     # mailyt navigation
-    primary.item :user_settings, t('bookyt.main_navigation.settings'), edit_user_registration_path, :highlights_on => /\/users\/edit/
+    primary.item :user_settings, t('main_navigation.settings'), edit_user_registration_path, :highlights_on => /\/users\/edit/
   end
 end
