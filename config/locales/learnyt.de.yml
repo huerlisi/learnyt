@@ -14,8 +14,13 @@ de:
   activerecord:
     models:
       user: Benutzer
+      question: Frage
 
     attributes:
+      question:
+        title: Titel
+        description: Text
+        remarks: Bemerkungen
 
   learnyt:
     all:              Alle

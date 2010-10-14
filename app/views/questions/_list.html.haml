@@ -1,0 +1,11 @@
+%table.list.question_list
+  %tr
+    %th= t_attr :title
+    %th= t_attr :description
+    %th= t_attr :remarks
+    %th.action-links
+
+  = render @questions
+
+  %tr
+    %th{:colspan => "4", :style => "text-align: right"}= will_paginate @questions

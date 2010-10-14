@@ -1,0 +1,7 @@
+.contextual
+  = link_to t_action('show'), @question
+  = link_to t_action('index'), questions_path
+  = link_to t_action('delete'), @question, :confirm => t_confirm_delete(@question), :method => :delete
+%h2= t_title
+
+= render :partial => 'form'
