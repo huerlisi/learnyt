@@ -60,4 +60,5 @@ Learnyt::Application.routes.draw do
 
   resources :questions
   resources :answers
+  resources :possible_answers
 end

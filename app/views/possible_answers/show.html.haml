@@ -1,0 +1,8 @@
+.contextual
+  = link_to t_action('edit'), edit_possible_answer_path(@possible_answer)
+  = link_to t_action('index'), possible_answers_path
+%h1= t_title
+
+%div= @possible_answer.question
+%div= @possible_answer.answer
+
