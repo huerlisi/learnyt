@@ -1,16 +1,28 @@
+// Imports
+@import "compass/css3/box-shadow"
+@import 'partials/formtastic'
+@import 'partials/formtastic_cyt'
+@import 'partials/pagination'
+
 // CyT **
 body
   color: #484848
   background: #f3f3f3
   +sanserif-font
 
+#container
+  margin-top: $h2_size
+  width: 95%
+
 #header
   background-color: #aeb9cf
-  height: 5.3em
+  height: 54px
   margin: 0
   color: #f8f8f8
   padding: 4px 8px 0px 6px
   position: relative
+  +border-radius($border_radius)
+  border: 1px solid #dddddd
   a
     color: #f8f8f8
 
@@ -18,21 +30,34 @@ body
 #content
   background-color: white
   margin: 0px
-  border-right: 1px solid #dddddd
+  border: 1px solid #dddddd
   padding: $content_padding
-  width: 100% - 2 * $content_padding
-  z-index: 10
+  +sanserif-font
+  font-size: $text_size
+  +border-radius($border_radius)
 
-* html content
+* html #content
   padding-left: 0
   margin-top: 0px
   padding: $content_padding
 
-html>body #content
-  min-height: 600px
+html>body
+  #content, #sidebar
+    min-height: 600px
 
-* html body #content
-  height: 600px
+* html body
+  #content, #sidebar
+    height: 600px
+
+// Sidebar
+#sidebar
+  background-color: white
+  margin: 0px
+  border: 1px solid #dddddd
+  padding: $content_padding
+  +sanserif-font
+  font-size: $text_size
+  +border-radius($border_radius)
 
 // Login form
 #login-form
@@ -121,7 +146,7 @@ th.action-links
   background-image: url(/images/16x16/add.png)
 
 .icon-delete
-  background-image: url(/images/16x16/delete.png)
+  background-image: url(/images/16x16/remove.png)
 
 .icon-edit
   background-image: url(/images/16x16/edit.png)
