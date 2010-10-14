@@ -1,0 +1,64 @@
+@import 'compass/css3/border-radius'
+
+#header
+  +border-radius($border_radius)
+  height: 80px
+  background-color: $dark_blue
+  color: $white
+
+// Based on Redmine from the redmine.css
+// begin
+#main-menu
+  li
+    margin: 0px 2px 0px 0px
+    padding: 0px 0px 0px 0px
+    white-space: nowrap
+    a
+      display: block
+      color: white
+      text-decoration: none
+      font-weight: bold
+      margin: 0
+      padding: 4px 10px 4px 10px
+      &:hover
+        background: $light_blue
+        color: $white
+      &.selected
+        background: $white
+        color: $gray
+        &:hover
+          background: $white
+          color: $gray
+// end
+#main-menu
+  position: absolute
+  bottom: 0px
+  li
+    a
+      +border-top-radius($border_radius)
+
+// Snippet from Redmine.css
+// Navigation
+.navigation_section
+  margin: 2em
+  margin-bottom: 3.5em
+  img
+    margin-right: 1em
+    float: left
+  ul
+    list-style-type: none
+  li
+    text-align: left
+    font-weight: bold
+    font-style: italic
+
+#header
+  background-color: #aeb9cf
+  height: 5.3em
+  margin: 0
+  color: #f8f8f8
+  padding: 4px 8px 0px 6px
+  position: relative
+  a
+    color: #f8f8f8
+// End of snippet
