@@ -1,30 +1,50 @@
+# Settings
+# ========
 source 'http://rubygems.org'
 
+# Rails
+# =====
 gem 'rails', '3.0.0'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
+# Database
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
-# Use unicorn as the web server
-# gem 'unicorn'
+# Development
+# ===========
+group :development do
+  gem 'rails3-generators'
+  gem 'rspec-rails', ">= 2.0.0.beta.19"
+  # Haml generators
+  gem 'hpricot'
+  gem 'ruby_parser'
+  gem 'rcov'
+end
 
-# Deploy with Capistrano
-# gem 'capistrano'
+# Test
+# ====
+group :test do
+  gem 'rspec'
+  gem 'rspec-rails', ">= 2.0.0.beta.19"
+  gem 'mocha'
+  gem 'shoulda'
+  gem 'factory_girl_rails'
+  gem 'cucumber-rails'
+  gem 'cucumber'
+  gem 'webrat'
+end
 
-# To use debugger
-# gem 'ruby-debug'
+# Standard helpers
+# ================
+gem 'haml'
+gem 'compass', '>= 0.10.4'
+gem 'fancy-buttons'
 
-# Bundle the extra gems:
-# gem 'bj'
-# gem 'nokogiri'
-# gem 'sqlite3-ruby', :require => 'sqlite3'
-# gem 'aws-s3', :require => 'aws/s3'
+gem 'simple-navigation'
 
-# Bundle gems for the local environment. Make sure to
-# put test-only gems in this group so their generators
-# and rake tasks are available in development mode:
-# group :development, :test do
-#   gem 'webrat'
-# end
+gem 'formtastic', '~> 1.1.0'
+gem 'will_paginate', :git => 'http://github.com/mislav/will_paginate.git', :branch => 'rails3'
+gem 'inherited_resources'
+gem 'has_scope'
+gem 'i18n_rails_helpers', '~> 0.8.0'
+
+gem 'jquery-rails'
