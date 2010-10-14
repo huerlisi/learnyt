@@ -1,0 +1,10 @@
+.contextual
+  = link_to t_action('edit'), edit_answer_path(@answer)
+  = link_to t_action('index'), answers_path
+%h1= t_title
+
+%h2= @answer.title
+
+%div= @answer.description
+%div= @answer.remarks
+

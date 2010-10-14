@@ -13,11 +13,17 @@ de:
 
   activerecord:
     models:
+      answer: Antwort
       user: Benutzer
       question: Frage
 
     attributes:
       question:
+        title: Titel
+        description: Text
+        remarks: Bemerkungen
+
+      answer:
         title: Titel
         description: Text
         remarks: Bemerkungen

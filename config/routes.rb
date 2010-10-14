@@ -59,4 +59,5 @@ Learnyt::Application.routes.draw do
   # match ':controller(/:action(/:id(.:format)))'
 
   resources :questions
+  resources :answers
 end
