@@ -3,6 +3,4 @@
   %td= question.description
   %td= question.remarks
 
-  %td.action-links
-    = link_to image_tag('16x16/edit.png', :title => t_action(:edit)), edit_question_path(question), :method => :get
-    = link_to image_tag('16x16/remove.png', :title => t_action(:delete)), question_path(question), :remote => true, :method => :delete, :confirm => t_confirm_delete(question)
+  = list_item_actions_for(question)

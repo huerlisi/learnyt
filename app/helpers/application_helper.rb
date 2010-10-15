@@ -22,4 +22,14 @@ EOF
   
     return output.html_safe
   end
+
+  def hide_deleted_list_item(resource)
+    model_name = resource.class.to_s.underscore
+    
+    output = <<EOF
+$('##{model_name}_#{resource.id}').fadeOut("slow")
+EOF
+    
+    return output.html_safe
+  end
 end
