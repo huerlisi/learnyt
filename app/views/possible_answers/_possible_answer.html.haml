@@ -2,6 +2,4 @@
   %td= link_to possible_answer.question.to_s, possible_answer.question
   %td= link_to possible_answer.answer.to_s, possible_answer.answer
 
-  %td.action-links
-    = link_to image_tag('16x16/edit.png', :title => t_action(:edit)), edit_possible_answer_path(possible_answer), :method => :get
-    = link_to image_tag('16x16/remove.png', :title => t_action(:delete)), possible_answer_path(possible_answer), :remote => true, :method => :delete, :confirm => t_confirm_delete(possible_answer)
+  = list_item_actions_for(possible_answer)
