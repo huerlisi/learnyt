@@ -17,9 +17,19 @@ form.formtastic
   fieldset > ol > li.boolean label
     padding-left: 15%
   ul.errors
-    color: #cc0000
+    color: #dd0000
     margin: 0.5em 0 1.5em 15%
     list-style: square
+  li.error
+    input
+      border-color: #dd0000
+
+form.formtastic fieldset.inputs
+  > ol > li
+    p.inline-errors
+      color: #dd0000
+      padding-left: 6px
+      margin: 0 0 0 15%
 
 // BOOLEAN OVERRIDES
 // SEMANTIC ERRORS
@@ -62,9 +72,12 @@ form.formtastic fieldset.inputs
       padding: 0 0 0 15%
     p
       &.inline-hints
-        margin: 0.5em 0 0 15%
+        padding-left: 6px
+        margin: 0 0 0 15%
       &.inline-errors
-        margin: 0.5em 0 0 15%
+        color: #dd0000
+        padding-left: 6px
+        margin: 0 0 0 15%
     ul.errors
       margin: 0.5em 0 0 15%
   ol li
