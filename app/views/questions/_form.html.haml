@@ -5,5 +5,15 @@
     = f.input :description
     = f.input :remarks
 
+  = f.inputs t_model(PossibleAnswer) do
+    = f.semantic_fields_for :possible_answers do |p|
+      = p.semantic_fields_for :answer do |a|
+        = a.input :title
+        = a.input :description
+        = a.input :remarks
+
+      = p.input :score
+      = p.input :position
+
   = f.buttons do
     = f.commit_button
