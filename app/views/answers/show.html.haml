@@ -2,13 +2,8 @@
   = show_contextual_for @answer
 %h1= t_title
 
-%h2= @answer.title
+#answer.box
+  %h2= @answer.title
 
-%div= @answer.description
-%div= @answer.remarks
-
-= index_contextual_for(PossibleAnswer)
-%h2= t_title :index, PossibleAnswer
-
-- @possible_answers = @answer.possible_answers.paginate(:page => params[:page])
-= render 'possible_answers/list'
+  %p.description<= @answer.description
+  %p.remarks<= @answer.remarks

@@ -3,14 +3,16 @@
 
 %h1= t_title
 
-.box
+#question.box
   %h2= @question.title
 
-  .description= @question.description
-  .remarks= @question.remarks
+  %p.description<= @question.description
+  %p.remarks<= @question.remarks
 
-  %h2= t_title :index, PossibleAnswer
+  %h2= t_model PossibleAnswer
 
-  %ul
-    - for possible_answer in @question.possible_answers
-      %li= possible_answer.answer.title
+  = semantic_form_for Response.new(:question => @question) do |f|
+    = f.inputs do
+      = f.input :question, :type => :hidden
+      = f.input :answer, :collection => @question.possible_answers
+
