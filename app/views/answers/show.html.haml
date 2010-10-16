@@ -1,6 +1,5 @@
 .contextual
-  = link_to t_action('edit'), edit_answer_path(@answer)
-  = link_to t_action('index'), answers_path
+  = show_contextual_for @answer
 %h1= t_title
 
 %h2= @answer.title
@@ -8,10 +7,8 @@
 %div= @answer.description
 %div= @answer.remarks
 
-.contextual
-  = link_to t_action('new', PossibleAnswer), new_possible_answer_path, :remote => true, :class => "icon icon-add"
+= index_contextual_for(PossibleAnswer)
 %h2= t_title :index, PossibleAnswer
 
-#new_possible_answer
 - @possible_answers = @answer.possible_answers.paginate(:page => params[:page])
 = render 'possible_answers/list'

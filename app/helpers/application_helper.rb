@@ -43,6 +43,12 @@ module ApplicationHelper
     render 'layouts/index_contextual_for', :model => model
   end
 
+  def new_contextual_for(model)
+    model_name = model.to_s.underscore
+    
+    render 'layouts/new_contextual_for', :model => model
+  end
+
   def show_contextual_for(resource)
     model = resource.class
     model_name = model.to_s.underscore

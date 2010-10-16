@@ -1,7 +1,5 @@
 .contextual
-  = link_to t_action('show'), @answer
-  = link_to t_action('index'), answers_path
-  = link_to t_action('delete'), @answer, :confirm => t_confirm_delete(@answer), :method => :delete
+  = edit_contextual_for @answer
 %h2= t_title
 
 = render :partial => 'form'
