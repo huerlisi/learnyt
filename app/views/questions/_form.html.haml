@@ -5,6 +5,10 @@
     = f.input :description
     = f.input :remarks
 
+    = f.commit_button
+
+  %h2= t_model(PossibleAnswer)
+  
   = f.inputs t_model(PossibleAnswer) do
     = f.semantic_fields_for :possible_answers do |p|
       = p.semantic_fields_for :answer do |a|
