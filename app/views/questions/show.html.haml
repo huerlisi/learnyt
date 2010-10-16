@@ -3,13 +3,14 @@
 
 %h1= t_title
 
-%h2= @question.title
+.box
+  %h2= @question.title
 
-.description= @question.description
-.remarks= @question.remarks
+  .description= @question.description
+  .remarks= @question.remarks
 
-%h2= t_title :index, PossibleAnswer
+  %h2= t_title :index, PossibleAnswer
 
-%ul
-  - for possible_answer in @question.possible_answers
-    %li= possible_answer.answer.title
+  %ul
+    - for possible_answer in @question.possible_answers
+      %li= possible_answer.answer.title
