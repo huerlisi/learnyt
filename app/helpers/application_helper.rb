@@ -8,30 +8,30 @@ module ApplicationHelper
     when 'new'
       model = resource_or_model
       model_name = model.to_s.underscore
-      output << link_to(t_crud('new', model), send("new_#{model_name}_path"), :remote => true, :class => "icon icon-add")
+      output << link_to(t_action('new'), send("new_#{model_name}_path"), :remote => true, :class => "icon icon-add")
     when 'show'
       resource = resource_or_model
       model = resource.class
       model_name = model.to_s.underscore
 
-      output << link_to(t_crud('show', model), send("#{model_name}_path", resource), :class => "icon icon-show")
+      output << link_to(t_action('show'), send("#{model_name}_path", resource), :class => "icon icon-show")
     when 'edit'
       resource = resource_or_model
       model = resource.class
       model_name = model.to_s.underscore
 
-      output << link_to(t_crud('edit', model), send("edit_#{model_name}_path", resource), :class => "icon icon-edit")
+      output << link_to(t_action('edit'), send("edit_#{model_name}_path", resource), :class => "icon icon-edit")
     when 'delete'
       resource = resource_or_model
       model = resource.class
       model_name = model.to_s.underscore
 
-      output << link_to(t_crud('delete', model), send("#{model_name}_path", resource), :confirm => t_confirm_delete(resource), :method => :delete, :class => "icon icon-delete")
+      output << link_to(t_action('delete'), send("#{model_name}_path", resource), :confirm => t_confirm_delete(resource), :method => :delete, :class => "icon icon-delete")
     when 'index'
       model = resource_or_model
       model_name = model.to_s.underscore
     
-      output << link_to(t_crud('index', model), send("#{model_name.pluralize}_path"), :class => "icon icon-index")
+      output << link_to(t_action('index'), send("#{model_name.pluralize}_path"), :class => "icon icon-index")
     end
     
     return output
