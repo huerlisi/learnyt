@@ -32,7 +32,18 @@ form.formtastic
     padding-left: 15%
 
 // LABELS
-form.formtastic fieldset
+form.formtastic fieldset.inputs
+  border: solid 2px white
+  +border-radius($border_radius / 2)
+  padding: 1em
+  width: 97%
+
+  legend
+    color: #505050
+    font-style: italic
+    padding-left: 1em
+    padding-right: 1em
+    
   ol li label
     width: 15%
     margin-right: 0.5em
