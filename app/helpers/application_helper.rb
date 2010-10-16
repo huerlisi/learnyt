@@ -1,19 +1,60 @@
 module ApplicationHelper
 
   # CRUD helpers
-  def contextual_link_to(action, model)
-    model_name = model.to_s.underscore
-  
+  def contextual_link_to(action, resource_or_model)
+    output = ActiveSupport::SafeBuffer.new
+    
     case action
     when 'new'
-      link_to t_crud('new', model), send("new_#{model_name}_path"), :remote => true, :class => "icon icon-add"
+      model = resource_or_model
+      model_name = model.to_s.underscore
+      output << link_to(t_crud('new', model), send("new_#{model_name}_path"), :remote => true, :class => "icon icon-add")
+    when 'show'
+      resource = resource_or_model
+      model = resource.class
+      model_name = model.to_s.underscore
+
+      output << link_to(t_crud('show', model), send("#{model_name}_path", resource), :class => "icon icon-show")
+    when 'edit'
+      resource = resource_or_model
+      model = resource.class
+      model_name = model.to_s.underscore
+
+      output << link_to(t_crud('edit', model), send("edit_#{model_name}_path", resource), :class => "icon icon-edit")
+    when 'delete'
+      resource = resource_or_model
+      model = resource.class
+      model_name = model.to_s.underscore
+
+      output << link_to(t_crud('delete', model), send("#{model_name}_path", resource), :confirm => t_confirm_delete(resource), :method => :delete, :class => "icon icon-delete")
+    when 'index'
+      model = resource_or_model
+      model_name = model.to_s.underscore
+    
+      output << link_to(t_crud('index', model), send("#{model_name.pluralize}_path"), :class => "icon icon-index")
     end
+    
+    return output
   end
   
   def index_contextual_for(model)
     model_name = model.to_s.underscore
     
-    render 'layouts/index_contextual_for', :model => model, :model_name => model_name
+    render 'layouts/index_contextual_for', :model => model
+  end
+
+  def show_contextual_for(resource)
+    model = resource.class
+    model_name = model.to_s.underscore
+    
+    render 'layouts/show_contextual_for', :resource => resource, :model => model
+  end
+
+  def edit_contextual_for(resource)
+    model = resource.class
+    model_name = model.to_s.underscore
+    
+    render 'layouts/edit_contextual_for', :resource => resource, :model => model
   end
 
   def list_item_actions_for(resource)

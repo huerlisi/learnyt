@@ -1,6 +1,6 @@
 .contextual
-  = link_to t_action('edit'), edit_question_path(@question)
-  = link_to t_action('index'), questions_path
+  = show_contextual_for @question
+
 %h1= t_title
 
 %h2= @question.title
