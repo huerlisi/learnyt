@@ -1,5 +1,15 @@
 module ApplicationHelper
 
+  # CRUD helpers
+  def contextual_link_to(action, model)
+    model_name = model.to_s.underscore
+  
+    case action
+    when 'new'
+      link_to t_crud('new', model), send("new_#{model_name}_path"), :remote => true, :class => "icon icon-add"
+    end
+  end
+  
   def index_contextual_for(model)
     model_name = model.to_s.underscore
     
