@@ -3,7 +3,7 @@ class Question < ActiveRecord::Base
   has_many :possible_answers
   accepts_nested_attributes_for :possible_answers
   
-  has_many :answers, :through => :possible_questions
+  has_many :answers, :through => :possible_answers
   accepts_nested_attributes_for :answers
 
   # Validations

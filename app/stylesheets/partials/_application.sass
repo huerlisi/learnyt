@@ -17,4 +17,32 @@
     margin-bottom: 6px
     border: solid 2px white
     +border-radius($border_radius / 2)
+  
+#answers
+  li.subbox
+    border-width: 1px
+    margin: 0.5em
+    margin-left: 2em
+    padding: 0.5em
+    +sanserif-font
+    font-weight: bold
+    font-size: 90%
+    
+    .description
+      font-weight: normal
+    &.correct
+      border-color: #9fcf9f
+    &.close
+      border-color: #fdbf3b
+    &.wrong
+      border-color: #990000
+      
+  h3
+    font-decoration: none
+    font-size: 80%
+    border: 0
+    margin: 0
+  .description, .remarks
+    margin-left: 3%
+    white-space: pre-line
     

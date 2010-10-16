@@ -11,8 +11,8 @@
 
   %h2= t_model PossibleAnswer
 
-  = semantic_form_for Response.new(:question => @question) do |f|
-    = f.inputs do
-      = f.input :question, :type => :hidden
-      = f.input :answer, :collection => @question.possible_answers
-
+  %ol#answers
+    - for @possible_answer in @question.possible_answers
+      %li.subbox{:class => @possible_answer.correctness}
+        %h3= @possible_answer.answer.title
+        %p.description<= @possible_answer.answer.description
