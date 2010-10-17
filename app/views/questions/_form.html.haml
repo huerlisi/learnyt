@@ -9,8 +9,8 @@
 
   %h2= t_model(PossibleAnswer)
   
-  = f.inputs t_model(PossibleAnswer) do
-    = f.semantic_fields_for :possible_answers do |p|
+  #answers.sortable
+    = f.inputs :for => :possible_answers, :class => 'inputs possible_answer subbox' do |p|
       = p.semantic_fields_for :answer do |a|
         = a.input :title
         = a.input :description
@@ -19,5 +19,5 @@
       = p.input :score
       = p.input :position
 
-  = f.buttons do
-    = f.commit_button
+    = f.buttons do
+      = f.commit_button

@@ -18,15 +18,21 @@
     border: solid 2px white
     +border-radius($border_radius / 2)
   
-ol#answers
+#answers
+  width: 98%
   list-style-type: decimal
 
-  li.possible_answer
+  li.possible_answer, fieldset.possible_answer
     display: list-item
     border-width: 1px
     margin: 0.5em
     margin-left: 2em
     padding: 0.5em
+
+  fieldset.possible_answer
+    background-color: #F6F6F6
+
+  li.possible_answer
     +sanserif-font
     font-weight: bold
     font-size: 90%

@@ -1,6 +1,6 @@
 class Question < ActiveRecord::Base
   # Associations
-  has_many :possible_answers
+  has_many :possible_answers, :order => :position
   accepts_nested_attributes_for :possible_answers
   
   has_many :answers, :through => :possible_answers
