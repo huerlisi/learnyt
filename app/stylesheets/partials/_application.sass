@@ -1,7 +1,7 @@
 // learnyt
 // =======
 // Questions
-#question, #answer
+#question, #answer, #response
   h2
     font-size: 90%
     margin-bottom: 1em
@@ -18,8 +18,11 @@
     border: solid 2px white
     +border-radius($border_radius / 2)
   
-#answers
-  li.subbox
+ol#answers
+  list-style-type: decimal
+
+  li.possible_answer
+    display: list-item
     border-width: 1px
     margin: 0.5em
     margin-left: 2em
@@ -32,16 +35,10 @@
       font-weight: normal
     &.correct
       border-color: #9fcf9f
-      &:hover, &.selected
-        background-color: #dfffdf
     &.close
       border-color: #fdbf3b
-      &:hover, &.selected
-        background-color: #ffebc1
     &.wrong
       border-color: #990000
-      &:hover, &.selected
-        background-color: #ffe3e3
       
   h3
     font-decoration: none
@@ -52,3 +49,26 @@
     margin-left: 3%
     white-space: pre-line
     
+#response
+  li.possible_answer
+    &.correct
+      &.selected
+        background-color: #dfffdf
+    &.close
+      &.selected
+        background-color: #ffebc1
+    &.wrong
+      &.selected
+        background-color: #ffe3e3
+
+#response form
+  li.possible_answer
+    &.correct
+      &:hover
+        background-color: #dfffdf
+    &.close
+      &:hover
+        background-color: #ffebc1
+    &.wrong
+      &:hover
+        background-color: #ffe3e3

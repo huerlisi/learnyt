@@ -3,5 +3,6 @@
 
 %h1= t_title
 
-- @question ||= @response.question
-= render 'questions/show'
+#response
+  - @question ||= @response.question
+  = render 'questions/show'

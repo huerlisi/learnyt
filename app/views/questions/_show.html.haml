@@ -1,13 +1,12 @@
-#question.box
-  %h2= @question.title
+%h2= @question.title
 
-  %p.description<= @question.description
-  %p.remarks<= @question.remarks
+%p.description<= @question.description
+%p.remarks<= @question.remarks
 
-  %h2= t_model PossibleAnswer
+%h2= t_model PossibleAnswer
 
-  %ol#answers
-    - for @possible_answer in @question.possible_answers
-      %li.subbox[@possible_answer]{:class => [@possible_answer.correctness, @response.try(:possible_answer) == @possible_answer ? 'selected' : nil], :data => {:id => @possible_answer.id}}
-        %h3= @possible_answer.answer.title
-        %p.description<= @possible_answer.answer.description
+%ol#answers
+  - for @possible_answer in @question.possible_answers
+    %li.subbox[@possible_answer]{:class => [@possible_answer.correctness, @response.try(:possible_answer) == @possible_answer ? 'selected' : nil], :data => {:id => @possible_answer.id}}
+      %h3= @possible_answer.answer.title
+      %p.description<= @possible_answer.answer.description
