@@ -38,3 +38,17 @@ $("form .score input").change(function(event) {
 $("form .score input").each(function() {
   setCorrectness($(this));
 });
+
+$(".destroy .action").each(function() {
+  $(this).css('cursor', 'pointer');
+  var container = $(this).closest(".destroyable");
+  var checkbox = container.find("input[type='checkbox'][name$='[_destroy]']");
+  $(this).closest('.destroy').find('label, input').hide();
+});
+
+$(".destroy .action").click(function() {
+  var container = $(this).closest(".destroyable");
+  var checkbox = container.find("input[type='checkbox'][name$='[_destroy]']");
+  checkbox.attr('checked', true);
+  container.fadeOut('slow');
+});

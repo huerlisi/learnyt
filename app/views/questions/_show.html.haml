@@ -7,7 +7,7 @@
 
 %ol#answers
   - for @possible_answer in @question.possible_answers
-    %li.subbox[@possible_answer]{:class => [@possible_answer.correctness, @response.try(:possible_answer) == @possible_answer ? 'selected' : nil], :data => {:id => @possible_answer.id}}
+    %li.subbox[@possible_answer]{:class => [@possible_answer.correctness, @response.try(:possible_answer) == @possible_answer ? 'selected' : nil]}
       .score{:class => @possible_answer.correctness}= @possible_answer.score
       %h3= @possible_answer.answer.title
       %p.description<= @possible_answer.answer.description

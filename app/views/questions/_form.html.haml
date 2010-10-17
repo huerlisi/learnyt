@@ -14,7 +14,11 @@
   
   %ol#answers.sortable
     = f.fields_for :possible_answers do |p|
-      %li.subbox.possible_answer
+      %li.subbox.destroyable[p.object]
+        .destroy
+          %label= t_action(:delete)
+          = p.check_box :_destroy
+          .action= image_tag('16x16/remove.png', :title => t_action(:delete))
         = render 'possible_answers/form', :form => p
 
   = f.buttons do
