@@ -3,11 +3,19 @@ function addAutofocusBehaviour() {
   $('*[data-autofocus=true]').first().focus();
 };
 
+// Add datepicker
 function addDatePickerBehaviour() {
   $('*[date-picker=true]').each(function(){
     $(this).datepicker({ dateFormat: 'dd.mm.yy' });
   });
-}
+};
+
+//
+function addSortableBehaviour() {
+  $(".sortable").sortable();
+  $(".sortable").disableSelection();
+};
+                    
 
 // Linkify containers having attribute data-href-container
 function addLinkifyContainersBehaviour() {
@@ -83,5 +91,6 @@ function addLinkifyContainersBehaviour() {
 $(document).ready(function() {
     addAutofocusBehaviour();
     addDatePickerBehaviour();
+    addSortableBehaviour();
     addLinkifyContainersBehaviour();
 });
