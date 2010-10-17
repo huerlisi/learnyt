@@ -1,7 +1,5 @@
-= f.fields_for :possible_answers do |p|
-  %li.subbox.possible_answer
-    .position= p.text_field :position
-    .score= p.text_field :score
-    = p.fields_for :answer do |a|
-      %h3= a.text_field :title
-      %p.description= a.text_area :description, :rows => 4
+.position= form.text_field :position
+.score= form.text_field :score
+= form.fields_for :answer do |a|
+  %h3= a.text_field :title
+  %p.description= a.text_area :description, :rows => 4
