@@ -1,10 +1,7 @@
-= semantic_form_for @possible_answer do |f|
-  = f.semantic_errors
-  = f.inputs do
-    = f.input :question, :input_html => {"data-autofocus" => true}
-    = f.input :answer
-    = f.input :score
-    = f.input :position
-
-  = f.buttons do
-    = f.commit_button
+= f.fields_for :possible_answers do |p|
+  %li.subbox.possible_answer
+    .position= p.text_field :position
+    .score= p.text_field :score
+    = p.fields_for :answer do |a|
+      %h3= a.text_field :title
+      %p.description= a.text_area :description, :rows => 4

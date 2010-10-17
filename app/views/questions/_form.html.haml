@@ -7,16 +7,13 @@
 
     = f.commit_button
 
+  .contextual
+    = contextual_link 'new', new_question_possible_answer_path(@question)
+    
   %h2= t_model(PossibleAnswer)
   
   %ol#answers.sortable
-    = f.fields_for :possible_answers do |p|
-      %li.subbox.possible_answer
-        .position= p.text_field :position
-        .score= p.text_field :score
-        = p.fields_for :answer do |a|
-          %h3= a.text_field :title
-          %p.description= a.text_area :description, :rows => 4
+    = render 'possible_answers/form', :f => f
 
   = f.buttons do
     = f.commit_button
