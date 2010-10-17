@@ -9,15 +9,13 @@
 
   %h2= t_model(PossibleAnswer)
   
-  #answers.sortable
-    = f.inputs :for => :possible_answers, :class => 'inputs possible_answer subbox' do |p|
-      = p.semantic_fields_for :answer do |a|
-        = a.input :title
-        = a.input :description
-        = a.input :remarks
+  %ol#answers.sortable
+    = f.fields_for :possible_answers do |p|
+      %li.subbox.possible_answer
+        .score= p.text_field :score, :style => "width: 3em"
+        = p.fields_for :answer do |a|
+          %h3= a.text_field :title
+          %p.description= a.text_area :description, :rows => 4
 
-      = p.input :score
-      = p.input :position
-
-    = f.buttons do
-      = f.commit_button
+  = f.buttons do
+    = f.commit_button
