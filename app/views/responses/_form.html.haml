@@ -1,0 +1,13 @@
+- @question ||= @response.question
+= semantic_form_for [@question, @response] do |f|
+  = f.semantic_errors
+
+  = f.input :possible_answer_id, :as => :hidden
+
+  - if @question
+    = render 'questions/show'
+  - else
+    = f.input :question
+
+  = f.buttons do
+    = f.commit_button

@@ -1,0 +1,7 @@
+%tr[response]
+  %td= response.question
+  %td= link_to response.answer, response, {'data-href-container' => 'tr'}
+  %td= response.possible_answer.score
+  %td= response.created_at
+
+  = list_item_actions_for(response)

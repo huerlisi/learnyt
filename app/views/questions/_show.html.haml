@@ -1,9 +1,3 @@
-.contextual
-  = show_contextual_for @question
-  = contextual_link 'respond', new_question_response_path(@question)
-
-%h1= t_title
-
 #question.box
   %h2= @question.title
 
@@ -14,6 +8,6 @@
 
   %ol#answers
     - for @possible_answer in @question.possible_answers
-      %li.subbox{:class => @possible_answer.correctness}
+      %li.subbox[@possible_answer]{:class => [@possible_answer.correctness, @response.try(:possible_answer) == @possible_answer ? 'selected' : nil], :data => {:id => @possible_answer.id}}
         %h3= @possible_answer.answer.title
         %p.description<= @possible_answer.answer.description

@@ -17,6 +17,7 @@ de:
       possible_answer: Mögliche Antwort
       user: Benutzer
       question: Frage
+      response: Antwort
 
     attributes:
       question:
@@ -29,6 +30,13 @@ de:
         description: Text
         remarks: Bemerkungen
       
+      response:
+        possible_answer: Mögliche Antwort
+        question: Frage
+        response: Antwort
+        score: Ergebnis
+        event_time: Um
+        
       possible_answer:
         question: Frage
         answer: Antwort

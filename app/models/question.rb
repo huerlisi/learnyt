@@ -6,6 +6,8 @@ class Question < ActiveRecord::Base
   has_many :answers, :through => :possible_answers
   accepts_nested_attributes_for :answers
 
+  has_many :responses
+  
   # Validations
   validates_presence_of :title
   

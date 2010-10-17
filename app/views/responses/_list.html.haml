@@ -1,0 +1,12 @@
+%table.list#response_list
+  %tr
+    %th= t_attr :question
+    %th= t_attr :response
+    %th= t_attr :score
+    %th= t_attr :event_time
+    %th.action-links
+
+  = render @responses
+
+  %tr
+    %th{:colspan => "4", :style => "text-align: right"}= will_paginate @responses

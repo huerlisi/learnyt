@@ -58,7 +58,10 @@ Learnyt::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
 
-  resources :questions
+  resources :questions do
+    resources :responses
+  end
+
   resources :answers
   resources :possible_answers
   resources :responses

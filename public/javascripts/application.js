@@ -1,2 +1,7 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+// learnyt
+
+$('.possible_answer').click(function(element) {
+  $('#response_possible_answer_id').val($(this).data('id'));
+  $('.possible_answer').removeClass('selected');
+  $(this).addClass('selected');
+});

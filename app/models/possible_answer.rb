@@ -5,6 +5,10 @@ class PossibleAnswer < ActiveRecord::Base
   accepts_nested_attributes_for :answer
 
   # Helpers
+  def to_s
+    answer.to_s
+  end
+  
   def correctness
     if score == 1.0
       return 'correct'

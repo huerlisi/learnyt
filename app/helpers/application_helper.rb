@@ -1,6 +1,12 @@
 module ApplicationHelper
 
   # CRUD helpers
+  def contextual_link(action, url)
+    output = ActiveSupport::SafeBuffer.new
+    
+    output << link_to(t_action(action), url, :class => "icon icon-#{action}")
+  end
+  
   def contextual_link_to(action, resource_or_model)
     output = ActiveSupport::SafeBuffer.new
     
