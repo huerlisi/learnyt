@@ -79,3 +79,7 @@ de:
 
   main_navigation:
     settings: Einstellungen
+
+  crud:
+    action:
+      respond: Beantworten
