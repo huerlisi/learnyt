@@ -37,17 +37,23 @@
     font-weight: bold
     font-size: 90%
     
+    .position
+      display: none
     .description
       font-weight: normal
+      textarea
+        margin-top: 1em
     .score
       float: left
       margin-right: 1em
-      &.correct
+      &.correct, .correct
         color: #9fcf9f
-      &.close
+      &.close, .close
         color: #fdbf3b
-      &.wrong
+      &.wrong, .wrong
         color: #990000
+      input
+        width: 3em
       
     &.correct
       border-color: #9fcf9f
