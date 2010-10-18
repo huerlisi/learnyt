@@ -1,6 +1,8 @@
 class QuestionsController < InheritedResources::Base
   # Responders
   respond_to :html, :js
+  
+  has_scope :by_title
 
   protected
     def collection
