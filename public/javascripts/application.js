@@ -52,3 +52,34 @@ $(".destroy .action").click(function() {
   checkbox.attr('checked', true);
   container.fadeOut('slow');
 });
+
+$("input[data-autocomplete]").autocomplete({
+  source: function( request, response ) {
+    $.ajax({
+      url: "http://localhost:3000/answers.json",
+      dataType: "json",
+      data: {
+        per_page: 12,
+        by_title: request.term
+      },
+      success: function( data ) {
+        response( $.map( data, function( object ) {
+          item = object.answer;
+          return {
+            label: item.title,
+            value: item.title
+          }
+        }));
+      }
+    });
+  },
+  minLength: 2,
+  select: function( event, ui ) {
+  },
+  open: function() {
+    $( this ).removeClass( "ui-corner-all" ).addClass( "ui-corner-top" );
+  },
+  close: function() {
+    $( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
+  }
+});
