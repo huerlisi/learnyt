@@ -1,5 +1,7 @@
-.position= form.text_field :position
-.score= form.text_field :score
-= form.fields_for :answer do |a|
-  %h3= a.text_field :title
-  %p.description= a.text_area :description, :rows => 4
+= semantic_form_for @possible_answer do |f|
+  = f.inputs do
+    = f.input :question
+    = f.text_field :answer, 'data-autocomplete' => questions_url(:format => :json)
+
+  = f.buttons do
+    = f.commit_button
