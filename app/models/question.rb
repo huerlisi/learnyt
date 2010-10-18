@@ -11,6 +11,9 @@ class Question < ActiveRecord::Base
   # Validations
   validates_presence_of :title
   
+  # Scopes
+  scope :by_title, lambda {|value| where("title LIKE ?", "%#{value}%")}
+  
   # Helpers
   def to_s
     title
