@@ -79,6 +79,7 @@ de:
 
   main_navigation:
     settings: Einstellungen
+    overview: Übersicht
 
   crud:
     action:

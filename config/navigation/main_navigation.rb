@@ -63,6 +63,8 @@ SimpleNavigation::Configuration.run do |navigation|
     # primary.auto_highlight = false
 
     # mailyt navigation
+    primary.item :overview, t('main_navigation.overview'), root_path
+    
     primary.item :nav_questions, t_model(Question), questions_path, :highlights_on => /\/questions/ do |question|
       question.item :new_question, t_action(:new, Question), new_question_path
       question.item :question_index, t_action(:index, Question), questions_path
