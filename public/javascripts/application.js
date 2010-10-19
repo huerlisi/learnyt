@@ -56,7 +56,8 @@ $(".destroy .action").click(function() {
 $("input[data-autocomplete]").autocomplete({
   source: function( request, response ) {
     $.ajax({
-      url: "http://localhost:3000/answers.json",
+      // Should use RAILS_ROOT or something...
+      url: "/answers.json",
       dataType: "json",
       data: {
         per_page: 12,
