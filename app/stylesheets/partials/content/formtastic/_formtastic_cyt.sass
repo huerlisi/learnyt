@@ -16,34 +16,41 @@ form.formtastic
   border: 1px solid #e4e4e4
   fieldset > ol > li.boolean label
     padding-left: 15%
+
   ul.errors
-    color: #dd0000
+    color: #cc0000
     margin: 0.5em 0 1.5em 15%
     list-style: square
   li.error
     input
-      border-color: #dd0000
-
-form.formtastic fieldset.inputs
+      border-color: #cc0000
   > ol > li
     p.inline-errors
       color: #dd0000
       padding-left: 6px
       margin: 0 0 0 15%
 
-// LABELS
-form.formtastic fieldset.inputs
-  border: solid 2px white
-  +border-radius($border_radius / 2)
-  padding: 1em
-  width: 97%
+  // Date-picker styling
+  input.hasDatepicker
+    width: 85px
 
   legend
     color: #505050
     font-style: italic
     padding-left: 1em
     padding-right: 1em
+
+// LABELS
+form.formtastic fieldset.inputs
+  padding: 1em
+  width: 97%
+  border-bottom: 1px solid #e4e4e4
+  margin-bottom: 10px
+  fieldset
+    border-bottom: none
+    margin-bottom: 10px
     
+form.formtastic fieldset
   ol li label
     width: 15%
     margin-right: 0.5em
@@ -62,12 +69,9 @@ form.formtastic fieldset.inputs
       padding: 0 0 0 15%
     p
       &.inline-hints
-        padding-left: 6px
-        margin: 0 0 0 15%
+        margin: 0.5em 0 0 15%
       &.inline-errors
-        color: #dd0000
-        padding-left: 6px
-        margin: 0 0 0 15%
+        margin: 0.5em 0 0 15%
     ul.errors
       margin: 0.5em 0 0 15%
   ol li

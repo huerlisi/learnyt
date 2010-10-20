@@ -18,7 +18,7 @@
         .destroy
           %label= t_action(:delete)
           = p.check_box :_destroy
-          .action= image_tag('16x16/remove.png', :title => t_action(:delete))
+          .action= image_tag('16x16/delete.png', :title => t_action(:delete))
         = render 'possible_answers/form_fields', :form => p
 
   = f.buttons do
