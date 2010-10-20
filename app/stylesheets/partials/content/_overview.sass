@@ -1,6 +1,10 @@
-@mixin icon-48($ident)
+=icon-48($ident)
   &##{$ident}
     background-image: url("/images/48x48/#{$ident}.png")
+
+=overview-icon-48($ident)
+  #overview ul li
+    +icon-48($ident)
 
 #overview
   ul
@@ -20,8 +24,6 @@
         display: block
       &#overview
         display: none
-      +icon-48('nav_questions')
-      +icon-48('nav_answers')
     ul
       width: inherit
       margin-top: 5px
