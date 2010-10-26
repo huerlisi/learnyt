@@ -84,6 +84,7 @@ $('##{model_name}_list').prepend('#{escape_javascript(render('form'))}');
 addAutofocusBehaviour();
 addAutocompleteBehaviour();
 addNestedFormsBehaviour();
+addCorrectnessIndicatorBehaviour();
 EOF
   
     return output.html_safe
