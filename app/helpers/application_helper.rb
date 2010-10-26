@@ -1,10 +1,11 @@
 module ApplicationHelper
 
   # CRUD helpers
-  def contextual_link(action, url)
+  def contextual_link(action, url, options = {})
     output = ActiveSupport::SafeBuffer.new
+    options.merge!(:class => "icon icon-{#action}")
     
-    output << link_to(t_action(action), url, :class => "icon icon-#{action}")
+    output << link_to(t_action(action), url, options)
   end
   
   def contextual_link_to(action, resource_or_model)
