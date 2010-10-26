@@ -80,9 +80,10 @@ module ApplicationHelper
     model_name = model.to_s.underscore
     
     output = <<EOF
-$('##{model_name}_list').before('#{escape_javascript(render('form'))}');
+$('##{model_name}_list').prepend('#{escape_javascript(render('form'))}');
 addAutofocusBehaviour();
 addAutocompleteBehaviour();
+addNestedFormsBehaviour();
 EOF
   
     return output.html_safe
