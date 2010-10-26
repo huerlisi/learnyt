@@ -1,7 +1,9 @@
-= semantic_form_for @possible_answer do |f|
-  = f.inputs do
-    = f.input :question
-    = f.text_field :answer, 'data-autocomplete' => questions_url(:format => :json)
-
-  = f.buttons do
-    = f.commit_button
+%ol#possible_answer_list.sortable
+  = fields_for @question do |f|
+    = f.fields_for :possible_answers do |p|
+      %li.subbox.destroyable[p.object]
+        .destroy
+          %label= t_action(:delete)
+          = p.check_box :_destroy
+          .action= image_tag('16x16/delete.png', :title => t_action(:delete))
+        = render 'possible_answers/form_fields', :form => p
