@@ -1,4 +1,6 @@
-#quiz.box
-  %h2= @quiz.title
+%h2= @quiz.title
 
-  %p.description<= @quiz.description
+%p.description<= @quiz.description
+
+%ol#questions
+  = render :partial => 'question', :collection => @quiz.questions
