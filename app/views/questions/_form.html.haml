@@ -9,7 +9,7 @@
     = f.commit_button
 
   .contextual
-    = contextual_link 'new', new_question_possible_answer_path(@question), :remote => true
+    = contextual_link 'new', new_question_possible_answer_path(@question), :remote => true unless @question.new_record?
     
   %h2= t_model(PossibleAnswer)
   
