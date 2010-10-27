@@ -25,6 +25,11 @@ de:
         title: Titel
         description: Text
         remarks: Bemerkungen
+        email:                          E-Mail
+        password:                       Passwort
+        password_confirmation:          Passwort Bestätigung
+        current_password:               Aktuelles Passwort  
+        remember_me:                    Angemeldet bleiben  
 
       answer:
         title: Titel
@@ -47,6 +52,13 @@ de:
       quiz:
         title: Titel
         description: Beschreibung
+
+      user:
+        email:                          E-Mail
+        password:                       Passwort
+        password_confirmation:          Passwort Bestätigung
+        current_password:               Aktuelles Passwort  
+        remember_me:                    Angemeldet bleiben  
         
   learnyt:
     all:              Alle
