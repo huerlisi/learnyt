@@ -1,0 +1,5 @@
+%tr[quiz]
+  %td= link_to quiz.title, quiz, {'data-href-container' => 'tr'}
+  %td= quiz.description
+
+  = list_item_actions_for(quiz)
