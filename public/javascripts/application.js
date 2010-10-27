@@ -94,9 +94,29 @@ function addAutocompleteBehaviour() {
   });
 };
 
+function addQuestionSelectionBehaviour() {
+  $("#available_questions, #selected_questions").sortable({
+    connectWith: '.question_select',
+    update: function(event, ui) {
+      $(this).find('li.quiz_question').each(function(index, element) {
+        // Update position
+        $(this).find("input[id$='_position']").val(index + 1);
+        // Update destroy flag
+        $(this).find("input[id$='_destroy']").attr('checked',
+          $(this).parents("#selected_questions").length == 0
+        );
+      });
+    }
+  }).disableSelection();
+
+  $("#available_questions li, #selected_questions li").css('cursor', "pointer");
+  $("#available_questions li fieldset.inputs, #selected_questions li fieldset.inputs").hide();
+};
+
 // Loads functions after DOM is ready
 $(document).ready(function() {
     addAutocompleteBehaviour();
     addNestedFormsBehaviour();
     addCorrectnessIndicatorBehaviour();
+    addQuestionSelectionBehaviour();
 });

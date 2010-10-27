@@ -99,6 +99,35 @@
       &:hover
         background-color: #ffe3e3
 
+// Quizzes
+
+#available_question_label, #selected_question_label
+  width: 40%
+  float: left
+  margin-left: 1em
+  margin-right: 1em
+  padding-left: 1em
+
+#available_questions, #selected_questions
+  width: 40%
+  float: left
+  margin: 1em
+  padding: 1em
+  min-height: 3em
+
+  li
+    border: solid 1px transparent
+    &:hover
+      border: solid 1px #dfffdf
+
+#available_questions
+
+#selected_questions
+  padding-left: 2em
+  li
+    display: list-item
+    list-style: decimal
+
 // Overview
 +overview-icon-48('nav_questions')
 +overview-icon-48('nav_answers')

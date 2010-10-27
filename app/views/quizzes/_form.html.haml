@@ -4,5 +4,33 @@
     = f.input :title, :input_html => {"data-autofocus" => true}
     = f.input :description
 
+  = f.inputs do
+    %label#selected_question_label
+      Ausgewählte Fragen
+    %label#available_question_label
+      Verfügbare Fragen
+
+    %ol#selected_questions.subbox.question_select
+      = f.fields_for :quiz_questions do |q|
+        %li[q.object]
+          = q.object.question.to_s
+          = q.inputs do
+            = q.input :position
+            = q.input :question
+            = q.input :quiz
+            = q.input :_destroy, :as => :boolean, :input_html => {:checked => false}
+
+    %ul#available_questions.subbox.question_select
+      - for question in Question.all
+        - @quiz.quiz_questions.build(:question => question) unless @quiz.questions.exists?(question)
+      = f.fields_for :quiz_questions do |q|
+        %li[q.object]
+          = q.object.question.to_s
+          = q.inputs do
+            = q.input :position
+            = q.input :question
+            = q.input :quiz
+            = q.input :_destroy, :as => :boolean, :input_html => {:checked => true}
+
   = f.buttons do
     = f.commit_button
