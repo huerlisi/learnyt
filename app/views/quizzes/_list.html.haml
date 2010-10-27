@@ -1,0 +1,10 @@
+%table.list#quiz_list
+  %tr
+    %th= t_attr :title
+    %th= t_attr :description
+    %th.action-links
+
+  = render @quizzes
+
+  %tr
+    %th{:colspan => "3", :style => "text-align: right"}= will_paginate @quizzes

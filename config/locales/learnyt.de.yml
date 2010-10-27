@@ -18,6 +18,7 @@ de:
       user: Benutzer
       question: Frage
       response: Antwort
+      quiz:  Quiz
 
     attributes:
       question:
@@ -43,6 +44,10 @@ de:
         score: Ergebnis
         position: Position
 
+      quiz:
+        title: Titel
+        description: Beschreibung
+        
   learnyt:
     all:              Alle
     edit:             Editieren
