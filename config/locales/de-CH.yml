@@ -127,6 +127,14 @@ de-CH:
           one:    "Konnte {{model}} nicht speichern: ein Fehler."
           other:  "Konnte {{model}} nicht speichern: {{count}} Fehler."
         body: "Bitte überprüfen Sie die folgenden Felder:"
+    attributes:
+      user:
+        email:                          E-Mail  
+        password:                       Passwort
+        password_confirmation:          Passwort Bestätigung
+        current_password:               Aktuelles Passwort
+        remember_me:                    Angemeldet bleiben
+
 
       messages:
         inclusion: "ist kein gültiger Wert"
