@@ -4,10 +4,7 @@
 
   = f.input :possible_answer_id, :as => :hidden
 
-  - if @question
-    = render 'questions/show'
-  - else
-    = f.input :question
+  = render 'question_form'
 
   = f.buttons do
     = f.commit_button
