@@ -96,8 +96,18 @@ function addAutocompleteBehaviour() {
 
 function addQuestionSelectionBehaviour() {
   // Hide unused elements for js users.
-  $("#available_questions li, #selected_questions li").css('cursor', "pointer");
-  $("#available_questions li fieldset.inputs, #selected_questions li fieldset.inputs").hide();
+  $("#all_questions > li").css('cursor', "pointer");
+  $("#all_questions > li > fieldset.inputs").hide();
+
+  // Sort questions
+  $('ul#all_questions > li').each(function() {
+    console.log($(this).find("input[id$='_destroy']:checked").val());
+    if($(this).find("input[id$='_destroy']:checked").val() == 1){
+      $('#selected_questions').append($(this));
+    }else{
+      $('#available_questions').append($(this));
+    }
+  });
 
   $("#available_questions, #selected_questions").sortable({
     connectWith: '.question_select',
