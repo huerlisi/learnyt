@@ -4,5 +4,17 @@
     = f.input :title, :input_html => {"data-autofocus" => true}
     = f.input :description
 
+  = f.inputs do
+    %label#available_question_label
+      Verfügbare Fragen
+    %label#selected_question_label
+      Ausgewählte Fragen
+
+    %ul#available_questions.subbox.question_select
+      - for question in Question.all
+        %li[question]
+          = question.to_s
+    %ol#selected_questions.subbox.question_select
+
   = f.buttons do
     = f.commit_button

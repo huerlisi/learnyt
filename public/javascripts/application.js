@@ -94,9 +94,17 @@ function addAutocompleteBehaviour() {
   });
 };
 
+function addQuestionSelectionBehaviour() {
+  $("#available_questions, #selected_questions").sortable({
+    connectWith: '.question_select'
+  }).disableSelection()
+  $("#available_questions li, #selected_questions li").css('cursor', "pointer");;
+};
+
 // Loads functions after DOM is ready
 $(document).ready(function() {
     addAutocompleteBehaviour();
     addNestedFormsBehaviour();
     addCorrectnessIndicatorBehaviour();
+    addQuestionSelectionBehaviour();
 });
