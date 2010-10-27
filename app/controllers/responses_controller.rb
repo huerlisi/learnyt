@@ -8,4 +8,7 @@ class ResponsesController < InheritedResources::Base
     def collection
       @responses ||= end_of_association_chain.paginate(:page => params[:page])
     end
+
+  # Actions
+  public
 end
