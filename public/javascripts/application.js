@@ -101,7 +101,6 @@ function addQuestionSelectionBehaviour() {
 
   // Sort questions
   $('ul#all_questions > li').each(function() {
-    console.log($(this).find("input[id$='_destroy']:checked").val());
     if($(this).find("input[id$='_destroy']:checked").val() == 1){
       $('#selected_questions').append($(this));
     }else{
