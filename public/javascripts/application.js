@@ -95,6 +95,10 @@ function addAutocompleteBehaviour() {
 };
 
 function addQuestionSelectionBehaviour() {
+  // Hide unused elements for js users.
+  $("#available_questions li, #selected_questions li").css('cursor', "pointer");
+  $("#available_questions li fieldset.inputs, #selected_questions li fieldset.inputs").hide();
+
   $("#available_questions, #selected_questions").sortable({
     connectWith: '.question_select',
     update: function(event, ui) {
@@ -108,10 +112,7 @@ function addQuestionSelectionBehaviour() {
       });
     }
   }).disableSelection();
-
-  $("#available_questions li, #selected_questions li").css('cursor', "pointer");
-  $("#available_questions li fieldset.inputs, #selected_questions li fieldset.inputs").hide();
-};
+}
 
 // Loads functions after DOM is ready
 $(document).ready(function() {
