@@ -5,16 +5,32 @@
     = f.input :description
 
   = f.inputs do
-    %label#available_question_label
-      Verfügbare Fragen
     %label#selected_question_label
       Ausgewählte Fragen
+    %label#available_question_label
+      Verfügbare Fragen
+
+    %ol#selected_questions.subbox.question_select
+      = f.fields_for :quiz_questions do |q|
+        %li[q.object]
+          = q.object.question.to_s
+          = q.inputs do
+            = q.input :position
+            = q.input :question
+            = q.input :quiz
+            = q.input :_destroy, :as => :boolean, :input_html => {:checked => true}
 
     %ul#available_questions.subbox.question_select
       - for question in Question.all
-        %li[question]
-          = question.to_s
-    %ol#selected_questions.subbox.question_select
+        - @quiz.quiz_questions.build(:question => question) unless @quiz.questions.exists?(question)
+      = f.fields_for :quiz_questions do |q|
+        %li[q.object]
+          = q.object.question.to_s
+          = q.inputs do
+            = q.input :position
+            = q.input :question
+            = q.input :quiz
+            = q.input :_destroy, :as => :boolean, :input_html => {:checked => true}
 
   = f.buttons do
     = f.commit_button

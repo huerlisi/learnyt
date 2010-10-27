@@ -4,5 +4,5 @@ class QuizQuestion < ActiveRecord::Base
   belongs_to :question
   
   # Validations
-  validates_presence_of :quiz, :question, :position
+  validates_presence_of :question, :position
 end
