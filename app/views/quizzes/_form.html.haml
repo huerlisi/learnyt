@@ -18,7 +18,7 @@
             = q.input :position
             = q.input :question
             = q.input :quiz
-            = q.input :_destroy, :as => :boolean, :input_html => {:checked => true}
+            = q.input :_destroy, :as => :boolean, :input_html => {:checked => false}
 
     %ul#available_questions.subbox.question_select
       - for question in Question.all
