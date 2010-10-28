@@ -12,8 +12,8 @@
     li#basic_claims_data
       width: 120px
     li
-      background: no-repeat top left
-      padding-left: 58px
+      background: no-repeat 5px 5px
+      padding-left: 60px
       padding-right: 40px
       min-height: 58px
       a
@@ -21,6 +21,7 @@
         display: block
       &#overview
         display: none
+
     ul
       width: inherit
       margin-top: 5px
@@ -32,3 +33,15 @@
         min-height: 1em
         a
           border-bottom: none
+#overview
+  >ul>li
+    // Top level
+    +border-radius($border_radius)
+    background-color: #F6F6F6
+    border: 1px solid #E4E4E4
+    color: #505050
+    
+    margin: 1em
+    padding-top: 0.8em
+    padding-bottom: 0.8em
+    width: 20%
