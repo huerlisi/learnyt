@@ -4,5 +4,6 @@
 %h1= t_title
 
 #quiz_response
-  - @question ||= @quiz_response.question
-  = render 'questions/show'
+  - for @response in @quiz_response.responses
+    - @question ||= @response.question
+    = render 'questions/show'

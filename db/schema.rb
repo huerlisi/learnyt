@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(:version => 20101028185520) do
     t.integer  "question_id"
     t.integer  "answer_id"
     t.decimal  "score"
-    t.integer  "quize_response_id"
+    t.integer  "quiz_response_id"
   end
 
   create_table "users", :force => true do |t|

@@ -10,8 +10,13 @@ selectables.click(function(element) {
 
 function addSelectableBehaviour() {
   var selectables = $('.possible_answers');
-  selectables.selectable();
   selectables.css('cursor', "pointer");
+  selectables.selectable({
+    stop: function(event, ui) {
+      var selected_id = $(".ui-selected", this).data('id');
+      $(this).next().children('input').val(selected_id);
+    }
+  });
 };
 
 $(".sortable").bind('sortupdate', function(event, ui) {
