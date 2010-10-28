@@ -3,7 +3,7 @@
 
   - for @question in @quiz.questions
     - @response = @quiz_response.responses.build(:question => @question)
-    = render 'responses/form'
+    = render 'responses/question_form'
 
   = f.buttons do
     = f.commit_button
