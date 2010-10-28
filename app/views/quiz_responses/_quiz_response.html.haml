@@ -1,0 +1,7 @@
+%tr[quiz_response]
+  %td= quiz_response.question
+  %td= link_to quiz_response.answer, quiz_response, {'data-href-container' => 'tr'}
+  %td= quiz_response.possible_answer.try(:score)
+  %td= quiz_response.created_at
+
+  = list_item_actions_for(quiz_response)

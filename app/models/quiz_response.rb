@@ -1,6 +1,5 @@
 class QuizResponse < ActiveRecord::Base
+  # Associations
   belongs_to :quiz
-  belongs_to :response
-
-  has_one :user, :through => :response
+  has_many :responses
 end

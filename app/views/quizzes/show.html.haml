@@ -1,5 +1,7 @@
 .contextual
   = show_contextual_for @quiz
+  = contextual_link 'respond', new_quiz_quiz_response_path(@quiz)
+
 %h1= t_title
 
 = render 'show'

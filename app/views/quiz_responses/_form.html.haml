@@ -1,0 +1,9 @@
+= semantic_form_for [@quiz, @quiz_response] do |f|
+  = f.semantic_errors
+
+  - for @question in @quiz.questions
+    - @response = @quiz_response.responses.build(:question => @question)
+    = render 'responses/form'
+
+  = f.buttons do
+    = f.commit_button

@@ -1,0 +1,8 @@
+.contextual
+  = show_contextual_for @quiz_response
+
+%h1= t_title
+
+#quiz_response
+  - @question ||= @quiz_response.question
+  = render 'questions/show'
