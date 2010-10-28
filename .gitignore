@@ -17,6 +17,7 @@ vendor/bundle
 
 # Volatile
 doc/api
+doc/app
 public/stylesheets/all.css
 
 # Backup
