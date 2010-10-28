@@ -1,5 +1,5 @@
-%tr[quiz]
-  %td= link_to quiz.title, quiz, {'data-href-container' => 'tr'}
-  %td= quiz.description
+%li[quiz]
+  = link_to quiz.title, quiz
+  %p<= quiz.description
 
-  = list_item_actions_for(quiz)
+//  = list_item_actions_for(quiz)
