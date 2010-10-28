@@ -15,6 +15,9 @@
       background: no-repeat 5px 5px
       padding-left: 60px
       padding-right: 40px
+      // Fix horizontal-list to not drop padding in last item
+      .last, &:last-child
+        padding-right: 40px
       min-height: 58px
       a
         border-bottom: 1px solid black
