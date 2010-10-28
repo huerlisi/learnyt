@@ -3,7 +3,7 @@
 %p.description<= @question.description
 %p.remarks<= @question.remarks
 
-%ol#answers
+%ol.possible_answers
   - for @possible_answer in @question.possible_answers
     %li.subbox[@possible_answer]{:class => [@response.try(:possible_answer) == @possible_answer ? 'selected' : nil], :data => {:id => @possible_answer.id}}
       %h3= @possible_answer.answer.title

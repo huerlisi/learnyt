@@ -3,10 +3,14 @@
 var selectables = $('#response form .possible_answer');
 selectables.css('cursor', "pointer");
 selectables.click(function(element) {
-  $('#response_possible_answer_id').val($(this).data('id'));
   $('.possible_answer').removeClass('selected');
   $(this).addClass('selected');
+  $('#response_possible_answer_id').val($(this).data('id'));
 });
+
+function addSelectableBehaviour() {
+  $('.possible_answers').selectable();
+};
 
 $(".sortable").bind('sortupdate', function(event, ui) {
   $(this).find('li.possible_answer').each(function(index, element) {
@@ -125,6 +129,7 @@ function addQuestionSelectionBehaviour() {
 
 // Loads functions after DOM is ready
 $(document).ready(function() {
+    addSelectableBehaviour();
     addAutocompleteBehaviour();
     addNestedFormsBehaviour();
     addCorrectnessIndicatorBehaviour();

@@ -1,7 +1,7 @@
 // learnyt
 // =======
 // Questions
-#question, .quiz, #answer, #response
+#question, .quiz, #answer, #response, .possible_answers
   h2
     font-size: 90%
     margin-bottom: 1em
@@ -18,7 +18,7 @@
     border: solid 2px white
     +border-radius($border_radius / 2)
   
-#possible_answer_list, #answers
+#possible_answer_list, #answers, .possible_answers
   width: 98%
   list-style-type: decimal
 
@@ -71,9 +71,9 @@
     margin-left: 3em
     white-space: pre-line
     
-#response
+#response, .possible_answers
   li.possible_answer
-    &.selected
+    &.selected, &.ui-selected
       background-color: #dfffdf
     &.correct
       &.selected
