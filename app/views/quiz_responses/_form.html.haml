@@ -1,8 +1,10 @@
-= semantic_form_for [@quiz, @quiz_response] do |f|
+= semantic_form_for @quiz_response do |f|
   = f.semantic_errors
 
-  - for @question in @quiz.questions
-    - @response = @quiz_response.responses.build(:question => @question)
+  - for question in @quiz.questions
+    - @quiz_response.responses.build(:question => question)
+  = f.fields_for :responses do |r|
+    - @question = r.object.question
     = render 'responses/question_form'
 
   = f.buttons do
