@@ -1,5 +1,5 @@
 %li[quiz]
   = link_to quiz.title, quiz
-  %p.description<= quiz.description
+  %p.description<= truncate(quiz.description, :length => 100, :separator => ' ')
 
 //  = list_item_actions_for(quiz)
