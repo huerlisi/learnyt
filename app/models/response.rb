@@ -8,6 +8,7 @@ class Response < ActiveRecord::Base
   belongs_to :possible_answer
   belongs_to :question
   belongs_to :answer
+  belongs_to :quiz_response
 
   # Validations
   validates_presence_of :possible_answer, :question, :answer, :score
