@@ -75,7 +75,10 @@ SimpleNavigation::Configuration.run do |navigation|
       answer.item :answer_index, t_action(:index, Answer), answers_path
     end
 
-    primary.item :quizzes, t_model(Quiz), quizzes_path, :highlights_on => /\/quizzes/
+    primary.item :nav_quizzes, t_model(Quiz), quizzes_path, :highlights_on => /\/quizzes/ do |quiz|
+      quiz.item :new_quiz, t_action(:new, Quiz), new_quiz_path
+      quiz.item :quiz_index, t_action(:index, Quiz), quizzes_path
+    end
 
     primary.item :nav_user_settings, t('main_navigation.settings'), edit_user_registration_path, :highlights_on => /\/users\/edit/
   end
