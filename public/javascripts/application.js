@@ -9,7 +9,9 @@ selectables.click(function(element) {
 });
 
 function addSelectableBehaviour() {
-  $('.possible_answers').selectable();
+  var selectables = $('.possible_answers');
+  selectables.selectable();
+  selectables.css('cursor', "pointer");
 };
 
 $(".sortable").bind('sortupdate', function(event, ui) {
