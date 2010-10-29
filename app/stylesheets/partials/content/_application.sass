@@ -19,6 +19,10 @@
     border: solid 2px white
     +border-radius($border_radius / 2)
   
+form #possible_answer_list
+  .description, .remarks
+    margin-left: 4.2em
+
 // Quizzes Index
 #quiz_list
   .description
@@ -45,7 +49,7 @@
     
     .position
       display: none
-    .description
+    .description, .remarks
       font-weight: normal
       textarea
         margin-top: 1em
