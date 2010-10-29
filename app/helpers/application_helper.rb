@@ -11,6 +11,9 @@ module ApplicationHelper
   def contextual_link_to(action, resource_or_model)
     output = ActiveSupport::SafeBuffer.new
     
+    # Handle both symbols and strings
+    action = action.to_s
+    
     case action
     when 'new'
       model = resource_or_model
