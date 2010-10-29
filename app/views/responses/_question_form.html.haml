@@ -1,7 +1,7 @@
 %h2= @question.title
 
-%p.description<= @question.description
-%p.remarks<= @question.remarks
+- if @question.description.present?
+  %p.description<= @question.description
 
 %ol.possible_answers
   - for @possible_answer in @question.possible_answers
