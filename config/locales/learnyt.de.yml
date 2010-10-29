@@ -58,6 +58,7 @@ de:
         quiz: Quiz
         score: Ergebnis
         event_time: Um
+        to_s: %{score} von %{max_score} Punkten
 
       user:
         email:                          E-Mail

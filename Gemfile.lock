@@ -1,6 +1,6 @@
 GIT
   remote: http://github.com/CyTeam/styleyt.git
-  revision: a52d6c81e030bee5de21a48b392ba3b959c9b800
+  revision: a52d6c8
   specs:
     styleyt (0.2.2)
       compass
@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: http://github.com/mislav/will_paginate.git
-  revision: b1a5beeec9f56ecbe3594fcdca76d92b6767ce50
+  revision: b1a5bee
   branch: rails3
   specs:
     will_paginate (3.0.pre3)

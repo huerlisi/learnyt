@@ -6,12 +6,12 @@ class QuizResponse < ActiveRecord::Base
 
   # Helpers
   def to_s
-    "%0.1f out of %0.1f points" % [score, max_score]
+    I18n.translate('activerecord.attributes.quiz_response.to_s', :score => "%0.1f" % score, :max_score => "%0.1f" %max_score)
   end
 
   # Calculated fields
   
-  # Calculate overal score.
+  # Calculate overall score.
   #
   # Simply add up the scores for all responses.
   def score
@@ -23,5 +23,16 @@ class QuizResponse < ActiveRecord::Base
   # Simply use the response count * 1.
   def max_score
     responses.count
+  end
+
+  # Calculate overall correctness.
+  def correctness
+    if score == max_score
+      return 'correct'
+    elsif score == 0.0
+      return 'wrong'
+    else
+      return 'close'
+    end
   end
 end
