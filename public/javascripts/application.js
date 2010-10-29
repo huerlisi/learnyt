@@ -9,7 +9,7 @@ selectables.click(function(element) {
 });
 
 function addSelectableBehaviour() {
-  var selectables = $('.possible_answers');
+  var selectables = $('form .possible_answers');
   selectables.css('cursor', "pointer");
   selectables.selectable({
     stop: function(event, ui) {
