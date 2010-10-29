@@ -1,7 +1,7 @@
-=overview-icon-48($ident)
+=overview-icon-48($ident, $icon = $ident)
   #overview ul li
-    &##{$ident}
-      +icon($ident, 48)
+    &##{$ident}, &.#{$ident}
+      +icon($icon, 48)
 
 #overview
   ul
