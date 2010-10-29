@@ -1,5 +1,7 @@
-#answer.box
-  %h2= @answer.title
+%h2= @answer.title
 
-  %p.description<= @answer.description
-  %p.remarks<= @answer.remarks
+#answer.box
+  - if @answer.description.present?
+    %p.description<= @answer.description
+  - if @answer.remarks.present?
+    %p.remarks<= @answer.remarks
