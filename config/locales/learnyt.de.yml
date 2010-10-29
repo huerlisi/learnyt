@@ -54,6 +54,11 @@ de:
         title: Titel
         description: Beschreibung
 
+      quiz_response:
+        quiz: Quiz
+        score: Ergebnis
+        event_time: Um
+
       user:
         email:                          E-Mail
         password:                       Passwort
