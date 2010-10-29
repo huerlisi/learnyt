@@ -5,9 +5,7 @@
 - if @question.remarks.present?
   %p.remarks<= @question.remarks
 
-%h2= t_model PossibleAnswer
-
-%ol#answers
+%ol.possible_answers
   - for @possible_answer in @question.possible_answers
     %li.subbox[@possible_answer]{:class => [@possible_answer.correctness, @response.try(:possible_answer) == @possible_answer ? 'selected' : nil], :data => {:id => @possible_answer.id}}
       .score{:class => @possible_answer.correctness}= @possible_answer.score
