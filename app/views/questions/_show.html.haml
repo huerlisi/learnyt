@@ -1,7 +1,9 @@
 %h2= @question.title
 
-%p.description<= @question.description
-%p.remarks<= @question.remarks
+- if @question.description.present?
+  %p.description<= @question.description
+- if @question.remarks.present?
+  %p.remarks<= @question.remarks
 
 %h2= t_model PossibleAnswer
 
