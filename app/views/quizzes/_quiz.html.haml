@@ -1,3 +1,3 @@
 %li[quiz]
-  = link_to quiz.title, quiz, {'data-href-container' => 'li'}
+  = link_to quiz.title, new_quiz_quiz_response_path(quiz), {'data-href-container' => 'li'}
   %p.description<= truncate(quiz.description, :length => 100, :separator => ' ')
