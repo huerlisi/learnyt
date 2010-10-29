@@ -4,10 +4,11 @@ source 'http://rubygems.org'
 
 # Rails
 # =====
-gem 'rails', '3.0.0'
+gem 'rails', '~> 3.0.0'
 
 # Database
 gem 'sqlite3-ruby', :require => 'sqlite3'
+gem 'mysql'
 
 # Development
 # ===========
@@ -54,4 +55,4 @@ gem 'jquery-rails'
 # learnyt
 # =======
 # Authentication
-gem 'devise', '>= 1.1'
+gem 'devise', '~> 1.1'
