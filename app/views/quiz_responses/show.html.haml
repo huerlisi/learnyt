@@ -5,5 +5,4 @@
 
 #quiz_response
   - for @response in @quiz_response.responses
-    - @question ||= @response.question
-    = render 'questions/show'
+    = render 'responses/show'
