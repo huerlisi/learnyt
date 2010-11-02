@@ -28,8 +28,11 @@ function addLinkifyContainersBehaviour() {
     container.css('cursor', "pointer");
     var href = element.attr('href');
     
-    container.delegate(':not(a, a img)', 'click', {href: href}, function() {
-      document.location.href = href;
+    container.delegate('*', 'click', {href: href}, function(event) {
+      // Don't override original link behaviour
+      if ($(event.target).parents('a').length == 0) {
+        document.location.href = href;
+      };
     });
   });
 };
