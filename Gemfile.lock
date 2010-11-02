@@ -5,15 +5,6 @@ GIT
   specs:
     will_paginate (3.0.pre3)
 
-GIT
-  remote: http://github.com/CyTeam/styleyt.git
-  revision: b13b8f2
-  specs:
-    styleyt (0.2.3)
-      compass
-      haml
-      rails (~> 3.0.0)
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -183,6 +174,5 @@ DEPENDENCIES
   shoulda
   simple-navigation
   sqlite3-ruby
-  styleyt!
   webrat
   will_paginate!

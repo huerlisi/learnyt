@@ -36,8 +36,6 @@ end
 
 # Standard helpers
 # ================
-gem 'styleyt', :git => 'http://github.com/CyTeam/styleyt.git'
-
 gem 'haml'
 gem 'compass', '>= 0.10.4'
 gem 'fancy-buttons'
