@@ -1,18 +1,18 @@
 GIT
+  remote: git://github.com/mislav/will_paginate.git
+  revision: b1a5bee
+  branch: rails3
+  specs:
+    will_paginate (3.0.pre3)
+
+GIT
   remote: http://github.com/CyTeam/styleyt.git
-  revision: b13b8f23bca050ae48c7d53930bfdc341d200985
+  revision: b13b8f2
   specs:
     styleyt (0.2.3)
       compass
       haml
       rails (~> 3.0.0)
-
-GIT
-  remote: http://github.com/mislav/will_paginate.git
-  revision: b1a5beeec9f56ecbe3594fcdca76d92b6767ce50
-  branch: rails3
-  specs:
-    will_paginate (3.0.pre3)
 
 GEM
   remote: http://rubygems.org/
