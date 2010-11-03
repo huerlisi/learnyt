@@ -2,6 +2,7 @@ class QuizResponse < ActiveRecord::Base
   # Associations
   belongs_to :quiz
   has_many :responses
+  belongs_to :user
   accepts_nested_attributes_for :responses
 
   # Helpers

@@ -4,7 +4,6 @@
 # these PossibleAnswers, we duplicate some values.
 class Response < ActiveRecord::Base
   # Associations
-  belongs_to :user
   belongs_to :possible_answer
   belongs_to :question
   belongs_to :answer
