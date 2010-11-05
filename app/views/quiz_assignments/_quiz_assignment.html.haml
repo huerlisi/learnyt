@@ -1,4 +1,7 @@
 %li.quiz[quiz_assignment]
   = "Fällig am: #{quiz_assignment.due_at}"
-  = link_to quiz_assignment.quiz.title, new_quiz_quiz_response_path(quiz_assignment.quiz), {'data-href-container' => 'li'}
+  - if current_user.role?(:teacher)
+    = link_to quiz_assignment.quiz.title, quiz_assignment_path(quiz_assignment), {'data-href-container' => 'li'}
+  - else
+    = link_to quiz_assignment.quiz.title, new_quiz_quiz_response_path(quiz_assignment.quiz), {'data-href-container' => 'li'}
   %p.description<= truncate(quiz_assignment.quiz.description, :length => 100, :separator => ' ')
