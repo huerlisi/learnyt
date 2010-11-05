@@ -15,7 +15,7 @@ class Ability
     elsif user.role? :teacher
       can :manage, :all
     elsif user.role? :pupil
-      can :read, [Quiz, Question]
+      can :read, [Quiz]
       # manage his own quiz responses
       can :manage, QuizResponse, :user_id => user.id
     end
