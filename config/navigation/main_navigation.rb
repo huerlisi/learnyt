@@ -8,6 +8,7 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :nav_quizzes, t_model(Quiz), quizzes_path do |quiz|
       quiz.item :new_quiz, t_action(:new, Quiz), new_quiz_path, :if => lambda { can?(:new, Quiz)}
       quiz.item :quiz_index, t_action(:index, Quiz), quizzes_path
+      quiz.item :quiz_assignment_index, t_title(:index, QuizAssignment), quiz_assignments_path
     end
 
     primary.item :nav_questions, t_model(Question), questions_path, :if => lambda { can?(:new, Question) or can?(:index, Question)} do |question|

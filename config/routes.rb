@@ -72,4 +72,5 @@ Learnyt::Application.routes.draw do
     resources :quiz_responses
   end
   resources :quiz_responses
+  resources :quiz_assignments
 end
