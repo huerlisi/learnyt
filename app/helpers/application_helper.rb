@@ -14,33 +14,27 @@ module ApplicationHelper
     # Handle both symbols and strings
     action = action.to_s
     
+    # Resource and Model setup
+    case action
+    when 'new', 'index'
+      model = resource_or_model
+    when 'show', 'edit', 'delete'
+      resource = resource_or_model
+      model = resource.class
+    end
+    model_name = model.to_s.underscore
+    
+    # Link generation
     case action
     when 'new'
-      model = resource_or_model
-      model_name = model.to_s.underscore
       output << link_to(t_action('new'), send("new_#{model_name}_path"), :remote => true, :class => "icon icon-add")
     when 'show'
-      resource = resource_or_model
-      model = resource.class
-      model_name = model.to_s.underscore
-
       output << link_to(t_action('show'), send("#{model_name}_path", resource), :class => "icon icon-show")
     when 'edit'
-      resource = resource_or_model
-      model = resource.class
-      model_name = model.to_s.underscore
-
       output << link_to(t_action('edit'), send("edit_#{model_name}_path", resource), :class => "icon icon-edit")
     when 'delete'
-      resource = resource_or_model
-      model = resource.class
-      model_name = model.to_s.underscore
-
       output << link_to(t_action('delete'), send("#{model_name}_path", resource), :confirm => t_confirm_delete(resource), :method => :delete, :class => "icon icon-delete")
     when 'index'
-      model = resource_or_model
-      model_name = model.to_s.underscore
-    
       output << link_to(t_action('index'), send("#{model_name.pluralize}_path"), :class => "icon icon-index")
     end
     
