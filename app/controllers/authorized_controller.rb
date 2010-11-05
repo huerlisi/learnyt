@@ -4,7 +4,7 @@ class AuthorizedController < InheritedResources::Base
 
   rescue_from CanCan::AccessDenied do |exception|
     flash[:alert] = t('cancan.access_denied')
-    redirect_to root_url
+    redirect_to :back
   end
 
   # Responders
