@@ -2,14 +2,12 @@ module ApplicationHelper
 
   # CRUD helpers
   def contextual_link(action, url, options = {})
-    options.merge!(:class => "icon icon-{#action}")
+    options.merge!(:class => "icon icon-#{action}")
     
     link_to(t_action(action), url, options)
   end
   
   def contextual_link_to(action, resource_or_model)
-    output = ActiveSupport::SafeBuffer.new
-    
     # Handle both symbols and strings
     action = action.to_s
     
@@ -29,18 +27,16 @@ module ApplicationHelper
     # Link generation
     case action
     when 'new'
-      output << link_to(t_action('new'), send("new_#{model_name}_path"), :remote => true, :class => "icon icon-add")
+      return contextual_link(action, send("new_#{model_name}_path"), :remote => true)
     when 'show'
-      output << link_to(t_action('show'), send("#{model_name}_path", resource), :class => "icon icon-show")
+      return contextual_link(action, send("#{model_name}_path", resource))
     when 'edit'
-      output << link_to(t_action('edit'), send("edit_#{model_name}_path", resource), :class => "icon icon-edit")
+      return contextual_link(action, send("edit_#{model_name}_path", resource))
     when 'delete'
-      output << link_to(t_action('delete'), send("#{model_name}_path", resource), :confirm => t_confirm_delete(resource), :method => :delete, :class => "icon icon-delete")
+      return contextual_link(action, send("#{model_name}_path", resource), :confirm => t_confirm_delete(resource), :method => :delete)
     when 'index'
-      output << link_to(t_action('index'), send("#{model_name.pluralize}_path"), :class => "icon icon-index")
+      return contextual_link(action, send("#{model_name.pluralize}_path"))
     end
-    
-    return output
   end
   
   def index_contextual_for(model)
