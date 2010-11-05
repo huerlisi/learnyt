@@ -1,0 +1,9 @@
+= semantic_form_for @quiz_assignment do |f|
+  = f.semantic_errors
+  = f.inputs do
+    = f.input :user, :input_html => {"data-autofocus" => true}
+    = f.input :quiz
+    = f.input :due_at
+
+  = f.buttons do
+    = f.commit_button

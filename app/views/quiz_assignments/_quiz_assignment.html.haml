@@ -1,0 +1,4 @@
+%li.quiz[quiz_assignment]
+  = "Fällig am: #{quiz_assignment.due_at}"
+  = link_to quiz_assignment.quiz.title, new_quiz_quiz_response_path(quiz_assignment.quiz), {'data-href-container' => 'li'}
+  %p.description<= truncate(quiz_assignment.quiz.description, :length => 100, :separator => ' ')
