@@ -7,7 +7,7 @@ de-CH:
 
   devise:
     failure:
-      unauthenticated: 'Sie müssen sich zuerst Anmelden um fortfahren zu können.'
+      unauthenticated: 'Sie müssen sich zuerst anmelden um fortfahren zu können.'
       unconfirmed: 'Sie müssen Ihr Konto zuerst aktivieren.'
       locked: 'Ihr Konto ist gesperrt.'
       invalid: 'Ungültige E-Mail Adresse oder ungültiges Passwort.'
