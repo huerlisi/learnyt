@@ -24,6 +24,9 @@ module ApplicationHelper
     end
     model_name = model.to_s.underscore
     
+    # Return if current user isn't authorized to call this action
+    return unless can?(action.to_sym, model)
+    
     # Link generation
     case action
     when 'new'
