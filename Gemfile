@@ -54,3 +54,5 @@ gem 'jquery-rails'
 # =======
 # Authentication
 gem 'devise', '~> 1.1'
+# Authorization
+gem 'cancan'
