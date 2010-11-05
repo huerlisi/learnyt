@@ -10,6 +10,8 @@ class Ability
   def initialize(user)
     user ||= User.new # guest user
  
+    alias_action :index, :to => :list
+    
     if user.role? :super_admin
       can :manage, :all
     elsif user.role? :teacher
