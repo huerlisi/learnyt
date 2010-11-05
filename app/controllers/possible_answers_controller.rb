@@ -1,14 +1,11 @@
-class PossibleAnswersController < InheritedResources::Base
+class PossibleAnswersController < AuthorizedController
+  # Associations
   optional_belongs_to :question
   
   # Responders
   respond_to :html, :js
 
-  protected
-    def collection
-      @possible_answers ||= end_of_association_chain.paginate(:page => params[:page])
-    end
-
+  # Actions
   public
   def new
     @question = Question.find(params[:question_id])

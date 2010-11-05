@@ -1,11 +1,4 @@
-class ResponsesController < InheritedResources::Base
+class ResponsesController < AuthorizedController
+  # Associations
   optional_belongs_to :question
-  
-  # Responders
-  respond_to :html, :js
-
-  protected
-    def collection
-      @responses ||= end_of_association_chain.paginate(:page => params[:page])
-    end
 end

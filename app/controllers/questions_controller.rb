@@ -1,13 +1,6 @@
-class QuestionsController < InheritedResources::Base
-  # Responders
-  respond_to :html, :js
-  
+class QuestionsController < AuthorizedController
+  # Scopes
   has_scope :by_title
-
-  protected
-    def collection
-      @questions ||= end_of_association_chain.paginate(:page => params[:page])
-    end
 
   # Actions
   public

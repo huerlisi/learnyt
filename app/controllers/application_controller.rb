@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
+  # Aspects
   protect_from_forgery
-
-  authorize_resource
 end

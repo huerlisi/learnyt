@@ -1,11 +1,7 @@
-class AnswersController < InheritedResources::Base
+class AnswersController < AuthorizedController
   # Responders
   respond_to :html, :js, :json
 
+  # Scopes
   has_scope :by_title
-
-  protected
-    def collection
-      @answers ||= end_of_association_chain.paginate(:page => params[:page])
-    end
 end
