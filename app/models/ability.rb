@@ -16,10 +16,8 @@ class Ability
       can :manage, :all
     elsif user.role? :pupil
       can :read, [Quiz, Question]
-      # manage products, assets he owns
-      can :manage, QuizResponse do |quiz_response|
-        quiz_response.try(:user) == user
-      end
+      # manage his own quiz responses
+      can :manage, QuizResponse, :user_id => user.id
     end
   end
 end

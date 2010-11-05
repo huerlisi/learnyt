@@ -13,6 +13,6 @@ class AuthorizedController < InheritedResources::Base
   # Resource setup
   protected
     def collection
-      instance_eval("@#{controller_name.pluralize} ||= end_of_association_chain.paginate(:page => params[:page])")
+      instance_eval("@#{controller_name.pluralize} ||= end_of_association_chain.accessible_by(current_ability).paginate(:page => params[:page])")
     end
 end
