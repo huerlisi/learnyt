@@ -7,16 +7,20 @@ module ApplicationHelper
     link_to(t_action(action), url, options)
   end
   
-  def contextual_link_for(action, resource_or_model)
+  def contextual_link_for(action = nil, resource_or_model = nil)
+    # Use current action if not specified
+    action ||= action_name
+
     # Handle both symbols and strings
     action = action.to_s
     
     # Resource and Model setup
+    # Use controller name to guess resource or model if not specified
     case action
     when 'new', 'index'
-      model = resource_or_model
+      model = resource_or_model || controller_name.singularize.camelize.constantize
     when 'show', 'edit', 'delete'
-      resource = resource_or_model
+      resource = resource_or_model || instance_variable_get("@#{controller_name.singularize}")
       model = resource.class
     end
     model_name = model.to_s.underscore
