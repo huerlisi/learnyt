@@ -7,10 +7,7 @@ module ApplicationHelper
     link_to(t_action(action), url, options)
   end
   
-  def contextual_link_for(action = nil, resource_or_model = nil)
-    # Use current action if not specified
-    action ||= action_name
-
+  def contextual_link_for(action, resource_or_model = nil)
     # Handle both symbols and strings
     action = action.to_s
     
