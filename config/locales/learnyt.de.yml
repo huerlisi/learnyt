@@ -88,3 +88,5 @@ de:
   crud:
     action:
       respond: Beantworten
+    flash:
+      created: %{model} "%{description}" angelegt

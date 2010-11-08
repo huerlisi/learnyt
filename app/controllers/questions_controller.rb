@@ -20,6 +20,6 @@ class QuestionsController < AuthorizedController
 
   # Redirect to next new question after creating one.
   def create
-    create! { new_question_path }
+    create!(:notice => t('crud.flash.created', :model => Question, :description => params[:question][:title])) { new_question_path }
   end
 end
