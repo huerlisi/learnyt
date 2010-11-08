@@ -5,9 +5,6 @@
     = f.input :description
     = f.input :remarks
 
-  = f.buttons do
-    = f.commit_button
-
   .contextual
     = icon_link_to 'new', new_question_possible_answer_path(@question), :remote => true unless @question.new_record?
     
