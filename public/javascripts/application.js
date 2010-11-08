@@ -106,6 +106,19 @@ function addAutocompleteBehaviour() {
 };
 
 function addQuestionSelectionBehaviour() {
+  function updateQuestionSelections(event, ui) {
+    var questions = $("#available_questions, #selected_questions");
+    
+    questions.find('li.quiz_question').each(function(index, element) {
+      // Update position
+      $(this).find("input[id$='_position']").val(index + 1);
+      // Update destroy flag
+      $(this).find("input[id$='_destroy']").attr('checked',
+        $(this).parents("#selected_questions").length == 0
+      );
+    });
+  };
+  
   // Hide unused elements for js users.
   $("#all_questions > li").css('cursor', "pointer");
   $("#all_questions > li > fieldset.inputs").hide();
@@ -121,17 +134,10 @@ function addQuestionSelectionBehaviour() {
 
   $("#available_questions, #selected_questions").sortable({
     connectWith: '.question_select',
-    update: function(event, ui) {
-      $(this).find('li.quiz_question').each(function(index, element) {
-        // Update position
-        $(this).find("input[id$='_position']").val(index + 1);
-        // Update destroy flag
-        $(this).find("input[id$='_destroy']").attr('checked',
-          $(this).parents("#selected_questions").length == 0
-        );
-      });
-    }
+    update:      updateQuestionSelections
   }).disableSelection();
+
+  updateQuestionSelections();
 }
 
 // Loads functions after DOM is ready
