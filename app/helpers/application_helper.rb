@@ -111,6 +111,7 @@ addAutofocusBehaviour();
 addAutocompleteBehaviour();
 addNestedFormsBehaviour();
 addCorrectnessIndicatorBehaviour();
+addDatePickerBehaviour();
 EOF
   
     return output.html_safe
