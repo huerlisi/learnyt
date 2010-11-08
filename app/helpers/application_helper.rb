@@ -52,9 +52,9 @@ module ApplicationHelper
     when 'new', 'create'
       actions << 'index'
     when 'show'
-      actions << ['edit', 'delete', 'index']
+      actions += ['edit', 'delete', 'index']
     when 'edit', 'update'
-      actions << ['show', 'delete', 'index']
+      actions += ['show', 'delete', 'index']
     when 'index'
       actions << 'new'
     end
