@@ -4,6 +4,8 @@ class QuestionsController < AuthorizedController
 
   # Actions
   public
+  
+  # Setup four answers right from the start.
   def new
     @question = Question.new(params[:question])
     @question.possible_answers.build([
@@ -14,5 +16,10 @@ class QuestionsController < AuthorizedController
     ])
     
     new!
+  end
+
+  # Redirect to next new question after creating one.
+  def create
+    create! { new_question_path }
   end
 end
