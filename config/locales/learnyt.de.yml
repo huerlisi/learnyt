@@ -61,6 +61,11 @@ de:
         event_time: Um
         to_s: %{score} von %{max_score} Punkten
 
+      quiz_assignment:
+        quiz:   Quiz
+        user:   Schüler
+        due_at: Fällig am
+        
       user:
         email:                          E-Mail
         password:                       Passwort
