@@ -64,6 +64,12 @@ module ApplicationHelper
     return links.join("\n").html_safe
   end
   
+  def contextual_links(action = nil, resource_or_model = nil)
+    content_tag('div', :class => 'contextual') do
+      contextual_links_for(action, resource_or_model)
+    end
+  end
+  
   def index_contextual_for(model)
     model_name = model.to_s.underscore
     
