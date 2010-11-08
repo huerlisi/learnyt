@@ -40,6 +40,30 @@ module ApplicationHelper
     end
   end
   
+  def contextual_links_for(action = nil, resource_or_model = nil)
+    # Use current action if not specified
+    action ||= action_name
+    
+    # Handle both symbols and strings
+    action = action.to_s
+    
+    actions = []
+    case action
+    when 'new', 'create'
+      actions << 'index'
+    when 'show'
+      actions << ['edit', 'delete', 'index']
+    when 'edit', 'update'
+      actions << ['show', 'delete', 'index']
+    when 'index'
+      actions << 'new'
+    end
+    
+    links = actions.map{|link_for| contextual_link_to(link_for, resource_or_model)}
+    
+    return links.join("\n").html_safe
+  end
+  
   def index_contextual_for(model)
     model_name = model.to_s.underscore
     
