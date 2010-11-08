@@ -24,7 +24,7 @@
           %h1#logo-text learn<span id="logo-yt">yt</span>
         #main-menu
           = render_navigation(:context => :main, :level => 1)
-
+          = render_navigation(:context => :user, :level => 1)
       #sidebar-column
         #second-main-menu.sidebar
           = render_navigation(:context => :main, :level => 2)

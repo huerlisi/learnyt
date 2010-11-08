@@ -105,6 +105,8 @@ de:
   main_navigation:
     settings: Einstellungen
     overview: Übersicht
+    destroy_user_session:     Abmelden
+    new_user_session:         Anmelden
 
   crud:
     action:
