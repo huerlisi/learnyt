@@ -56,3 +56,5 @@ gem 'jquery-rails'
 gem 'devise', '~> 1.1'
 # Authorization
 gem 'cancan'
+# Date/Time handling
+gem 'validates_timeliness', '~> 3.0.0'
