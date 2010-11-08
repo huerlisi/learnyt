@@ -3,7 +3,7 @@
   = f.inputs do
     = f.input :user, :input_html => {"data-autofocus" => true}
     = f.input :quiz
-    = f.input :due_at
+    = f.input :due_at, :as => :date_field
 
   = f.buttons do
     = f.commit_button
