@@ -10,7 +10,7 @@ de:
       unauthenticated: 'Sie müssen sich zuerst anmelden um fortfahren zu können.'
       unconfirmed: 'Sie müssen Ihr Konto zuerst aktivieren.'
       locked: 'Ihr Konto ist gesperrt.'
-      invalid: 'Ungültige E-Mail Adresse oder ungültiges Passwort.'
+      invalid: 'Ungültige E-Mail Adresse oder falsches Passwort.'
       invalid_token: 'Ungültiger Anmelde-Token.'
       timeout: 'Ihre Sitzung ist abgelaufen. Bitte melden Sie sich erneut an.'
       inactive: 'Ihr Konto wurde noch nicht aktiviert.'
@@ -39,7 +39,7 @@ de:
         subject: 'Konto entsperren'
     resend:                     Anforderung für die Kontoaktvierung erneut senden
     welcome:                    Wilkommen {{email}}!
-    confirm_with_link:          'Sie können ihren Konto mit folgendem link aktivieren:'
+    confirm_with_link:          'Sie können ihren Konto mit folgendem Link aktivieren:'
     confirm_account:            Konto aktivieren
     hello:                      Hallo {{email}}!
     request_to_change_password: Jemand hat einen Link zum Ändern des Passworts angefragt, Sie können dies mit folgendem Link tun.
@@ -59,5 +59,3 @@ de:
     resend_unlock_instructions: Entsperrungsanleitung erneut senden
     no_confirmation_received:   Haben Sie keine Anleitung für die Kontoaktivierung erhalten?
     no_unlock_received:         Haben Sie keine Anleitung für die Kontoentsperrung erhalten?
-
-
