@@ -1,10 +1,2 @@
 = semantic_form_for @user do |f|
-  = f.semantic_errors
-
-  = f.inputs do
-    = f.input :email
-    = f.input :password
-    = f.input :password_confirmation
-
-  = f.buttons do
-    = f.commit_button t('devise.update')
+  = render :partial => 'devise/registrations/form', :locals => {:f => f}
