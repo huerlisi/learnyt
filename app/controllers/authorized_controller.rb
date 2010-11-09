@@ -17,6 +17,11 @@ class AuthorizedController < InheritedResources::Base
   # Responders
   respond_to :html, :js
 
+  # Flash helpers
+  def created_flash(resource)
+    render_to_string(:partial => 'layouts/created_flash', :resource => resource)
+  end
+
   # Resource setup
   protected
     def collection

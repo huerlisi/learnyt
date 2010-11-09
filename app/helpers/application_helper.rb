@@ -1,5 +1,4 @@
 module ApplicationHelper
-
   # CRUD helpers
   def icon_link_to(action, url, options = {})
     options.merge!(:class => "icon icon-#{action}")

@@ -94,4 +94,4 @@ de:
     action:
       respond: Beantworten
     flash:
-      created: %{model} "%{description}" angelegt
+      created_html: %{message} angelegt
