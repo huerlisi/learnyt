@@ -3,7 +3,7 @@
   = f.input :email
   = f.input :password
   = f.input :password_confirmation
-  = f.input :current_password, :required => true
+  = f.input :current_password, :required => true unless can?(:manage, User)
 
 = f.buttons do
   = f.commit_button t('devise.update')
