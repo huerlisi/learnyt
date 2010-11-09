@@ -72,6 +72,7 @@ de:
         password_confirmation:          Passwort Bestätigung
         current_password:               Aktuelles Passwort  
         remember_me:                    Angemeldet bleiben  
+        created_at:                     Registriert seit
         
   learnyt:
     all:              Alle

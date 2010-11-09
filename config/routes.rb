@@ -5,7 +5,8 @@ Learnyt::Application.routes.draw do
 
   # Authorization
   devise_for :users
-
+  resources :users
+  
   # Application Resources
   resources :questions do
     resources :responses

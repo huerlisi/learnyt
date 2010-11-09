@@ -1,0 +1,5 @@
+%tr[user]
+  %td= link_to user, user, {'data-href-container' => 'tr'}
+  %td= user.created_at.to_date
+
+  = list_item_actions_for(user)
