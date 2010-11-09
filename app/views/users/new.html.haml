@@ -1,0 +1,8 @@
+.contextual
+  = contextual_link_to :show, @quiz
+  = contextual_link_to :index, Quiz
+
+%h1= @user.quiz
+
+#user
+  = render :partial => 'form'

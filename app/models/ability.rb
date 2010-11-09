@@ -15,7 +15,7 @@ class Ability
     if user.role? :super_admin
       can :manage, :all
     elsif user.role? :teacher
-      can :manage, :all
+      can :manage, [Answer, PossibleAnswer, Quiz, QuizQuestion, QuizAssignment, QuizResponse, Question]
     elsif user.role? :pupil
       can :list, Quiz
       can :list, QuizAssignment, :user_id => user.id

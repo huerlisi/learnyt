@@ -25,6 +25,11 @@ SimpleNavigation::Configuration.run do |navigation|
       quiz_response.item :quiz_response_index, t_action(:index, QuizResponse), quiz_responses_path
     end
 
+    primary.item :nav_users, t_model(User), users_path, :if => lambda { can?(:new, User) or can?(:index, User) } do |user|
+      user.item :new_user, t_action(:new, User), new_user_path, :if => lambda { can?(:new, User) }
+      user.item :user_index, t_action(:index, User), users_path, :if => lambda { can?(:index, User) }
+    end
+
     primary.item :nav_settings, t('main_navigation.settings'), edit_user_registration_path
   end
 end
