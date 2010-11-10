@@ -12,7 +12,7 @@ class Ability
  
     alias_action :index, :to => :list
     
-    if user.role? :super_admin
+    if user.role? :admin
       can :manage, :all
     elsif user.role? :teacher
       can :manage, [Answer, PossibleAnswer, Quiz, QuizQuestion, QuizAssignment, QuizResponse, Question]

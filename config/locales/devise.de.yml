@@ -19,7 +19,7 @@ de:
       signed_out: 'Sie haben sich erfolgreich abgemeldet.'
     passwords:
       send_instructions: 'In wenigen Minuten erhalten Sie eine E-Mail mit der Anleitung wie Sie Ihr Passwort zurücksetzen können.'
-      updated: 'Ihr Passwort wurde erfolgreich geänder. Sie sind jetzt angemeldet.'
+      updated: 'Ihr Passwort wurde erfolgreich geändert. Sie sind jetzt angemeldet.'
     confirmations:
       send_instructions: 'In wenigen Minuten erhalten Sie eine E-Mail zur Konto-Aktivierung.'
       confirmed: 'Ihr Konto wurde bestätigt. Sie sind nun angemeldet.'
@@ -38,10 +38,10 @@ de:
       unlock_instructions:
         subject: 'Konto entsperren'
     resend:                     Anforderung für die Kontoaktvierung erneut senden
-    welcome:                    Wilkommen {{email}}!
+    welcome:                    Wilkommen %{email}!
     confirm_with_link:          'Sie können ihren Konto mit folgendem Link aktivieren:'
     confirm_account:            Konto aktivieren
-    hello:                      Hallo {{email}}!
+    hello:                      Hallo %{email}!
     request_to_change_password: Jemand hat einen Link zum Ändern des Passworts angefragt, Sie können dies mit folgendem Link tun.
     change_my_password:         Passwort ändern
     ignore_mail:
