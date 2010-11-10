@@ -8,7 +8,7 @@ class Ability
  
   # Available roles
   def self.roles
-    ['Admin', 'Pupil', 'Teacher']
+    ['admin', 'pupil', 'teacher']
   end
   
   # Main role/ability definitions.
