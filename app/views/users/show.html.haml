@@ -2,4 +2,10 @@
 
 %h1= @user
 
-= @user.email
+%p
+  = @user.email
+
+%ul#roles
+- @user.roles.each do |role|
+  %li
+    = role.name
