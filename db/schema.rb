@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101105145935) do
+ActiveRecord::Schema.define(:version => 20101110103315) do
 
   create_table "answers", :force => true do |t|
     t.string   "title"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(:version => 20101105145935) do
   create_table "possible_answers", :force => true do |t|
     t.integer  "question_id"
     t.integer  "answer_id"
-    t.decimal  "score"
+    t.decimal  "score",       :precision => 10, :scale => 0
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(:version => 20101105145935) do
     t.integer  "possible_answer_id"
     t.integer  "question_id"
     t.integer  "answer_id"
-    t.decimal  "score"
+    t.decimal  "score",              :precision => 10, :scale => 0
     t.integer  "quiz_response_id"
   end
 
@@ -103,6 +103,7 @@ ActiveRecord::Schema.define(:version => 20101105145935) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "locked_at"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

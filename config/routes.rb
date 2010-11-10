@@ -4,9 +4,10 @@ Learnyt::Application.routes.draw do
   root :to => "overview#index"
 
   # Authorization
+  devise_for :users, :controllers => {:registrations => "registrations"}
   devise_for :users
   resources :users
-  
+
   # Application Resources
   resources :questions do
     resources :responses
