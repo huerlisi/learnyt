@@ -24,18 +24,13 @@ sudo apt-get install rubygems
 
 h2. Install Ruby'n'Rails
 
-learnyt is developed and tested using Rails 3.0.0 and Ruby 1.8.
+learnyt is developed and tested using Ruby 1.8.
 
 Install packages to support installing rails:
 
 <pre>
 sudo apt-get install irb ruby libruby-extras sqlite3 libsqlite3-dev libmysqlclient-dev libxml2-dev libxslt-dev ruby-dev build-essential
-</pre>
-
-Install rails using gem:
-
-<pre>
-sudo gem install rails rake bundler
+sudo gem install rake bundler
 </pre>
 
 h2. Install learnyt
@@ -52,13 +47,6 @@ Install dependency gems:
 
 <pre>
 bundle
-</pre>
-
-Install dependency plugins:
-
-<pre>
-# Install plugin package dependencies
-git submodule update --init
 </pre>
 
 Setup database:
