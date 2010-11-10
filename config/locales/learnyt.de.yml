@@ -90,6 +90,12 @@ de:
       user:
         password: "Leer lassen um Passwort nicht zu ändern."
           
+  cancan:
+    roles:
+      admin:   'Administrator'
+      pupil:   'Schüler'
+      teacher: 'Lehrer'
+      
   main_navigation:
     settings: Einstellungen
     overview: Übersicht
