@@ -73,6 +73,7 @@ de:
         current_password:               Aktuelles Passwort  
         remember_me:                    Angemeldet bleiben  
         created_at:                     Registriert seit
+        role_texts:                     Rollen
         
   learnyt:
     all:              Alle
