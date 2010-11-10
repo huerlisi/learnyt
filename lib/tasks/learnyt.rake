@@ -11,7 +11,7 @@ namespace :learnyt do
       password = ask('password (at least 6 chars):')
       user = User.create({:email => email, :password => password, :password_confirmation => password})
       if user.valid?
-        user.roles.create(:name => 'SuperAdmin')
+        user.roles.create(:name => 'Admin')
       else
         user.errors.each do |error|
           puts error
