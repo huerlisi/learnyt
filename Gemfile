@@ -14,7 +14,7 @@ gem 'mysql'
 # ===========
 group :development do
   gem 'rails3-generators'
-  gem 'rspec-rails', ">= 2.0.0.beta.19"
+  gem 'rspec-rails', "~> 2.1.0"
   # Haml generators
   gem 'hpricot'
   gem 'ruby_parser'
@@ -25,7 +25,7 @@ end
 # ====
 group :test do
   gem 'rspec'
-  gem 'rspec-rails', ">= 2.0.0.beta.19"
+  gem 'rspec-rails', "~> 2.1.0"
   gem 'mocha'
   gem 'shoulda'
   gem 'factory_girl_rails'
@@ -37,7 +37,7 @@ end
 # Standard helpers
 # ================
 gem 'haml'
-gem 'compass', '>= 0.10.4'
+gem 'compass', '~> 0.10.6'
 gem 'fancy-buttons'
 
 gem 'simple-navigation'
