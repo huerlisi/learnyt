@@ -85,6 +85,11 @@ de:
     difference:       Differenz
     back:             Zurück
 
+  formtastic:
+    hints:
+      user:
+        password: "Leer lassen um Passwort nicht zu ändern."
+          
   main_navigation:
     settings: Einstellungen
     overview: Übersicht
