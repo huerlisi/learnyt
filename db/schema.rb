@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(:version => 20101110103315) do
   create_table "possible_answers", :force => true do |t|
     t.integer  "question_id"
     t.integer  "answer_id"
-    t.decimal  "score",       :precision => 10, :scale => 0
+    t.decimal  "score"
     t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(:version => 20101110103315) do
     t.integer  "possible_answer_id"
     t.integer  "question_id"
     t.integer  "answer_id"
-    t.decimal  "score",              :precision => 10, :scale => 0
+    t.decimal  "score"
     t.integer  "quiz_response_id"
   end
 
