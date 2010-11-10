@@ -1,6 +1,5 @@
 # Boring files
 # ============
-*~
 .#*
 DEADJOE
 
@@ -25,14 +24,6 @@ db/backup
 
 # Local
 config/database.yml
-
-# Development
-# ===========
-# RVM
-.rvmrc
-
-# Rubymine
-.idea
 
 # Plugins
 # =======
