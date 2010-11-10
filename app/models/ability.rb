@@ -13,7 +13,7 @@ class Ability
   
   # Prepare roles to show in select inputs etc.
   def self.roles_for_collection
-    self.roles.map{|role| [I18n.translate(role, :scope => 'cancan.roles'), role]}
+    self.roles.map{|role| [role.to_s, role.name]}
   end
   
   # Main role/ability definitions.

@@ -8,4 +8,4 @@
 %ul#roles
 - @user.roles.each do |role|
   %li
-    = role.name
+    = role.to_s
