@@ -6,6 +6,11 @@ class Ability
   # Aspects
   include CanCan::Ability
  
+  # Available roles
+  def self.roles
+    ['Admin', 'Pupil', 'Teacher']
+  end
+  
   # Main role/ability definitions.
   def initialize(user)
     user ||= User.new # guest user
