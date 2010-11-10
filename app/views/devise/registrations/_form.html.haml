@@ -1,7 +1,7 @@
 = f.semantic_errors
 = f.inputs do
   = f.input :email
-  = f.input :password, :hint => !f.object.new_record?
+  = f.input :password, :hint => !f.object.new_record?, :input_html => {:autocomplete => "off"}
   = f.input :password_confirmation
   = f.input :current_password, :required => true unless can?(:manage, User)
   = f.input :roles, :collection => Ability.roles, :required => true if can?(:manage, User)
