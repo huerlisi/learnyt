@@ -8,7 +8,12 @@ class Ability
  
   # Available roles
   def self.roles
-    ['Admin', 'Pupil', 'Teacher']
+    ['admin', 'pupil', 'teacher']
+  end
+  
+  # Prepare roles to show in select inputs etc.
+  def self.roles_for_collection
+    self.roles.map{|role| [I18n.translate(role, :scope => 'cancan.roles'), role]}
   end
   
   # Main role/ability definitions.
