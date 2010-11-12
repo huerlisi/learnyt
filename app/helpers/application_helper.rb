@@ -68,32 +68,6 @@ module ApplicationHelper
       contextual_links_for(action, resource_or_model)
     end
   end
-  
-  def index_contextual_for(model)
-    model_name = model.to_s.underscore
-    
-    render 'layouts/index_contextual_for', :model => model
-  end
-
-  def new_contextual_for(model)
-    model_name = model.to_s.underscore
-    
-    render 'layouts/new_contextual_for', :model => model
-  end
-
-  def show_contextual_for(resource)
-    model = resource.class
-    model_name = model.to_s.underscore
-    
-    render 'layouts/show_contextual_for', :resource => resource, :model => model
-  end
-
-  def edit_contextual_for(resource)
-    model = resource.class
-    model_name = model.to_s.underscore
-    
-    render 'layouts/edit_contextual_for', :resource => resource, :model => model
-  end
 
   def list_item_actions_for(resource)
     model_name = resource.class.to_s.underscore
