@@ -75,6 +75,7 @@ module ApplicationHelper
     render 'layouts/list_item_actions_for', :model_name => model_name, :resource => resource
   end
 
+  # Nested form helpers
   def show_new_form(model)
     model_name = model.to_s.underscore
     
