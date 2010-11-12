@@ -2,7 +2,7 @@
 SimpleNavigation::Configuration.run do |navigation|  
   # Define the primary navigation
   navigation.items do |primary|
-    # mailyt navigation
+    # learnyt navigation
     primary.item :overview, t('main_navigation.overview'), root_path
     
     primary.item :nav_quizzes, t_model(Quiz), quizzes_path do |quiz|
