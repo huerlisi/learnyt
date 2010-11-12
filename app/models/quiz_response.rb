@@ -16,7 +16,7 @@ class QuizResponse < ActiveRecord::Base
   #
   # Simply add up the scores for all responses.
   def score
-    responses.map{|response| response.score}.inject(:+)
+    responses.map{|response| response.score}.inject(:+) || 0.0
   end
 
   # Calculate maximum score.
