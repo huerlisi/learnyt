@@ -39,7 +39,7 @@ GEM
       activesupport (~> 3.0.0)
     bcrypt-ruby (2.1.2)
     builder (2.1.2)
-    cancan (1.4.0)
+    cancan (1.4.1)
     compass (0.10.6)
       haml (>= 3.0.4)
     cucumber (0.9.4)
