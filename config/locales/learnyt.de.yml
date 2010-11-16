@@ -19,7 +19,7 @@ de:
       question: Frage
       response: Antwort
       quiz:  Quiz
-      quiz_response: Lösung
+      quiz_response: Resultat
       quiz_assignment: Aufgaben
 
     attributes:
