@@ -140,6 +140,12 @@ function addQuestionSelectionBehaviour() {
   updateQuestionSelections();
 }
 
+// Autogrow
+function addAutogrowBehaviour() {
+  $(".autogrow").elastic();
+}
+
+
 // Loads functions after DOM is ready
 $(document).ready(function() {
     addSelectableBehaviour();
@@ -147,4 +153,5 @@ $(document).ready(function() {
     addNestedFormsBehaviour();
     addCorrectnessIndicatorBehaviour();
     addQuestionSelectionBehaviour();
+    addAutogrowBehaviour();
 });
