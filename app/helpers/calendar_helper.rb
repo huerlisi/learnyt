@@ -25,7 +25,7 @@ module CalendarHelper
       html = %(<a href="/events/#{event.id}" title="#{h(event.name)}">)
       html << display_event_time(event, day)
       html << %(#{h(event.name)}</a>)
-      html
+      html.html_safe
     end
   end
 end
