@@ -7,21 +7,22 @@
     %label#selected_question_label= t_attr(:selected_questions)
     %label#available_question_label= t_attr(:available_questions)
 
-    %ol#selected_questions.subbox.question_select
+    %li
+      %ol#selected_questions.subbox.question_select
 
-    %ul#available_questions.subbox.question_select
+      %ul#available_questions.subbox.question_select
 
-    %ul#all_questions
-      - for question in Question.all
-        - @quiz.quiz_questions.build(:question => question) unless @quiz.questions.exists?(question)
-      = f.fields_for :quiz_questions do |q|
-        %li[q.object]
-          = q.object.question.to_s
-          = q.inputs do
-            = q.input :position
-            = q.input :question
-            = q.input :quiz
-            = q.input :_destroy, :as => :boolean, :input_html => {:checked => !q.object.new_record?}
+      %ul#all_questions
+        - for question in Question.all
+          - @quiz.quiz_questions.build(:question => question) unless @quiz.questions.exists?(question)
+        = f.fields_for :quiz_questions do |q|
+          %li[q.object]
+            = q.object.question.to_s
+            = q.inputs do
+              = q.input :position
+              = q.input :question
+              = q.input :quiz
+              = q.input :_destroy, :as => :boolean, :input_html => {:checked => !q.object.new_record?}
 
   = f.buttons do
     = f.commit_button
