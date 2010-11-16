@@ -58,6 +58,7 @@ de:
         available_questions: Verfügbare Fragen
 
       quiz_response:
+        user: Schüler
         quiz: Quiz
         score: Ergebnis
         event_time: Um
