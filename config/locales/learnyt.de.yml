@@ -54,6 +54,8 @@ de:
       quiz:
         title: Titel
         description: Beschreibung
+        selected_questions:  Ausgewählte Fragen
+        available_questions: Verfügbare Fragen
 
       quiz_response:
         quiz: Quiz

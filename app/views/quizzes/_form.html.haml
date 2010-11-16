@@ -4,10 +4,8 @@
     = f.input :title, :input_html => {"data-autofocus" => true}
     = f.input :description
 
-    %label#selected_question_label
-      Ausgewählte Fragen
-    %label#available_question_label
-      Verfügbare Fragen
+    %label#selected_question_label= t_attr(:selected_questions)
+    %label#available_question_label= t_attr(:available_questions)
 
     %ol#selected_questions.subbox.question_select
 
