@@ -3,4 +3,3 @@
 = form.fields_for :answer do |a|
   = a.text_field :title, 'data-autocomplete' => questions_url(:format => :json)
   %p.description= a.text_area :description, :rows => 1, :class => 'autogrow'
-  %p.remarks= a.text_area :remarks, :rows => 1, :class => 'autogrow'
