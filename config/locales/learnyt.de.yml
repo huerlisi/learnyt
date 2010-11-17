@@ -78,6 +78,7 @@ de:
         created_at:                     Registriert seit
         roles:                          Rollen
         role_texts:                     Rollen
+        locked:                         Gesperrt
         
   learnyt:
     all:              Alle
@@ -110,5 +111,7 @@ de:
   crud:
     action:
       respond: Beantworten
+      unlock:  Freischalten
     flash:
       created_html: %{message} angelegt
+      unlocked: %{user} freigeschaltet

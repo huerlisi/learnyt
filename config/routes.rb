@@ -13,7 +13,11 @@ Learnyt::Application.routes.draw do
   # Authorization
   devise_for :users, :controllers => {:registrations => "registrations"}
   devise_for :users
-  resources :users
+  resources :users do
+    member do
+      post :unlock
+    end
+  end
 
   # Application Resources
   resources :questions do

@@ -2,5 +2,8 @@
   %td= link_to user, user, {'data-href-container' => 'tr'}
   %td= user.roles.map{|role| t(role.name, :scope => 'cancan.roles')}.join(', ')
   %td= user.created_at.to_date
+  %td
+    - if user.locked_at
+      = link_to image_tag('16x16/locked.png', :title => t_action(:unlock)), unlock_user_path(user), :method => :post
 
   = list_item_actions_for(user)

@@ -13,4 +13,11 @@ class UsersController < AuthorizedController
 
     update!
   end
+
+  def unlock
+    @user = resource
+    @user.unlock_access!
+    
+    redirect_to users_path, :notice => t('crud.flash.unlocked', :user => @user.to_s)
+  end
 end
