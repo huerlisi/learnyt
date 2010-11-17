@@ -58,4 +58,4 @@ gem 'devise', '~> 1.1'
 gem 'cancan'
 # Date/Time handling
 gem 'validates_timeliness', '~> 3.0.0'
-gem 'event_calendar', :git => 'git://github.com/raskhadafi/event_calendar.git'
+#gem 'event_calendar', :git => 'git://github.com/raskhadafi/event_calendar.git'

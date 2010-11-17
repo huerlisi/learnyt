@@ -5,13 +5,6 @@ GIT
   specs:
     will_paginate (3.0.pre3)
 
-GIT
-  remote: git://github.com/raskhadafi/event_calendar.git
-  revision: a477ea04bfa8246cdd4ab20654f2863ae718423f
-  specs:
-    event_calendar (2.3.1)
-      activerecord
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -164,7 +157,6 @@ DEPENDENCIES
   cucumber
   cucumber-rails
   devise (~> 1.1)
-  event_calendar!
   factory_girl_rails
   fancy-buttons
   formtastic (~> 1.1.0)
