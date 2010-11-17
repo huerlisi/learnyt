@@ -19,7 +19,7 @@ de:
       question: Frage
       response: Antwort
       quiz:  Quiz
-      quiz_response: Lösung
+      quiz_response: Resultat
       quiz_assignment: Aufgaben
 
     attributes:
@@ -54,8 +54,11 @@ de:
       quiz:
         title: Titel
         description: Beschreibung
+        selected_questions:  Ausgewählte Fragen
+        available_questions: Verfügbare Fragen
 
       quiz_response:
+        user: Schüler
         quiz: Quiz
         score: Ergebnis
         event_time: Um

@@ -21,7 +21,6 @@ SimpleNavigation::Configuration.run do |navigation|
     end
 
     primary.item :nav_quiz_responses, t_model(QuizResponse), quiz_responses_path, :if => lambda { can?(:new, QuizResponse) } do |quiz_response|
-      quiz_response.item :new_quiz_response, t_action(:new, QuizResponse), new_quiz_response_path, :if => lambda { can?(:new, QuizResponse)}
       quiz_response.item :quiz_response_index, t_action(:index, QuizResponse), quiz_responses_path, :if => lambda { can?(:new, QuizResponse) }
     end
 
