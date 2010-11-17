@@ -7,8 +7,25 @@ class QuizAssignment < ActiveRecord::Base
   validates_presence_of :user, :quiz
 
   # Calendar
-  has_event_calendar :start_at_field  => 'due_at', :end_at_field => 'due_at'
+  cattr_reader :start_at_field, :end_at_field
+  @@start_at_field = :due_at
+  @@end_at_field = :due_at
   
+  has_one :event, :dependent => :destroy, :as => :object
+
+  before_save :update_event
+  private
+  def update_event
+    build_event unless persisted?
+    
+    event.start_at = self[self.class.start_at_field]
+    event.end_at = self[self.class.end_at_field]
+    event.all_day = true
+    
+    event.save
+  end
+  
+  public
   def name
     to_s
   end
