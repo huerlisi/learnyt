@@ -12,6 +12,8 @@ h2. Documentation
 
 Documentation is maintained in a "Wiki":http://redmine.cyt.ch/projects/learnyt/wiki.
 
+Installation documentation is in the INSTALL.textile file.
+
 h2. Contributing
 
 Code is available at "github":http://github.com/huerlisi/learnyt.
