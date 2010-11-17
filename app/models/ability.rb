@@ -28,7 +28,7 @@ class Ability
       can :manage, [Answer, PossibleAnswer, Quiz, QuizQuestion, QuizAssignment, QuizResponse, Question]
     elsif user.role? :pupil
       can :list, Quiz
-      can :list, QuizAssignment, :user_id => user.id
+      can [:list, :read], QuizAssignment, :user_id => user.id
       # manage his own quiz responses
       can :manage, QuizResponse, :user_id => user.id
     end
