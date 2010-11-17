@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/huerlisi/event_calendar.git
+  revision: be692bfa4f115b98908b3aa1b6de8512e2f8723d
+  specs:
+    event_calendar (2.3.1)
+      activerecord
+
+GIT
   remote: git://github.com/mislav/will_paginate.git
   revision: b1a5beeec9f56ecbe3594fcdca76d92b6767ce50
   branch: rails3
@@ -157,6 +164,7 @@ DEPENDENCIES
   cucumber
   cucumber-rails
   devise (~> 1.1)
+  event_calendar!
   factory_girl_rails
   fancy-buttons
   formtastic (~> 1.1.0)
