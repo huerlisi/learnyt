@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
 
   # Authorization roles
   has_and_belongs_to_many :roles
+  scope :by_role, lambda{|role| include(:roles).where(:name => role)}
   
   def role?(role)
     return !!self.roles.find_by_name(role.to_s)
