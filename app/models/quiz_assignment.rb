@@ -1,4 +1,7 @@
 class QuizAssignment < ActiveRecord::Base
+  # Scope
+  default_scope order(:due_at)
+  
   # Associations
   belongs_to :user
   belongs_to :quiz
