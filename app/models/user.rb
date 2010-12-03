@@ -11,6 +11,12 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :roles
   scope :by_role, lambda{|role| include(:roles).where(:name => role)}
   
+  # Return current role name.
+  def role_name
+    # Just return _a_ role, no preferences or guarantees...
+    roles.last.name
+  end
+  
   def role?(role)
     return !!self.roles.find_by_name(role.to_s)
   end

@@ -5,10 +5,11 @@ Learnyt::Application.routes.draw do
   match '/events/:event' => 'calendar#view'
   match '/calendar/:year/:month/:day', :controller => 'calendar', :action => 'day'
 
-
   # Root
+  get "welcome/index"
+  root :to => "welcome#index"
+
   get "overview/index"
-  root :to => "overview#index"
 
   # Authorization
   devise_for :users, :controllers => {:registrations => "registrations"}
