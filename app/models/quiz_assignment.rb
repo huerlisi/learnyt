@@ -19,7 +19,8 @@ class QuizAssignment < ActiveRecord::Base
   before_save :update_event
   private
   def update_event
-    build_event unless persisted?
+    return unless self[self.class.start_at_field]
+    build_event unless event
     
     event.start_at = self[self.class.start_at_field]
     event.end_at = self[self.class.end_at_field]
