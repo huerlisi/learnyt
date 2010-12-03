@@ -1,4 +1,5 @@
 = semantic_form_for [@quiz, @quiz_response] do |f|
+  = f.input :quiz_assignment_id, :as => :hidden
   = f.semantic_errors
 
   - for question in @quiz.questions
