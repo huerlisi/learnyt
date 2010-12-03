@@ -5,9 +5,9 @@ SimpleNavigation::Configuration.run do |navigation|
     # learnyt navigation
     primary.item :overview, t('main_navigation.overview'), root_path
     
-    primary.item :nav_quizzes, t_model(Quiz), quizzes_path do |quiz|
+    primary.item :nav_quizzes, t_model(Quiz), quizzes_path, :if => lambda { can?(:new, Quiz) or can?(:index, Quiz)}  do |quiz|
       quiz.item :new_quiz, t_action(:new, Quiz), new_quiz_path, :if => lambda { can?(:new, Quiz)}
-      quiz.item :quiz_index, t_action(:index, Quiz), quizzes_path
+      quiz.item :quiz_index, t_action(:index, Quiz), quizzes_path, :if => lambda { can?(:index, Quiz)}
     end
 
     primary.item :nav_quiz_assignments, t_model(QuizAssignment), quiz_assignments_path, :if => lambda { can?(:new, QuizAssignment) or can?(:index, QuizAssignment)} do |quiz_assignment|
