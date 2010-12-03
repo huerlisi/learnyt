@@ -40,6 +40,6 @@ class QuizAssignment < ActiveRecord::Base
   
   # Helpers
   def to_s
-    user.to_s
+    "%s für %s" % [quiz.title, user.to_s]
   end
 end
