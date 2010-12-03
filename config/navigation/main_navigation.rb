@@ -13,6 +13,7 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :nav_quiz_assignments, t_model(QuizAssignment), quiz_assignments_path, :if => lambda { can?(:new, QuizAssignment) or can?(:index, QuizAssignment)} do |quiz_assignment|
       quiz_assignment.item :new_quiz_assignment, t_action(:new, QuizAssignment), new_quiz_assignment_path, :if => lambda { can?(:new, QuizAssignment)}
       quiz_assignment.item :quiz_assignment_index, t_title(:index, QuizAssignment), quiz_assignments_path
+      quiz_assignment.item :quiz_assignment_calendar, t_title(:calendar, QuizAssignment), calendar_path
     end
 
     primary.item :nav_questions, t_model(Question), questions_path, :if => lambda { can?(:new, Question) or can?(:index, Question)} do |question|

@@ -109,6 +109,8 @@ de:
     new_user_session:         Anmelden
 
   crud:
+    title:
+      calendar: %{model} Kalender
     action:
       respond: Beantworten
       unlock:  Freischalten
