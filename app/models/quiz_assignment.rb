@@ -5,6 +5,10 @@ class QuizAssignment < ActiveRecord::Base
   # Associations
   belongs_to :user
   belongs_to :quiz
+  has_many :quiz_responses
+  def responded?
+    quiz_responses.present?
+  end
 
   # Validations
   validates_presence_of :user, :quiz
