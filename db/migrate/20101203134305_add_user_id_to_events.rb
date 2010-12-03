@@ -4,6 +4,7 @@ class AddUserIdToEvents < ActiveRecord::Migration
     
     Event.all.map{|event|
       event.user_id = event.object.try(:user_id) if event.object
+      event.save
     }
   end
 
