@@ -1,10 +1,4 @@
 Learnyt::Application.routes.draw do
-
-  match '/calendar' => 'calendar#index', :year => Time.zone.now.year, :month => Time.zone.now.month
-  match '/calendar/:year/:month' => 'calendar#index'
-  match '/events/:event' => 'calendar#view'
-  match '/calendar/:year/:month/:day', :controller => 'calendar', :action => 'day'
-
   # Root
   get "welcome/index"
   root :to => "welcome#index"
@@ -25,7 +19,6 @@ Learnyt::Application.routes.draw do
     resources :responses
     resources :possible_answers
   end
-
   resources :answers
   resources :possible_answers
   resources :responses
@@ -34,4 +27,10 @@ Learnyt::Application.routes.draw do
   end
   resources :quiz_responses
   resources :quiz_assignments
+
+  # Calendar
+  match '/calendar' => 'calendar#index', :year => Time.zone.now.year, :month => Time.zone.now.month
+  match '/calendar/:year/:month' => 'calendar#index'
+  match '/events/:event' => 'calendar#view'
+  match '/calendar/:year/:month/:day', :controller => 'calendar', :action => 'day'
 end
