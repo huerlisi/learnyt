@@ -14,7 +14,7 @@ gem 'mysql'
 # ===========
 group :development do
   gem 'rails3-generators'
-  gem 'rspec-rails', "~> 2.1.0"
+  gem 'rspec-rails', "~> 2.1"
   # Haml generators
   gem 'hpricot'
   gem 'ruby_parser'
@@ -24,8 +24,7 @@ end
 # Test
 # ====
 group :test do
-  gem 'rspec'
-  gem 'rspec-rails', "~> 2.1.0"
+  gem 'rspec-rails', "~> 2.1"
   gem 'mocha'
   gem 'shoulda'
   gem 'factory_girl_rails'
