@@ -22,7 +22,7 @@ module CalendarHelper
     # args is an argument hash containing :event, :day, and :options
     calendar event_calendar_opts do |args|
       event, day = args[:event], args[:day]
-      title = event.name
+      title = event.name || ""
       text = display_event_time(event, day) + title
       
       link_to(text, event.object, :title => title)
