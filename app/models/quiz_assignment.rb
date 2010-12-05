@@ -26,6 +26,7 @@ class QuizAssignment < ActiveRecord::Base
     return unless self[self.class.start_at_field]
     build_event unless event
     
+    event.user = user
     event.start_at = self[self.class.start_at_field]
     event.end_at = self[self.class.end_at_field]
     event.all_day = true
