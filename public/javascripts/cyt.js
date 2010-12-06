@@ -39,7 +39,7 @@ function addLinkifyContainersBehaviour() {
 
 // Add tooltips for overview
 function addTooltipBehaviour() {
-  $(".tt[title]").each(function() {
+  $(".tooltip-title[title]").each(function() {
     if ( $(this).attr('title') != '' ) {
       $(this).tooltip({
         position: 'top center',
