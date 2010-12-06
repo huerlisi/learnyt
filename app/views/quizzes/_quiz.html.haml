@@ -1,2 +1,2 @@
-%li.tt[quiz]{:title => truncate(quiz.description, :length => 100, :separator => ' ')}
+%li.tooltip-title[quiz]{:title => truncate(quiz.description, :length => 100, :separator => ' ')}
   = link_to quiz.title, quiz_path(quiz), {'data-href-container' => 'li'}
