@@ -10,6 +10,14 @@ class QuizAssignment < ActiveRecord::Base
     quiz_responses.present?
   end
 
+  scope :state, lambda {|value|
+    if value == 'solved'
+      includes(:quiz_responses).where('quiz_responses.created_at IS NOT NULL')
+    else
+      includes(:quiz_responses).where('quiz_responses.created_at IS NULL')
+    end
+  }
+  
   # Validations
   validates_presence_of :user, :quiz
 
