@@ -70,7 +70,8 @@ de:
         user: Schüler
         quiz: Quiz
         score: Ergebnis
-        event_time: Um
+        solved_on: Gelöst am
+        event_time: Gelöst um
         to_s: %{score} von %{max_score} Punkten
 
       quiz_assignment:

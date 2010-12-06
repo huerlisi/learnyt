@@ -3,12 +3,20 @@
   = link_to quiz.title, quiz_path(quiz), {'data-href-container' => 'li'}
   %table
     %tr
-      %th= t('application.question_count')
-      %td= quiz.questions.count
+      %th= t_attr(:user)
+      %td= link_to quiz_assignment.user, quiz_assignment.user
     %tr
       %th= t_attr(:due_at)
       %td= quiz_assignment.due_at.try(:to_date)
     %tr
-      %th= t_attr(:user)
-      %td= link_to quiz_assignment.user, quiz_assignment.user, :style => 'display: inline'
+      %th= t_attr(:solved_on, QuizResponse)
+      %td 
+        = quiz.quiz_responses.last.created_at.to_date
+    %tr
+      %th= t('application.question_count')
+      %td= quiz.questions.count
+    %tr
+      %th= t_attr(:score, QuizResponse)
+      %td 
+        = "%.1f/%.1f" % [quiz.quiz_responses.last.score, quiz.quiz_responses.last.max_score]
       
