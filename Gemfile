@@ -41,7 +41,7 @@ gem 'fancy-buttons'
 
 gem 'simple-navigation'
 
-gem 'formtastic', '~> 1.1.0'
+gem 'formtastic', '~> 1.2.1'
 gem 'will_paginate', :git => 'git://github.com/mislav/will_paginate.git', :branch => 'rails3'
 gem 'inherited_resources'
 gem 'has_scope'

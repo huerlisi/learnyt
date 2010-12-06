@@ -68,9 +68,9 @@ GEM
       rails (>= 3.0.0.beta4)
     fancy-buttons (1.0.4)
       compass (>= 0.10.6)
-    formtastic (1.1.0)
-      actionpack (>= 2.3.0)
-      activesupport (>= 2.3.0)
+    formtastic (1.2.2)
+      actionpack (>= 2.3.7)
+      activesupport (>= 2.3.7)
       i18n (>= 0.4.0)
     gherkin (2.2.9)
       json (~> 1.4.6)
@@ -169,7 +169,7 @@ DEPENDENCIES
   event_calendar!
   factory_girl_rails
   fancy-buttons
-  formtastic (~> 1.1.0)
+  formtastic (~> 1.2.1)
   haml
   has_scope
   hpricot
