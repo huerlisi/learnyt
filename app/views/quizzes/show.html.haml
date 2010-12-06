@@ -2,4 +2,7 @@
   = contextual_links_for
   = icon_link_to 'respond', new_quiz_quiz_response_path(@quiz)
 
-= render 'show'
+%h1= @quiz.title
+
+.quiz
+  = render 'show'
