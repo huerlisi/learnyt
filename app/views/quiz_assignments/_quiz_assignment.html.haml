@@ -11,7 +11,7 @@
       %td= quiz_assignment.due_at.try(:to_date)
     %tr
       %th= t_attr(:solved_on, QuizResponse)
-      %td= quiz_assignment.quiz_responses.last.created_at.to_date if quiz_assignment.responded?
+      %td= quiz_assignment.quiz_responses.last.created_at.to_date if quiz_assignment.solved?
     %tr
       %th= t('application.question_count')
       %td= quiz.questions.count
