@@ -124,6 +124,9 @@ de:
     action:
       respond: Beantworten
       unlock:  Freischalten
+      only_solved: Gelöste
+      only_unsolved: Offene
+      all: Alle anzeigen
     flash:
       created_html: %{message} angelegt
       unlocked: %{user} freigeschaltet
