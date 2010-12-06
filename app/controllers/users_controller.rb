@@ -20,4 +20,8 @@ class UsersController < AuthorizedController
     
     redirect_to users_path, :notice => t('crud.flash.unlocked', :user => @user.to_s)
   end
+
+  def current
+    redirect_to current_user
+  end
 end

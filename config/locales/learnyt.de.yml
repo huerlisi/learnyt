@@ -121,6 +121,7 @@ de:
   crud:
     title:
       calendar: %{model} Kalender
+      current: Aktueller %{model}
     action:
       respond: Beantworten
       unlock:  Freischalten
