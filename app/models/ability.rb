@@ -30,7 +30,7 @@ class Ability
       can [:list, :read], QuizAssignment, :user_id => user.id
       can [:list, :read], Event, :user_id => user.id
       # manage his own quiz responses
-      can :manage, QuizResponse, :user_id => user.id
+      can [:create, :list, :read], QuizResponse, :user_id => user.id
     end
   end
 end
