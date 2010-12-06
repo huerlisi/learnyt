@@ -12,7 +12,7 @@
     %tr
       %th= t_attr(:solved_on, QuizResponse)
       %td 
-        = quiz.quiz_responses.last.created_at.to_date
+        = quiz_assignment.quiz_responses.last.created_at.to_date if quiz_assignment.responded?
     %tr
       %th= t('application.question_count')
       %td= quiz.questions.count
