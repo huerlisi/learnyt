@@ -37,6 +37,36 @@ function addLinkifyContainersBehaviour() {
   });
 };
 
+// Add tooltips for overview
+function addTooltipBehaviour() {
+  $(".tt[title]").each(function() {
+    if ( $(this).attr('title') != '' ) {
+      $(this).tooltip({
+        position: 'top center',
+        predelay: 500,
+        effect: 'fade'
+      });
+    }
+  });
+};
+
+// Add tooltips for overview
+function addOverviewTooltipBehaviour() {
+  $('.overview-list li a[title]').tooltip({
+    position: 'center right',
+    predelay: 500,
+    effect: 'fade'
+  });
+};
+
+// Add icon action tooltips
+function addIconTooltipBehaviour() {
+  $('a.icon-tooltip[title]').tooltip({
+    tipClass: 'icon-tooltip-popup',
+    effect: 'fade',
+    fadeOutSpeed: 100
+  });
+};
 // Javascript Highlighter
 // Fixed version of comment in
 // http://stackoverflow.com/questions/1650389/prototype-js-highlight-words-dom-traversing-correctly-and-efficiently
@@ -82,8 +112,11 @@ function addLinkifyContainersBehaviour() {
 
 // Loads functions after DOM is ready
 $(document).ready(function() {
-    addAutofocusBehaviour();
-    addDatePickerBehaviour();
-    addSortableBehaviour();
-    addLinkifyContainersBehaviour();
+  addAutofocusBehaviour();
+  addDatePickerBehaviour();
+  addSortableBehaviour();
+  addLinkifyContainersBehaviour();
+  addTooltipBehaviour();
+  addOverviewTooltipBehaviour();
+  addIconTooltipBehaviour();
 });

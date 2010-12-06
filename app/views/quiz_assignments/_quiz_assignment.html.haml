@@ -1,4 +1,3 @@
-%li.quiz[quiz_assignment]
-  = "Fällig am: #{quiz_assignment.due_at.try(:to_date)}"
+%li.quiz[quiz_assignment]{:tooltip => truncate(quiz_assignment.quiz.description, :length => 100, :separator => ' ')}
   = link_to quiz_assignment.quiz.title, quiz_assignment, {'data-href-container' => 'li'}
-  %p.description<= truncate(quiz_assignment.quiz.description, :length => 100, :separator => ' ')
+  = "Fällig am: #{quiz_assignment.due_at.try(:to_date)}"
