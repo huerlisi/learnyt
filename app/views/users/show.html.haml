@@ -2,8 +2,7 @@
 
 %h1= @user
 
-%p
-  = @user.email
+= full_address(@user.person.vcard)
 
 %ul#roles
 - @user.roles.each do |role|
