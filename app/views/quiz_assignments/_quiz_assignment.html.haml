@@ -2,9 +2,10 @@
 %li.tooltip-title[quiz]{:title => truncate(quiz.description, :length => 100, :separator => ' ')}
   = link_to quiz.title, quiz_path(quiz), {'data-href-container' => 'li'}
   %table
-    %tr
-      %th= t_attr(:user)
-      %td= link_to quiz_assignment.user, quiz_assignment.user
+    = unless current_user == quiz_assignment.user
+      %tr
+        %th= t_attr(:user)
+        %td= link_to quiz_assignment.user, quiz_assignment.user
     %tr
       %th= t_attr(:due_at)
       %td= quiz_assignment.due_at.try(:to_date)
