@@ -6,7 +6,9 @@ de:
       one: 1 Frage
       other: %{count} Fragen
 
+    question_count: Fragen
     created_at: Erstellt am %{created_at}
+    due_at: Fällig am %{due_at}
 
   sex:
     male:   Mann
@@ -62,6 +64,7 @@ de:
         description: Beschreibung
         selected_questions:  Ausgewählte Fragen
         available_questions: Verfügbare Fragen
+        created_at: Erstellt am
 
       quiz_response:
         user: Schüler

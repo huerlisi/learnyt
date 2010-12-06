@@ -1,3 +1,14 @@
-%li.tooltip-title.quiz[quiz_assignment]{:title => truncate(quiz_assignment.quiz.description, :length => 100, :separator => ' ')}
-  = link_to quiz_assignment.quiz.title, quiz_assignment, {'data-href-container' => 'li'}
-  = "Fällig am: #{quiz_assignment.due_at.try(:to_date)}"
+- quiz = quiz_assignment.quiz
+%li.tooltip-title[quiz]{:title => truncate(quiz.description, :length => 100, :separator => ' ')}
+  = link_to quiz.title, quiz_path(quiz), {'data-href-container' => 'li'}
+  %table
+    %tr
+      %th= t('application.question_count')
+      %td= quiz.questions.count
+    %tr
+      %th= t_attr(:due_at)
+      %td= quiz_assignment.due_at.try(:to_date)
+    %tr
+      %th= t_attr(:user)
+      %td= link_to quiz_assignment.user, quiz_assignment.user, :style => 'display: inline'
+      
