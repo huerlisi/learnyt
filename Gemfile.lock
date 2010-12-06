@@ -77,6 +77,9 @@ GEM
       term-ansicolor (~> 1.0.5)
     haml (3.0.24)
     has_scope (0.5.0)
+    has_vcards (0.6.0)
+      activerecord
+      i18n
     hpricot (0.8.3)
     i18n (0.5.0)
     i18n_rails_helpers (0.8.2)
@@ -172,6 +175,7 @@ DEPENDENCIES
   formtastic (~> 1.2.1)
   haml
   has_scope
+  has_vcards (~> 0.6)
   hpricot
   i18n_rails_helpers (~> 0.8.0)
   inherited_resources

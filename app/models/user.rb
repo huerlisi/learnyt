@@ -32,6 +32,12 @@ class User < ActiveRecord::Base
     end
   end
   
+  # Person
+  belongs_to :person
+  attr_accessible :person_attributes
+  accepts_nested_attributes_for :person
+  validates_presence_of :person
+  
   # Helpers
   def to_s
     email

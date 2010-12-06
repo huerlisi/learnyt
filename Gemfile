@@ -53,8 +53,13 @@ gem 'jquery-rails'
 # =======
 # Authentication
 gem 'devise', '~> 1.1'
+
 # Authorization
 gem 'cancan'
+
 # Date/Time handling
 gem 'validates_timeliness', '~> 3.0.0'
 gem 'event_calendar', :git => 'git://github.com/huerlisi/event_calendar.git'
+
+# Vcards
+gem 'has_vcards', '~> 0.6'
