@@ -40,6 +40,6 @@ class User < ActiveRecord::Base
   
   # Helpers
   def to_s
-    email
+    person.try(:to_s) || email
   end
 end
