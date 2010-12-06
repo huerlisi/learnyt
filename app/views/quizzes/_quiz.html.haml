@@ -1,2 +1,5 @@
 %li.tooltip-title[quiz]{:title => truncate(quiz.description, :length => 100, :separator => ' ')}
   = link_to quiz.title, quiz_path(quiz), {'data-href-container' => 'li'}
+  %ul
+    %li= t('application.created_at', :created_at => quiz.created_at.to_date)
+    %li= t('application.question', :count => quiz.questions.count)

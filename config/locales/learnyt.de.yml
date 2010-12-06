@@ -2,6 +2,12 @@ de:
   application:
     title: learnyt
 
+    question:
+      one: 1 Frage
+      other: %{count} Fragen
+
+    created_at: Erstellt am %{created_at}
+
   sex:
     male:   Mann
     female: Frau
