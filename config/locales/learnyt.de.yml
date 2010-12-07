@@ -103,6 +103,9 @@ de:
     difference:       Differenz
     back:             Zurück
 
+    address:  Adresse
+    tags:     Schlagworte
+
   formtastic:
     hints:
       user:

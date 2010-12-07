@@ -2,7 +2,9 @@
 
 %h1= @user
 
-= full_address(@user.person.vcard)
+= render 'people/show', :person => @user.person
+
+%h2= t_attr(:roles)
 
 %ul#roles
 - @user.roles.each do |role|

@@ -25,4 +25,7 @@ class Person < ActiveRecord::Base
   def to_s
     "%s (%s)" % [vcard.try(:full_name), vcard.try(:locality)]
   end
+
+  # Tags
+  acts_as_taggable
 end
