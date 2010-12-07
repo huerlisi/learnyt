@@ -62,4 +62,4 @@ gem 'validates_timeliness', '~> 3.0.0'
 gem 'event_calendar', :git => 'git://github.com/huerlisi/event_calendar.git'
 
 # Vcards
-gem 'has_vcards', '~> 0.6'
+gem 'has_vcards', '~> 0.6.1'
