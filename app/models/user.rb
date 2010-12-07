@@ -7,8 +7,9 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :locked_at, :role_texts
 
   # Authorization roles
-  has_and_belongs_to_many :roles
+  has_and_belongs_to_many :roles, :autosave => true
   scope :by_role, lambda{|role| include(:roles).where(:name => role)}
+  attr_accessible :role_texts
   
   # Return current role name.
   def role_name
