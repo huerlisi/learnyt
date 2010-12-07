@@ -1,0 +1,7 @@
+- content_for :sidebar do
+  .sub-tabs
+    %h3= t('application.filter')
+    %ul
+      %li.all_filter= link_to t('learnyt.all'), url_for(params.merge(:tagged_with => nil))
+      - for tag in controller_name.singularize.camelize.constantize.top_tags
+        %li= link_to tag, url_for(params.merge(:tagged_with => tag.name))

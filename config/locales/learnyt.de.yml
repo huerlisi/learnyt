@@ -10,6 +10,7 @@ de:
     response_count: Versuche
     created_at: Erstellt am %{created_at}
     due_at: Fällig am %{due_at}
+    filter: Filter
 
   sex:
     male:   Mann
