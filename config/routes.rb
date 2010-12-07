@@ -6,7 +6,6 @@ Learnyt::Application.routes.draw do
   get "overview/index"
 
   # Authorization
-  devise_for :users, :controllers => {:registrations => "registrations"}
   devise_for :users
   resources :users do
     member do

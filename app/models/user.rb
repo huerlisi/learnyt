@@ -1,8 +1,7 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :lockable
+  devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :locked_at, :role_texts
@@ -28,7 +27,7 @@ class User < ActiveRecord::Base
   def role_texts=(role_names)
     roles.delete_all
     for role_name in role_names
-      roles.create(:name => role_name)
+      roles.build(:name => role_name)
     end
   end
   
