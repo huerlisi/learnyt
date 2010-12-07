@@ -4,4 +4,5 @@ class AnswersController < AuthorizedController
 
   # Scopes
   has_scope :by_title
+  has_scope :tagged_with
 end
