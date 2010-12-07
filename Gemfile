@@ -63,3 +63,6 @@ gem 'event_calendar', :git => 'git://github.com/huerlisi/event_calendar.git'
 
 # Vcards
 gem 'has_vcards', '~> 0.6.1'
+
+# Tagging
+gem 'acts-as-taggable-on', '~> 2.0.6'
