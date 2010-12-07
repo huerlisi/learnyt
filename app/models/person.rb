@@ -28,4 +28,7 @@ class Person < ActiveRecord::Base
 
   # Tags
   acts_as_taggable
+
+  # Roles
+  has_one :user
 end

@@ -17,6 +17,7 @@ Learnyt::Application.routes.draw do
   end
 
   # Application Resources
+  resources :people
   resources :questions do
     resources :responses
     resources :possible_answers

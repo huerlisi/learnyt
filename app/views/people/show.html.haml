@@ -1,0 +1,12 @@
+= contextual_links
+
+%h1= @user
+
+= render 'people/show', :person => @user.person
+
+%h2= t_attr(:roles)
+
+%ul#roles
+- @user.roles.each do |role|
+  %li
+    = role.to_s
