@@ -1,6 +1,3 @@
 = f.semantic_fields_for :person do |p|
   = p.inputs t('form.person.address') do
     = render 'vcards/form', :f => p
-
-  = p.inputs t('learnyt.tags') do
-    = p.input :tag_list

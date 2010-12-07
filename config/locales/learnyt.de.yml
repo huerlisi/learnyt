@@ -24,6 +24,7 @@ de:
     models:
       answer: Antwort
       possible_answer: Mögliche Antwort
+      person: Person
       user: Benutzer
       question: Frage
       response: Antwort
@@ -53,6 +54,13 @@ de:
         response: Antwort
         score: Ergebnis
         event_time: Um
+        
+      person:
+        name:          Name
+        created_at:    Erfasst am
+        date_of_birth: Geburtsdatum
+        date_of_death: Todestag
+        sex:           Geschlecht
         
       possible_answer:
         question: Frage

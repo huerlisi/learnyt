@@ -10,5 +10,8 @@
     - f.object.build_person unless f.object.person
     = render 'people/form', :f => f
 
+    = f.inputs t('learnyt.tags') do
+      = f.input :tag_list
+
   = f.buttons do
     = f.commit_button

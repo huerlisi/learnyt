@@ -2,6 +2,9 @@
 #
 # Provides a user/account management interface.
 class UsersController < AuthorizedController
+  # Scopes
+  has_scope :tagged_with
+  
   # Actions
   def update
     @user = User.find(params[:id])

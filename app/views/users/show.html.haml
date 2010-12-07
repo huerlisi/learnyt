@@ -4,6 +4,10 @@
 
 = render 'people/show', :person => @user.person
 
+%h2= t('learnyt.tags')
+
+= @user.tag_list
+
 %h2= t_attr(:roles)
 
 %ul#roles

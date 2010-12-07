@@ -38,6 +38,10 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :person
   validates_presence_of :person
   
+  # Tags
+  acts_as_taggable
+  attr_accessible :tag_list
+
   # Helpers
   def to_s
     person.try(:to_s) || email
