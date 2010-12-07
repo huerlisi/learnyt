@@ -89,6 +89,7 @@ de:
         roles:                          Rollen
         role_texts:                     Rollen
         locked:                         Gesperrt
+        name:                           Name
         
   learnyt:
     all:              Alle
