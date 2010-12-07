@@ -6,8 +6,12 @@ class AuthorizedController < InheritedResources::Base
     flash[:alert] = t('cancan.access_denied')
     
     if user_signed_in?
-      # Show error on referring page for logged in users
-      redirect_to :back
+      if request.env["HTTP_REFERER"]
+        # Show error on referring page for logged in users
+        redirect_to :back
+      else
+        redirect_to root_path
+      end
     else
       # Redirect to login page otherwise
       redirect_to new_user_session_path

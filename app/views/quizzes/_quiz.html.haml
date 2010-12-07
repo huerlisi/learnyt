@@ -1,6 +1,9 @@
-%li[quiz]
-  - if current_user.role?(:teacher)
-    = link_to quiz.title, quiz_path(quiz), {'data-href-container' => 'li'}
-  - else
-    = link_to quiz.title, new_quiz_quiz_response_path(quiz), {'data-href-container' => 'li'}
-  %p.description<= truncate(quiz.description, :length => 100, :separator => ' ')
+%li.tooltip-title[quiz]{:title => truncate(quiz.description, :length => 100, :separator => ' ')}
+  = link_to quiz.title, quiz_path(quiz), {'data-href-container' => 'li'}
+  %table
+    %tr
+      %th= t('application.question_count')
+      %td= quiz.questions.count
+    %tr
+      %th= t_attr(:created_at)
+      %td= quiz.created_at.to_date

@@ -1,4 +1,21 @@
-%li.quiz[quiz_assignment]
-  = "Fällig am: #{quiz_assignment.due_at.try(:to_date)}"
-  = link_to quiz_assignment.quiz.title, new_quiz_quiz_response_path(quiz_assignment.quiz), {'data-href-container' => 'li'}
-  %p.description<= truncate(quiz_assignment.quiz.description, :length => 100, :separator => ' ')
+- quiz = quiz_assignment.quiz
+%li.tooltip-title[quiz]{:title => truncate(quiz.description, :length => 100, :separator => ' ')}
+  = link_to quiz.title, quiz_assignment_path(quiz_assignment), {'data-href-container' => 'li'}
+  %table
+    - unless current_user == quiz_assignment.user
+      %tr
+        %th= t_attr(:user)
+        %td= link_to quiz_assignment.user, quiz_assignment.user
+    %tr
+      %th= t_attr(:due_at)
+      %td= quiz_assignment.due_at.try(:to_date)
+    %tr
+      %th= t_attr(:solved_on, QuizResponse)
+      %td= quiz_assignment.quiz_responses.last.created_at.to_date if quiz_assignment.solved?
+    %tr
+      %th= t('application.question_count')
+      %td= quiz.questions.count
+    %tr
+      %th= t_attr(:score, QuizResponse)
+      %td= "%.1f/%.1f" % [quiz.quiz_responses.last.score, quiz.quiz_responses.last.max_score]
+      

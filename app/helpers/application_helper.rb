@@ -86,6 +86,7 @@ addAutocompleteBehaviour();
 addNestedFormsBehaviour();
 addCorrectnessIndicatorBehaviour();
 addDatePickerBehaviour();
+addAutogrowBehaviour();
 EOF
   
     return output.html_safe

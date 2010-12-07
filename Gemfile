@@ -14,7 +14,7 @@ gem 'mysql'
 # ===========
 group :development do
   gem 'rails3-generators'
-  gem 'rspec-rails', "~> 2.1.0"
+  gem 'rspec-rails', "~> 2.1"
   # Haml generators
   gem 'hpricot'
   gem 'ruby_parser'
@@ -24,8 +24,7 @@ end
 # Test
 # ====
 group :test do
-  gem 'rspec'
-  gem 'rspec-rails', "~> 2.1.0"
+  gem 'rspec-rails', "~> 2.1"
   gem 'mocha'
   gem 'shoulda'
   gem 'factory_girl_rails'
@@ -42,7 +41,7 @@ gem 'fancy-buttons'
 
 gem 'simple-navigation'
 
-gem 'formtastic', '~> 1.1.0'
+gem 'formtastic', '~> 1.2.1'
 gem 'will_paginate', :git => 'git://github.com/mislav/will_paginate.git', :branch => 'rails3'
 gem 'inherited_resources'
 gem 'has_scope'
@@ -54,8 +53,13 @@ gem 'jquery-rails'
 # =======
 # Authentication
 gem 'devise', '~> 1.1'
+
 # Authorization
 gem 'cancan'
+
 # Date/Time handling
 gem 'validates_timeliness', '~> 3.0.0'
-#gem 'event_calendar', :git => 'git://github.com/raskhadafi/event_calendar.git'
+gem 'event_calendar', :git => 'git://github.com/huerlisi/event_calendar.git'
+
+# Vcards
+gem 'has_vcards', '~> 0.6'

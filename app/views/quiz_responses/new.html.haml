@@ -2,7 +2,10 @@
   = contextual_link_to :show, @quiz
   = contextual_link_to :index, Quiz
 
-%h1= @quiz_response.quiz
+%h1= @quiz
+
 
 #quiz_response
+  %p.description<= @quiz.description
+
   = render :partial => 'form'

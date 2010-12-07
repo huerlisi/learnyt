@@ -1,14 +1,9 @@
 Learnyt::Application.routes.draw do
-
-  match '/calendar' => 'calendar#index', :year => Time.zone.now.year, :month => Time.zone.now.month
-  match '/calendar/:year/:month' => 'calendar#index'
-  match '/events/:event' => 'calendar#view'
-  match '/calendar/:year/:month/:day', :controller => 'calendar', :action => 'day'
-
-
   # Root
+  get "welcome/index"
+  root :to => "welcome#index"
+
   get "overview/index"
-  root :to => "overview#index"
 
   # Authorization
   devise_for :users, :controllers => {:registrations => "registrations"}
@@ -17,6 +12,9 @@ Learnyt::Application.routes.draw do
     member do
       post :unlock
     end
+    collection do
+      get :current
+    end
   end
 
   # Application Resources
@@ -24,7 +22,6 @@ Learnyt::Application.routes.draw do
     resources :responses
     resources :possible_answers
   end
-
   resources :answers
   resources :possible_answers
   resources :responses
@@ -32,5 +29,13 @@ Learnyt::Application.routes.draw do
     resources :quiz_responses
   end
   resources :quiz_responses
-  resources :quiz_assignments
+  resources :quiz_assignments do
+    resources :quiz_responses
+  end
+
+  # Calendar
+  match '/calendar' => 'calendar#index', :year => Time.zone.now.year, :month => Time.zone.now.month
+  match '/calendar/:year/:month' => 'calendar#index'
+  match '/events/:event' => 'calendar#view'
+  match '/calendar/:year/:month/:day', :controller => 'calendar', :action => 'day'
 end

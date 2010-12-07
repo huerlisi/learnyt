@@ -9,6 +9,13 @@ class User < ActiveRecord::Base
 
   # Authorization roles
   has_and_belongs_to_many :roles
+  scope :by_role, lambda{|role| include(:roles).where(:name => role)}
+  
+  # Return current role name.
+  def role_name
+    # Just return _a_ role, no preferences or guarantees...
+    roles.last.name
+  end
   
   def role?(role)
     return !!self.roles.find_by_name(role.to_s)
@@ -25,8 +32,14 @@ class User < ActiveRecord::Base
     end
   end
   
+  # Person
+  belongs_to :person
+  attr_accessible :person_attributes
+  accepts_nested_attributes_for :person
+  validates_presence_of :person
+  
   # Helpers
   def to_s
-    email
+    person.try(:to_s) || email
   end
 end

@@ -2,6 +2,14 @@ de:
   application:
     title: learnyt
 
+    question:
+      one: 1 Frage
+      other: %{count} Fragen
+
+    question_count: Fragen
+    created_at: Erstellt am %{created_at}
+    due_at: Fällig am %{due_at}
+
   sex:
     male:   Mann
     female: Frau
@@ -56,12 +64,14 @@ de:
         description: Beschreibung
         selected_questions:  Ausgewählte Fragen
         available_questions: Verfügbare Fragen
+        created_at: Erstellt am
 
       quiz_response:
         user: Schüler
         quiz: Quiz
         score: Ergebnis
-        event_time: Um
+        solved_on: Gelöst am
+        event_time: Gelöst um
         to_s: %{score} von %{max_score} Punkten
 
       quiz_assignment:
@@ -109,9 +119,15 @@ de:
     new_user_session:         Anmelden
 
   crud:
+    title:
+      calendar: %{model} Kalender
+      current: Aktueller %{model}
     action:
       respond: Beantworten
       unlock:  Freischalten
+      only_solved: Gelöste
+      only_unsolved: Offene
+      all: Alle anzeigen
     flash:
       created_html: %{message} angelegt
       unlocked: %{user} freigeschaltet
