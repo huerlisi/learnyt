@@ -11,6 +11,9 @@ class Quiz < ActiveRecord::Base
   # Validations
   validates_presence_of :title
   
+  # Tags
+  acts_as_taggable
+
   # Helpers
   def to_s
     title

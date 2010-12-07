@@ -4,6 +4,7 @@
     = f.input :title, :input_html => {"data-autofocus" => true}
     = f.input :description, :input_html => {"class" => 'autogrow', :rows => 1}
     = f.input :remarks, :input_html => {"class" => 'autogrow', :rows => 1}
+    = f.input :tag_list
 
   .contextual
     = icon_link_to 'new', new_question_possible_answer_path(@question), :remote => true unless @question.new_record?

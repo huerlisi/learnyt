@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101207100903) do
+ActiveRecord::Schema.define(:version => 20101207123559) do
 
   create_table "addresses", :force => true do |t|
     t.string  "post_office_box",  :limit => 50
@@ -130,6 +130,12 @@ ActiveRecord::Schema.define(:version => 20101207100903) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "roles_people", :id => false, :force => true do |t|
+    t.integer "role_id"
+    t.string  "role_type"
+    t.integer "person_id"
   end
 
   create_table "roles_users", :id => false, :force => true do |t|

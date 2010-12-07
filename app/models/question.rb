@@ -14,6 +14,9 @@ class Question < ActiveRecord::Base
   # Scopes
   scope :by_title, lambda {|value| where("title LIKE ?", "%#{value}%")}
   
+  # Tags
+  acts_as_taggable
+
   # Helpers
   def to_s
     title

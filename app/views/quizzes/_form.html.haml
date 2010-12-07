@@ -3,6 +3,7 @@
   = f.inputs do
     = f.input :title, :input_html => {"data-autofocus" => true}
     = f.input :description, :input_html => {"class" => 'autogrow', :rows => 1}
+    = f.input :tag_list
 
     %label#selected_question_label= t_attr(:selected_questions)
     %label#available_question_label= t_attr(:available_questions)

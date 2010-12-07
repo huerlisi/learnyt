@@ -1,4 +1,7 @@
 class QuizzesController < AuthorizedController
+  # Scopes
+  has_scope :tagged_with
+
   # Actions
   def show
     @quiz = Quiz.find(params[:id])
