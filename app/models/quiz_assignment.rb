@@ -6,8 +6,12 @@ class QuizAssignment < ActiveRecord::Base
   belongs_to :user
   belongs_to :quiz
   has_many :quiz_responses
+  def response_count
+    quiz_responses.count
+  end
+  
   def solved?
-    quiz_responses.present?
+    response_count > 0
   end
 
   scope :state, lambda {|value|
