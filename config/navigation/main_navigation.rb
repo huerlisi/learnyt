@@ -4,7 +4,7 @@ SimpleNavigation::Configuration.run do |navigation|
   navigation.items do |primary|
     # learnyt navigation
     if current_user
-      primary.item :overview, t('main_navigation.overview'), root_path
+      primary.item :overview, t('main_navigation.overview'), overview_index_path
       
       primary.item :nav_quizzes, t_model(Quiz), quizzes_path, :if => lambda { can?(:new, Quiz) or can?(:index, Quiz)}  do |quiz|
         quiz.item :new_quiz, t_action(:new, Quiz), new_quiz_path, :if => lambda { can?(:new, Quiz)}
