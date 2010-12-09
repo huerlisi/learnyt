@@ -115,6 +115,9 @@ de:
     address:  Adresse
     tags:     Schlagworte
 
+    quiz:
+      not_solved: Quiz wurde nicht gelöst.
+
   formtastic:
     hints:
       user:
