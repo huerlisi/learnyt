@@ -1,5 +1,5 @@
 %tr[quiz_response]
-  %td= link_to quiz_response.user, quiz_response.user if quiz_response.user
+  %td= link_to quiz_response.user, quiz_response.user if (quiz_response.user and not current_user == quiz_response.user)
   %td= quiz_response.quiz
   %td= link_to quiz_response, quiz_response, {'data-href-container' => 'tr'}
   %td= quiz_response.created_at
