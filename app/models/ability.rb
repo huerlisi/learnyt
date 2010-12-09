@@ -31,6 +31,7 @@ class Ability
       can [:list, :read], Event, :user_id => user.id
       # manage his own quiz responses
       can [:create, :list, :read], QuizResponse, :user_id => user.id
+      can [:show, :current, :update], User, :id => user.id
     end
   end
 end
