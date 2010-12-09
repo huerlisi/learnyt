@@ -3,5 +3,5 @@
   %td= quiz_response.quiz
   %td= link_to quiz_response, quiz_response, {'data-href-container' => 'tr'}
   %td= quiz_response.created_at
-
-  = list_item_actions_for(quiz_response)
+  %td.action-links
+    = link_to image_tag('16x16/archive.png', :title => t('learnyt.to_archive')), quiz_response_archive_path(quiz_response), :remote => true, :method => :put, :confirm => t('learnyt.to_archive_of', :quiz => quiz_response.quiz)

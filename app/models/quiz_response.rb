@@ -5,6 +5,8 @@ class QuizResponse < ActiveRecord::Base
   has_many :responses
   belongs_to :user
   accepts_nested_attributes_for :responses
+  default_scope where(:archive => false)
+  scope :archive, where(:archive => true)
 
   # Helpers
   def to_s

@@ -24,6 +24,7 @@ SimpleNavigation::Configuration.run do |navigation|
 
       primary.item :nav_quiz_responses, t_model(QuizResponse), quiz_responses_path, :if => lambda { can?(:new, QuizResponse) } do |quiz_response|
         quiz_response.item :quiz_response_index, t_action(:index, QuizResponse), quiz_responses_path, :if => lambda { can?(:new, QuizResponse) }
+        quiz_response.item :quiz_response_archive, I18n.t('learnyt.archive'), quiz_responses_archive_path, :if => lambda { can?(:new, QuizResponse) }
       end
 
       primary.item :nav_users, t_model(User), users_path, :if => lambda { can?(:index, User) } do |user|

@@ -27,7 +27,11 @@ Learnyt::Application.routes.draw do
   resources :quizzes do
     resources :quiz_responses
   end
-  resources :quiz_responses
+  match '/quiz_responses/archive' => 'quiz_responses#archive_index'
+  resources :quiz_responses do
+    put 'archive'
+    put 'recover'
+  end
   resources :quiz_assignments do
     resources :quiz_responses
   end

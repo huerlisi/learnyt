@@ -117,6 +117,9 @@ de:
 
     quiz:
       not_solved: Quiz wurde nicht gelöst.
+    archive: Archiv
+    to_archive: Archivieren
+    to_archive_of: %{quiz} archivieren?
 
   formtastic:
     hints:
