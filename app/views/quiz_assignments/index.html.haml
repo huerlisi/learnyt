@@ -1,7 +1,7 @@
 .contextual
   = icon_link_to 'only_solved', url_for(:state => 'solved') unless params[:state] == 'solved'
   = icon_link_to 'only_unsolved', url_for(:state => 'unsolved') if params[:state] == 'solved'
-  = icon_link_to 'all', quiz_assignments_path
+  = icon_link_to 'all', url_for(:state => 'all')
   = contextual_links_for
 
 

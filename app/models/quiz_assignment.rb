@@ -17,8 +17,10 @@ class QuizAssignment < ActiveRecord::Base
   scope :state, lambda {|value|
     if value == 'solved'
       includes(:quiz_responses).where('quiz_responses.created_at IS NOT NULL')
-    else
+    elsif value == 'unsolved'
       includes(:quiz_responses).where('quiz_responses.created_at IS NULL')
+    else
+      scoped
     end
   }
   

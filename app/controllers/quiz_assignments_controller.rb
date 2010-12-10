@@ -1,6 +1,6 @@
 class QuizAssignmentsController < AuthorizedController
   # Scopes
-  #has_scope :state, :default => 'unsolved'
+  has_scope :state, :default => 'unsolved'
   
   # Actions
   def show
