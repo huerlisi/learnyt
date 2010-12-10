@@ -1,5 +1,5 @@
 - quiz = quiz_assignment.quiz
-%li.tooltip-title[quiz]{:title => truncate(quiz.description, :length => 100, :separator => ' ')}
+%li.tooltip-title[quiz]{:title => truncate(quiz.description, :length => 100, :separator => ' '), :class => (quiz_assignment.solved? ? 'solved' : 'unsolved')}
   = link_to quiz.title, quiz_assignment_path(quiz_assignment), {'data-href-container' => 'li'}
   %table
     - unless current_user == quiz_assignment.user

@@ -120,6 +120,10 @@ de:
     archive: Archiv
     to_archive: Archivieren
     to_archive_of: %{quiz} archivieren?
+    quiz_assignment:
+      solved: Gelöste Aufgaben
+      unsolved: Offene Aufgaben
+      all: Alle Aufgaben
 
   formtastic:
     hints:
