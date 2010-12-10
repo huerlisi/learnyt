@@ -1,6 +1,6 @@
 %table.list#quiz_response_list
   %tr
-    %th= t_attr :user if not current_user == @quiz_responses.first.user
+    %th= t_attr :user if current_user.role?('admin') or current_user.role?('teacher')
     %th= t_attr :quiz
     %th= t_attr :score
     %th= t_attr :event_time
