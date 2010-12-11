@@ -1,18 +1,8 @@
 require 'spec_helper'
 
 describe AnswersController do
-  before :all do
-    @admin = Factory.create(:admin_user)
-  end
-  
-  before :each do
-    sign_in(@admin)
-  end
-
-  after :each do
-    sign_out(@admin)
-  end
-  
+  login_admin
+    
   def mock_answer(stubs={})
     @mock_answer ||= mock_model(Answer, stubs).as_null_object
   end

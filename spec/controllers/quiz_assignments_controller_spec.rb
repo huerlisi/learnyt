@@ -1,7 +1,8 @@
 require 'spec_helper'
 
 describe QuizAssignmentsController do
-
+  login_admin
+  
   def mock_quiz_assignment(stubs={})
     (@mock_quiz_assignment ||= mock_model(QuizAssignment).as_null_object).tap do |quiz_assignment|
       quiz_assignment.stub(stubs) unless stubs.empty?
