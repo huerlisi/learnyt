@@ -27,6 +27,13 @@ SimpleNavigation::Configuration.run do |navigation|
         quiz_response.item :quiz_response_archive, I18n.t('learnyt.archive'), quiz_responses_archive_path, :if => lambda { can?(:new, QuizResponse) }
       end
 
+      primary.item :nav_correspondence, 'Korrespondenz', e_mails_path, :if => lambda { can?(:index, EMail) } do |correspondence|
+        correspondence.item :correspondence_e_mail_list, 'E-Mails', e_mails_path, :if => lambda { can?(:index, EMail) }
+        correspondence.item :correspondence_post_mails, 'Briefe', '/'
+        correspondence.item :correspondence_new_e_mail, 'Neues E-Mail', new_e_mail_path
+        correspondence.item :correspondence_new_post_mail, 'Neuer Brief', '/'
+      end
+
       primary.item :nav_users, t_model(User), users_path, :if => lambda { can?(:index, User) } do |user|
         user.item :new_user, t_action(:new, User), new_user_path, :if => lambda { can?(:new, User) }
         user.item :user_index, t_action(:index, User), users_path, :if => lambda { can?(:index, User) }
