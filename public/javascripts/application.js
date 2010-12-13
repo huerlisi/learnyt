@@ -146,6 +146,8 @@ function addAutogrowBehaviour() {
 }
 
 function addMultipleSelect() {
+    var createLink = $('a[href=/quiz_assignments/new]');
+    createLink.removeAttr('data-remote');
     var addLink = $('a[data-multipleselect-add]');
     addLink.prev('li').append(addLink);
     addLink.show();
