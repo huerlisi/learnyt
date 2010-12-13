@@ -1,8 +1,13 @@
 # Read about factories at http://github.com/thoughtbot/factory_girl
 
+Factory.define :vcard do |f|
+  f.given_name     'Peter'
+  f.family_name    'Muster'
+  f.street_address 'Teststr. 1'
+  f.postal_code    '9999'
+  f.locality       'Capital'
+end
+
 Factory.define :person do |f|
-  f.type "MyString"
-  f.date_of_birth "2010-12-06"
-  f.date_of_death "2010-12-06"
-  f.sex 1
+  f.vcard Factory.build(:vcard)
 end

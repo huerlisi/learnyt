@@ -1,7 +1,8 @@
 require 'spec_helper'
 
 describe ResponsesController do
-
+  login_admin
+  
   def mock_response(stubs={})
     @mock_response ||= mock_model(Response, stubs).as_null_object
   end

@@ -1,7 +1,8 @@
 require 'spec_helper'
 
 describe PossibleAnswersController do
-
+  login_admin
+  
   def mock_possible_answer(stubs={})
     @mock_possible_answer ||= mock_model(PossibleAnswer, stubs).as_null_object
   end
