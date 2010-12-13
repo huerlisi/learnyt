@@ -32,6 +32,7 @@ de:
       quiz:  Quiz
       quiz_response: Resultat
       quiz_assignment: Aufgaben
+      e_mail: E-Mail
 
     attributes:
       question:
@@ -100,7 +101,12 @@ de:
         role_texts:                     Rollen
         locked:                         Gesperrt
         name:                           Name
-        
+
+      e_mail:
+        title:      Betreff
+        user:       Absender
+        recipients: Empfänger
+        body:       Inhalt
   learnyt:
     all:              Alle
     edit:             Editieren

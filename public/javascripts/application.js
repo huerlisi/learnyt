@@ -145,9 +145,7 @@ function addAutogrowBehaviour() {
   $(".autogrow").elastic();
 }
 
-function addMultipleSelect() {
-    var createLink = $('a[href=/quiz_assignments/new]');
-    createLink.removeAttr('data-remote');
+function addMultipleSelectBehaviourForQuizAssignments() {
     var addLink = $('a[data-multipleselect-add]');
     addLink.prev('li').append(addLink);
     addLink.show();
@@ -179,6 +177,13 @@ function addMultipleSelect() {
   });
 }
 
+function addMultipleSelectBehaviourForEMails(){
+    $('#e_mail_user_ids').multiselect({
+                                             width: 600,
+                                             height: 200
+                                           });
+}
+
 // Loads functions after DOM is ready
 $(document).ready(function() {
     addSelectableBehaviour();
@@ -187,5 +192,6 @@ $(document).ready(function() {
     addCorrectnessIndicatorBehaviour();
     addQuestionSelectionBehaviour();
     addAutogrowBehaviour();
-    addMultipleSelect();
+    addMultipleSelectBehaviourForQuizAssignments();
+    addMultipleSelectBehaviourForEMails();
 });

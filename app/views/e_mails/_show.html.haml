@@ -2,6 +2,14 @@
   = @e_mail.title
 
 #e_mail.box
-  - if @e_mail.title.present?
-    %p.description
-      = @e_mail.title
+  %p.body
+    = @e_mail.sender
+
+  %p.body
+    = @e_mail.body
+
+  %ul#recipients.body
+    - @e_mail.users.each do |user|
+      %li
+        = user
+
