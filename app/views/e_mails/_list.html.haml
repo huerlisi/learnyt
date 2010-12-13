@@ -1,6 +1,9 @@
 %table.list#e_mail_list
   %tr
-    %th= t_attr :title
+    - [:title, :sender, :send_at].each do |attr|
+      %th
+        = t_attr attr
+
     %th.action-links
 
   = render @e_mails

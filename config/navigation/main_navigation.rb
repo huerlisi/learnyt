@@ -28,7 +28,7 @@ SimpleNavigation::Configuration.run do |navigation|
       end
 
       primary.item :nav_correspondence, 'Korrespondenz', e_mails_path, :if => lambda { can?(:index, EMail) } do |correspondence|
-        correspondence.item :correspondence_e_mail_list, 'E-Mails', e_mails_path, :if => lambda { can?(:index, EMail) }
+        correspondence.item :correspondence_e_mail_list, 'E-Mails', e_mails_path, :highlights_on => /\/e_mails/, :if => lambda { can?(:index, EMail) }
         correspondence.item :correspondence_post_mails, 'Briefe', '/'
         correspondence.item :correspondence_new_e_mail, 'Neues E-Mail', new_e_mail_path
         correspondence.item :correspondence_new_post_mail, 'Neuer Brief', '/'

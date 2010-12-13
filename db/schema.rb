@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101213193344) do
+ActiveRecord::Schema.define(:version => 20101213210836) do
 
   create_table "addresses", :force => true do |t|
     t.string  "post_office_box",  :limit => 50
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20101213193344) do
     t.integer  "recipients_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "send_at"
   end
 
   create_table "events", :force => true do |t|

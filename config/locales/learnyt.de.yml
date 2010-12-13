@@ -105,9 +105,11 @@ de:
 
       e_mail:
         title:      Betreff
-        user:       Absender
-        recipients: Empfänger
+        sender:       Absender
+        users: Empfänger
         body:       Inhalt
+        send_at:    Versandzeit
+
   learnyt:
     all:              Alle
     edit:             Editieren
