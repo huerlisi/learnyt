@@ -1,13 +1,14 @@
 require 'spec_helper'
 
 describe WelcomeController do
-  login_admin
-  
   describe "GET 'index'" do
-    it "should be successful" do
-      get 'index'
-      response.should be_success
+    context "when logged in as admin" do
+      login_admin
+
+      it "should redirect to overview#index" do
+        get 'index'
+        response.should redirect_to(overview_index_path)
+      end
     end
   end
-
 end
