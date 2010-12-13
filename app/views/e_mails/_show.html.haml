@@ -1,0 +1,7 @@
+%h2
+  = @e_mail.title
+
+#e_mail.box
+  - if @e_mail.title.present?
+    %p.description
+      = @e_mail.title
