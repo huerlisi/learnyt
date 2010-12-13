@@ -35,20 +35,7 @@ class QuizAssignment < ActiveRecord::Base
   has_one :event, :dependent => :destroy, :as => :object
 
   before_save :update_event
-  private
-  def update_event
-    return unless self[self.class.start_at_field]
-    build_event unless event
-    
-    event.user = user
-    event.start_at = self[self.class.start_at_field]
-    event.end_at = self[self.class.end_at_field]
-    event.all_day = true
-    
-    event.save
-  end
-  
-  public
+
   def name
     to_s
   end
@@ -60,5 +47,18 @@ class QuizAssignment < ActiveRecord::Base
   # Helpers
   def to_s
     "%s für %s" % [quiz.title, user.to_s]
+  end
+
+  private
+  def update_event
+    return unless self[self.class.start_at_field]
+    build_event unless event
+
+    event.user = user
+    event.start_at = self[self.class.start_at_field]
+    event.end_at = self[self.class.end_at_field]
+    event.all_day = true
+
+    event.save
   end
 end
