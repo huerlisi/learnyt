@@ -62,6 +62,7 @@ de:
         date_of_birth: Geburtsdatum
         date_of_death: Todestag
         sex:           Geschlecht
+        remarks:       Bemerkungen
         
       possible_answer:
         question: Frage

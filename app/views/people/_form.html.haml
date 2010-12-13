@@ -1,3 +1,5 @@
 = f.semantic_fields_for :person do |p|
   = p.inputs t('form.person.address') do
     = render 'vcards/form', :f => p
+  = p.inputs t_attr(:remarks, Person) do
+    = p.input :remarks, :input_html => {"class" => 'autogrow', :rows => 1}
