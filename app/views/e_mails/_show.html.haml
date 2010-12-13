@@ -2,14 +2,17 @@
   = @e_mail.title
 
 #e_mail.box
-  %p.body
-    = @e_mail.sender
+  - [:sender, :body].each do |attr|
+    %p.body
+      %label
+        = t_attr attr
+      = @e_mail.send(attr)
 
   %p.body
-    = @e_mail.body
-
-  %ul#recipients.body
-    - @e_mail.users.each do |user|
-      %li
-        = user
+    %label
+      = t_attr :users
+    %ul#recipients.body
+      - @e_mail.users.each do |user|
+        %li
+          = user
 

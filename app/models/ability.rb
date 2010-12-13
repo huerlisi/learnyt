@@ -26,6 +26,7 @@ class Ability
       can :manage, :all
     elsif user.role? :teacher
       can :manage, [Answer, PossibleAnswer, Quiz, QuizQuestion, QuizAssignment, QuizResponse, Question]
+      can [:list, :read, :create], EMail
     elsif user.role? :pupil
       can [:list, :read], QuizAssignment, :user_id => user.id
       can [:list, :read], Event, :user_id => user.id
