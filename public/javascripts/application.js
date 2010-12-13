@@ -145,6 +145,31 @@ function addAutogrowBehaviour() {
   $(".autogrow").elastic();
 }
 
+function addMultipleSelect() {
+  $('a[data-multipleselect-add]').click(function(e){
+    e.preventDefault();
+    var target = $(this).attr('data-multipleselect-add');
+    var select = $('#' + target);
+    var link = $(this);
+    select.attr('multiple', 'multiple');
+    select.multiselect({
+                         width: 600,
+                         height: 300
+                       });
+    link.after('<a id="remove_multi" class="icon-delete-text" href="#" data-multipleselect-remove="'+ target +'">minus</a>');
+    $('#remove_multi').click(function(e){
+      e.preventDefault();
+      var select = $('#' + $(this).attr('data-multipleselect-remove'));
+      var add = $('#toggle_multiple');
+      select.multiselect('destroy');
+      select.removeAttr('multiple');
+      select.removeAttr('style');
+      $(this).remove();
+      add.show();
+    });
+    link.hide();
+  });
+}
 
 // Loads functions after DOM is ready
 $(document).ready(function() {
@@ -154,4 +179,5 @@ $(document).ready(function() {
     addCorrectnessIndicatorBehaviour();
     addQuestionSelectionBehaviour();
     addAutogrowBehaviour();
+    addMultipleSelect();
 });
