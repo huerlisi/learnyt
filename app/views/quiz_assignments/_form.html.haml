@@ -2,6 +2,7 @@
   = f.semantic_errors
   = f.inputs do
     = f.input :user, :input_html => {"data-autofocus" => true}
+    = link_to 'plus', '#', :id => 'toggle_multiple', :class => 'icon-add-text', 'data-multipleselect-add' => 'quiz_assignment_user_id'
     = f.input :quiz
     = f.input :due_at, :as => :date_field
 
