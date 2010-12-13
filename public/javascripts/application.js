@@ -146,7 +146,10 @@ function addAutogrowBehaviour() {
 }
 
 function addMultipleSelect() {
-  $('a[data-multipleselect-add]').click(function(e){
+    var addLink = $('a[data-multipleselect-add]');
+    addLink.prev('li').append(addLink);
+    addLink.show();
+    addLink.click(function(e){
     e.preventDefault();
     var target = $(this).attr('data-multipleselect-add');
     var select = $('#' + target);
