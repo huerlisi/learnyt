@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101213210836) do
+ActiveRecord::Schema.define(:version => 20101214084946) do
 
   create_table "addresses", :force => true do |t|
     t.string  "post_office_box",  :limit => 50

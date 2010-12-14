@@ -1,11 +1,11 @@
 require "spec_helper"
 
 describe UserEMail do
-  describe "pupil_mail" do
-    let(:mail) { UserEMail.pupil_mail }
+  describe "student_mail" do
+    let(:mail) { UserEMail.student_mail }
 
     it "renders the headers" do
-      mail.subject.should eq("Pupil mail")
+      mail.subject.should eq("Student mail")
       mail.to.should eq(["to@example.org"])
       mail.from.should eq(["from@example.com"])
     end

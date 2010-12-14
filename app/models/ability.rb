@@ -8,7 +8,7 @@ class Ability
  
   # Available roles
   def self.roles
-    ['admin', 'pupil', 'teacher']
+    ['admin', 'student', 'teacher']
   end
   
   # Prepare roles to show in select inputs etc.
@@ -27,7 +27,7 @@ class Ability
     elsif user.role? :teacher
       can :manage, [Answer, PossibleAnswer, Quiz, QuizQuestion, QuizAssignment, QuizResponse, Question]
       can [:list, :read, :create], EMail
-    elsif user.role? :pupil
+    elsif user.role? :student
       can [:list, :read], QuizAssignment, :user_id => user.id
       can [:list, :read], Event, :user_id => user.id
       # manage his own quiz responses

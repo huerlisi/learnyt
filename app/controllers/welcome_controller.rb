@@ -5,7 +5,7 @@ class WelcomeController < ApplicationController
         redirect_to overview_index_path
       when 'teacher'
         redirect_to overview_index_path
-      when 'pupil'
+      when 'student'
         redirect_to quiz_assignments_path
       else
         # Should not happen, actually

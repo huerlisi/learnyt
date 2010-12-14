@@ -7,6 +7,6 @@ Factory.define :teacher, :class => Role do |f|
   f.name "teacher"
 end
 
-Factory.define :pupil, :class => Role do |f|
-  f.name "pupil"
+Factory.define :student, :class => Role do |f|
+  f.name "student"
 end

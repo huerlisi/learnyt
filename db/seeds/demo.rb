@@ -14,9 +14,9 @@ teacher.person = teacher_person
 teacher.roles.build(:name => 'teacher')
 teacher.save
 
-pupil_vcard = Vcard.new(:given_name => 'Anne', :family_name => 'Pupil', :street_address => 'Learning Av. 19', :postal_code => '9999', :locality => 'Capital')
-pupil_person = Person.new(:vcard => pupil_vcard, :sex => Person::FEMALE)
-pupil = User.new({:email => 'pupil@example.com', :password => 'demo1234', :password_confirmation => 'demo1234'})
-pupil.person = pupil_person
-pupil.roles.build(:name => 'pupil')
-pupil.save
+student_vcard = Vcard.new(:given_name => 'Anne', :family_name => 'Student', :street_address => 'Learning Av. 19', :postal_code => '9999', :locality => 'Capital')
+student_person = Person.new(:vcard => student_vcard, :sex => Person::FEMALE)
+student = User.new({:email => 'student@example.com', :password => 'demo1234', :password_confirmation => 'demo1234'})
+student.person = student_person
+student.roles.build(:name => 'student')
+student.save

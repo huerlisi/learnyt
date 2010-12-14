@@ -144,7 +144,7 @@ de:
   cancan:
     roles:
       admin:   'Administrator'
-      pupil:   'Schüler'
+      student:   'Schüler'
       teacher: 'Lehrer'
       
   main_navigation:
