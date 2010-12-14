@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe "possible_answers/new.html.haml" do
+  login_admin
+  
   before(:each) do
     assign(:possible_answer, stub_model(PossibleAnswer).as_new_record)
   end
