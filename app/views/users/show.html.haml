@@ -3,7 +3,8 @@
 %h1= @user
 
 #user
-  = render 'people/show', :person => @user.person
+  - @person = @user.person
+  = render 'people/show'
 
   %h2= t('learnyt.tags')
 

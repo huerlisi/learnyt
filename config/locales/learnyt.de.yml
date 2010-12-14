@@ -26,6 +26,9 @@ de:
       answer: Antwort
       possible_answer: Mögliche Antwort
       person: Person
+      teacher: Lehrer
+      student: Schüler
+      parent: Eltern
       user: Benutzer
       question: Frage
       response: Antwort
@@ -64,6 +67,7 @@ de:
         date_of_death: Todestag
         sex:           Geschlecht
         remarks:       Bemerkungen
+        address:       Adresse
         
       possible_answer:
         question: Frage
