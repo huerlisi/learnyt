@@ -1,5 +1,6 @@
 %tr[person]
   %td= link_to person, person, {'data-href-container' => 'tr'}
   %td= person.vcard.address
+  %td= link_to person.user.email, person.user if person.user
 
   = list_item_actions_for(person)

@@ -68,7 +68,8 @@ de:
         sex:           Geschlecht
         remarks:       Bemerkungen
         address:       Adresse
-        
+        user:          Benutzer/Account
+
       possible_answer:
         question: Frage
         answer: Antwort

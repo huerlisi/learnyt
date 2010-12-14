@@ -2,9 +2,10 @@
   %tr
     %th= t_attr :name
     %th= t_attr :address
+    %th= t_attr :user
     %th.action-links
 
   = render :collection => @people, :partial => 'person'
   
   %tr
-    %th{:colspan => "3", :style => "text-align: right"}= will_paginate @people
+    %th{:colspan => "4", :style => "text-align: right"}= will_paginate @people
