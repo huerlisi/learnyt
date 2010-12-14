@@ -1,2 +1,2 @@
-class Student < Person
+class Parent < Person
 end
