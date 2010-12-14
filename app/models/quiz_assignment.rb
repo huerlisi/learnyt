@@ -14,6 +14,14 @@ class QuizAssignment < ActiveRecord::Base
     response_count > 0
   end
 
+  def due?
+    due_at ? due_at.past? : false
+  end
+
+  def due_today?
+    due_at ? due_at.today? : false
+  end
+
   scope :state, lambda {|value|
     if value == 'solved'
       includes(:quiz_responses).where('quiz_responses.created_at IS NOT NULL')
