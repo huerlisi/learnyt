@@ -150,6 +150,9 @@ de:
     overview: Übersicht
     destroy_user_session:     Abmelden
     new_user_session:         Anmelden
+    correspondence: Korrespondenz
+    e_mail_index: E-Mails
+    post_mail_index: Briefe
 
   crud:
     title:
