@@ -123,6 +123,8 @@ de:
 
     address:  Adresse
     tags:     Schlagworte
+    add_signature: Signature einfügen
+    signature: %{name}, %{date_time}
 
     quiz:
       not_solved: Quiz wurde nicht gelöst.

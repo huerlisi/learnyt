@@ -3,3 +3,5 @@
     = render 'vcards/form', :f => p
   = p.inputs t_attr(:remarks, Person) do
     = p.input :remarks, :input_html => {"class" => 'autogrow', :rows => 1}
+  = p.buttons do
+    = button_to_function t('learnyt.add_signature'), "$('#user_person_attributes_remarks').insertAtCaret('\\n#{t('learnyt.signature', :name => current_user.person.vcard.full_name, :date_time => DateTime.now)}')"
