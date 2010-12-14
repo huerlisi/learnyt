@@ -45,7 +45,7 @@ gem 'formtastic', '~> 1.2.1'
 gem 'will_paginate', :git => 'git://github.com/mislav/will_paginate.git', :branch => 'rails3'
 gem 'inherited_resources'
 gem 'has_scope'
-gem 'i18n_rails_helpers', '~> 0.8.0'
+gem 'i18n_rails_helpers', '~> 0.9'
 
 gem 'jquery-rails'
 
