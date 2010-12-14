@@ -1,0 +1,10 @@
+%tr[e_mail]
+  %td
+    = link_to e_mail.title, e_mail_path(e_mail)
+  %td
+    = e_mail.sender
+  %td
+    - if e_mail.send?
+      = e_mail.send_at
+
+  = list_item_actions_for(e_mail)

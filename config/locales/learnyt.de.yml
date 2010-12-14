@@ -32,6 +32,7 @@ de:
       quiz:  Quiz
       quiz_response: Resultat
       quiz_assignment: Aufgaben
+      e_mail: E-Mail
 
     attributes:
       question:
@@ -62,6 +63,7 @@ de:
         date_of_birth: Geburtsdatum
         date_of_death: Todestag
         sex:           Geschlecht
+        remarks:       Bemerkungen
         
       possible_answer:
         question: Frage
@@ -100,7 +102,14 @@ de:
         role_texts:                     Rollen
         locked:                         Gesperrt
         name:                           Name
-        
+
+      e_mail:
+        title:      Betreff
+        sender:       Absender
+        users: Empfänger
+        body:       Inhalt
+        send_at:    Versandzeit
+
   learnyt:
     all:              Alle
     edit:             Editieren

@@ -1,0 +1,12 @@
+%table.list#e_mail_list
+  %tr
+    - [:title, :sender, :send_at].each do |attr|
+      %th
+        = t_attr attr
+
+    %th.action-links
+
+  = render @e_mails
+
+  %tr
+    %th{:colspan => "4", :style => "text-align: right"}= will_paginate @e_mails

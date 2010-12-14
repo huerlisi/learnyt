@@ -35,7 +35,7 @@ Learnyt::Application.routes.draw do
   resources :quiz_assignments do
     resources :quiz_responses
   end
-
+  resources :e_mails
   # Calendar
   match '/calendar' => 'calendar#index', :year => Time.zone.now.year, :month => Time.zone.now.month
   match '/calendar/:year/:month' => 'calendar#index'

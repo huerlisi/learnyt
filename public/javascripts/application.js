@@ -145,17 +145,22 @@ function addAutogrowBehaviour() {
   $(".autogrow").elastic();
 }
 
-function addMultipleSelect() {
-  $('a[data-multipleselect-add]').click(function(e){
+function addMultipleSelectBehaviourForQuizAssignments() {
+    var addLink = $('a[data-multipleselect-add]');
+    addLink.prev('li').append(addLink);
+    addLink.show();
+    addLink.click(function(e){
     e.preventDefault();
     var target = $(this).attr('data-multipleselect-add');
     var select = $('#' + target);
     var link = $(this);
-    select.attr('multiple', 'multiple');
+    select.attr('multiple', 'true');
     select.multiselect({
                          width: 600,
                          height: 300
                        });
+    select.removeAttr('name');
+    select.attr('name', 'quiz_assignment[user_ids][]');
     link.after('<a id="remove_multi" class="icon-delete-text" href="#" data-multipleselect-remove="'+ target +'">minus</a>');
     $('#remove_multi').click(function(e){
       e.preventDefault();
@@ -164,11 +169,19 @@ function addMultipleSelect() {
       select.multiselect('destroy');
       select.removeAttr('multiple');
       select.removeAttr('style');
+      select.attr('name', 'quiz_assignment[user_id]');
       $(this).remove();
       add.show();
     });
     link.hide();
   });
+}
+
+function addMultipleSelectBehaviourForEMails(){
+    $('#e_mail_user_ids').multiselect({
+                                             width: 600,
+                                             height: 200
+                                           });
 }
 
 // Loads functions after DOM is ready
@@ -179,5 +192,6 @@ $(document).ready(function() {
     addCorrectnessIndicatorBehaviour();
     addQuestionSelectionBehaviour();
     addAutogrowBehaviour();
-    addMultipleSelect();
+    addMultipleSelectBehaviourForQuizAssignments();
+    addMultipleSelectBehaviourForEMails();
 });

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101209143423) do
+ActiveRecord::Schema.define(:version => 20101213210836) do
 
   create_table "addresses", :force => true do |t|
     t.string  "post_office_box",  :limit => 50
@@ -34,6 +34,16 @@ ActiveRecord::Schema.define(:version => 20101209143423) do
     t.datetime "updated_at"
   end
 
+  create_table "e_mails", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "title"
+    t.text     "body"
+    t.integer  "recipients_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "send_at"
+  end
+
   create_table "events", :force => true do |t|
     t.string   "name"
     t.datetime "start_at"
@@ -53,6 +63,7 @@ ActiveRecord::Schema.define(:version => 20101209143423) do
     t.integer  "sex"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "remarks"
   end
 
   create_table "phone_numbers", :force => true do |t|
@@ -113,6 +124,13 @@ ActiveRecord::Schema.define(:version => 20101209143423) do
   create_table "quizzes", :force => true do |t|
     t.string   "title"
     t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "recipients", :force => true do |t|
+    t.integer  "e_mail_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

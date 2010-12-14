@@ -17,7 +17,16 @@ class QuizAssignmentsController < AuthorizedController
   end
 
   def create
-    create! { quiz_assignments_path }
+    if users = params[:quiz_assignment][:user_ids]
+      params[:quiz_assignment].delete(:user_ids)
+      users.each do |user|
+        params[:quiz_assignment][:user_id] = user
+        QuizAssignment.create(params[:quiz_assignment])
+      end
+      redirect_to quiz_assignments_path
+    else
+      create!{quiz_assignments_path}
+    end
   end
 
   def update

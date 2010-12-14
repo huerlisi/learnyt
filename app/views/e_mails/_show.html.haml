@@ -1,0 +1,19 @@
+%h2
+  = @e_mail.title
+
+#e_mail.box
+  - [:sender, :body, :send_at].each do |attr|
+    .body
+      %label
+        = t_attr attr
+      .content
+        = @e_mail.send(attr)
+
+  .body
+    %label
+      = t_attr :users
+    %ul#recipients
+      - @e_mail.users.each do |user|
+        %li
+          = user
+

@@ -2,15 +2,16 @@
 
 %h1= @user
 
-= render 'people/show', :person => @user.person
+#user
+  = render 'people/show', :person => @user.person
 
-%h2= t('learnyt.tags')
+  %h2= t('learnyt.tags')
 
-= @user.tag_list
+  = @user.tag_list
 
-%h2= t_attr(:roles)
+  %h2= t_attr(:roles)
 
-%ul#roles
-- @user.roles.each do |role|
-  %li
-    = role.to_s
+  %ul#roles
+  - @user.roles.each do |role|
+    %li
+      = role.to_s
