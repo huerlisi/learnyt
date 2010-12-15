@@ -1,0 +1,10 @@
+%h2= t('learnyt.tags')
+
+= resource.user.tag_list
+
+%h2= t_attr(:roles)
+
+%ul#roles
+- resource.user.roles.each do |role|
+  %li
+    = role.to_s
