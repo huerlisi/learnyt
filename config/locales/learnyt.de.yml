@@ -69,6 +69,7 @@ de:
         remarks:       Bemerkungen
         address:       Adresse
         user:          Login
+        type:          Art
 
       possible_answer:
         question: Frage

@@ -1,0 +1,11 @@
+%table.list#people_list
+  %tr
+    %th= t_attr :name
+    %th= t_attr :address
+    %th= t_attr :user
+    %th.action-links
+
+  = render @students
+  
+  %tr
+    %th{:colspan => "4", :style => "text-align: right"}= will_paginate @students

@@ -1,5 +1,6 @@
 %table.list#people_list
   %tr
+    %th= t_attr :type
     %th= t_attr :name
     %th= t_attr :address
     %th= t_attr :user
@@ -8,4 +9,4 @@
   = render :collection => @people, :partial => 'person'
   
   %tr
-    %th{:colspan => "4", :style => "text-align: right"}= will_paginate @people
+    %th{:colspan => "5", :style => "text-align: right"}= will_paginate @people
