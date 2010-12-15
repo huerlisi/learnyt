@@ -25,13 +25,13 @@ module ApplicationHelper
     content_tag 'div', :id => 'tabs', :class => 'ui-tabs' do
       buffer = content_tag 'ul' do
         tabs.collect do |tab|
-          inner_content += ui_tab_link tab[:name], tab
-        end.html_safe
+          ui_tab_link tab[:name], tab
+        end.to_s.html_safe
       end
 
       buffer += tabs.collect do |tab|
         ui_tab_content tab[:name], tab
-      end.html_safe
+      end.to_s.html_safe
       
       buffer
     end
