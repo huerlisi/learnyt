@@ -1,0 +1,6 @@
+%tr[parent]
+  %td= link_to parent, parent, {'data-href-container' => 'tr'}
+  %td= parent.vcard.address
+  %td= link_to parent.user.email, parent.user if parent.user
+
+  = list_item_actions_for(parent)

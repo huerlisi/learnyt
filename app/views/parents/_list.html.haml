@@ -1,0 +1,11 @@
+%table.list#parent_list
+  %tr
+    %th= t_attr :name, Person
+    %th= t_attr :address, Person
+    %th= t_attr :user, Person
+    %th.action-links
+
+  = render collection
+  
+  %tr
+    %th{:colspan => "4", :style => "text-align: right"}= will_paginate collection

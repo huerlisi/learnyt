@@ -37,6 +37,7 @@ SimpleNavigation::Configuration.run do |navigation|
       primary.item :nav_people, t_model(Person), people_path, :if => lambda { can?(:index, Person) } do |person|
         person.item :student_index, t_model(Student), students_path, :if => lambda { can?(:index, Student) }
         person.item :teacher_index, t_model(Teacher), teachers_path, :if => lambda { can?(:index, Teacher) }
+        person.item :parent_index, t_model(Parent), parents_path, :if => lambda { can?(:index, Parent) }
         person.item :person_index, t('learnyt.all'), people_path, :if => lambda { can?(:index, Person) }
       end
 
