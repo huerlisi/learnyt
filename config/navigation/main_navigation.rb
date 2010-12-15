@@ -34,6 +34,12 @@ SimpleNavigation::Configuration.run do |navigation|
         #correspondence.item :correspondence_new_post_mail, t_action(:new, PostMail), '/'
       end
 
+      primary.item :nav_people, t_model(Person), people_path, :if => lambda { can?(:index, Person) } do |person|
+        person.item :student_index, t_model(Student), students_path, :if => lambda { can?(:index, Student) }
+        person.item :teacher_index, t_model(Teacher), teachers_path, :if => lambda { can?(:index, Teacher) }
+        person.item :person_index, t('learnyt.all'), people_path, :if => lambda { can?(:index, Person) }
+      end
+
       primary.item :nav_users, t_model(User), users_path, :if => lambda { can?(:index, User) } do |user|
         user.item :new_user, t_action(:new, User), new_user_path, :if => lambda { can?(:new, User) }
         user.item :user_index, t_action(:index, User), users_path, :if => lambda { can?(:index, User) }

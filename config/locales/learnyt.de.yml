@@ -25,7 +25,7 @@ de:
     models:
       answer: Antwort
       possible_answer: Mögliche Antwort
-      person: Person
+      person: Kontakt
       teacher: Lehrer
       student: Schüler
       parent: Eltern
