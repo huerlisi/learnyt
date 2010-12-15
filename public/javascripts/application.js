@@ -212,6 +212,12 @@ insertAtCaret: function(myValue){
 }
 });
 
+// Tabs
+function addTabsBehaviour() {
+  $("#tabs").tabs();
+}
+
+
 // Loads functions after DOM is ready
 $(document).ready(function() {
     addSelectableBehaviour();
@@ -222,4 +228,5 @@ $(document).ready(function() {
     addAutogrowBehaviour();
     addMultipleSelectBehaviourForQuizAssignments();
     addMultipleSelectBehaviourForEMails();
+    addTabsBehaviour();
 });

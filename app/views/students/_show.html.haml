@@ -1,3 +1,9 @@
-= render 'people/address_tab'
-= render 'remarks_tab'
-= render 'people/user_tab' if resource.user
+#tabs.ui-tabs
+  %ul
+    %li= link_to 'Personalien', '#tab-1'
+    %li= link_to 'Bemerkungen', '#tab-2'
+    %li= link_to 'Login', '#tab-3'
+
+  #tab-1.ui-tabs-hide= render 'people/address_tab'
+  #tab-2.ui-tabs-hide= render 'remarks_tab'
+  #tab-3.ui-tabs-hide= render 'people/user_tab' if resource.user
