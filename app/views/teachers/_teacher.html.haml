@@ -1,0 +1,6 @@
+%tr[teacher]
+  %td= link_to teacher, teacher, {'data-href-container' => 'tr'}
+  %td= teacher.vcard.address
+  %td= link_to teacher.user.email, teacher.user if teacher.user
+
+  = list_item_actions_for(teacher)

@@ -20,9 +20,9 @@ Learnyt::Application.routes.draw do
 
   # Contacts
   resources :people
-  resources :teachers, :controller => :people
+  resources :teachers
   resources :students
-  resources :parents, :controller => :people
+  resources :parents
   
   # Quiz
   resources :questions do

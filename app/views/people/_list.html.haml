@@ -6,7 +6,7 @@
     %th= t_attr :user
     %th.action-links
 
-  = render :collection => @people, :partial => 'person'
+  = render :collection => collection, :partial => 'person'
   
   %tr
-    %th{:colspan => "5", :style => "text-align: right"}= will_paginate @people
+    %th{:colspan => "5", :style => "text-align: right"}= will_paginate collection
