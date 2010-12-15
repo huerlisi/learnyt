@@ -1,8 +1,8 @@
 %table.list#people_list
   %tr
-    %th= t_attr :name
-    %th= t_attr :address
-    %th= t_attr :user
+    %th= t_attr :name, Person
+    %th= t_attr :address, Person
+    %th= t_attr :user, Person
     %th.action-links
 
   = render @students
