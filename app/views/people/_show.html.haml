@@ -1,2 +1,7 @@
-= render 'address_tab'
-= render 'people/user_tab' if resource.user
+#tabs.ui-tabs
+  %ul
+    = ui_tab_link 'address'
+    = ui_tab_link 'user', lambda { resource.user }
+
+  = ui_tab_content 'address'
+  = ui_tab_content 'user', 'user_tab', lambda { resource.user }

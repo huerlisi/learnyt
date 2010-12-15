@@ -142,6 +142,11 @@ de:
       unsolved: Offene Aufgaben
       all: Alle Aufgaben
 
+  tabs:
+    address: Personalien
+    remarks: Bemerkungen
+    user:    Login
+    
   formtastic:
     hints:
       user:

@@ -1,4 +1,27 @@
 module ApplicationHelper
+  # Tabs
+  def ui_tab_link(name, only = nil)
+    unless only.nil?
+      return unless only.call
+    end
+
+    content_tag "li" do
+      link_to t(name, :scope => 'tabs'), "#tab-#{name}"
+    end
+  end
+
+  def ui_tab_content(name, partial = nil, only = nil)
+    unless only.nil?
+      return unless only.call
+    end
+    
+    partial ||= "#{name}_tab"
+    
+    content_tag "div", :id => "tab-#{name}", :class => "ui-tabs-hide" do
+      render partial
+    end
+  end
+  
   def list_item_actions_for(resource)
     model_name = resource.class.to_s.underscore
     
