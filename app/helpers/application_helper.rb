@@ -1,24 +1,39 @@
 module ApplicationHelper
   # Tabs
-  def ui_tab_link(name, only = nil)
-    unless only.nil?
-      return unless only.call
-    end
+  def ui_tab_link(name, options = {})
+    only = options.delete(:only)
+    return if only and !only.call
 
-    content_tag "li" do
+    content_tag 'li' do
       link_to t(name, :scope => 'tabs'), "#tab-#{name}"
     end
   end
 
-  def ui_tab_content(name, partial = nil, only = nil)
-    unless only.nil?
-      return unless only.call
-    end
+  def ui_tab_content(name, options = {})
+    only = options.delete(:only)
+    return if only and !only.call
     
+    partial = options.delete(:partial)
     partial ||= "#{name}_tab"
     
-    content_tag "div", :id => "tab-#{name}", :class => "ui-tabs-hide" do
+    content_tag 'div', :id => "tab-#{name}", :class => "ui-tabs-hide" do
       render partial
+    end
+  end
+  
+  def ui_tabs(tabs)
+    content_tag 'div', :id => 'tabs', :class => 'ui-tabs' do
+      buffer = content_tag 'ul' do
+        tabs.collect do |tab|
+          inner_content += ui_tab_link tab[:name], tab
+        end.html_safe
+      end
+
+      buffer += tabs.collect do |tab|
+        ui_tab_content tab[:name], tab
+      end.html_safe
+      
+      buffer
     end
   end
   

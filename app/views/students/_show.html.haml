@@ -1,9 +1,5 @@
-#tabs.ui-tabs
-  %ul
-    = ui_tab_link 'address'
-    = ui_tab_link 'remarks'
-    = ui_tab_link 'user'
-
-  = ui_tab_content 'address', 'people/address_tab'
-  = ui_tab_content 'remarks'
-  = ui_tab_content 'user', 'people/user_tab', lambda { resource.user }
+= ui_tabs [ |
+    {:name => "address", :partial => 'people/address_tab' }, |
+    {:name => "remarks"}, |
+    {:name => "user", :partial => 'people/user_tab', :only => lambda { resource.user} } |
+  ] |
