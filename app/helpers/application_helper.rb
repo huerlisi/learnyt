@@ -14,7 +14,7 @@ module ApplicationHelper
     return if only and !only.call
     
     partial = options.delete(:partial)
-    partial ||= "#{name}_tab"
+    partial ||= "tab_#{name}"
     
     content_tag 'div', :id => "tab-#{name}", :class => "ui-tabs-hide" do
       render partial
