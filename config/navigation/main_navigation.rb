@@ -27,18 +27,17 @@ SimpleNavigation::Configuration.run do |navigation|
         quiz_response.item :quiz_response_archive, I18n.t('learnyt.archive'), quiz_responses_archive_path, :if => lambda { can?(:new, QuizResponse) }
       end
 
-      primary.item :nav_correspondence, t('correspondence', :scope => :main_navigation), e_mails_path, :if => lambda { can?(:index, EMail) } do |correspondence|
-        correspondence.item :correspondence_e_mail_index, t(:e_mail_index, :scope => :main_navigation), e_mails_path, :highlights_on => /\/e_mails/, :if => lambda { can?(:index, EMail) }
-        #correspondence.item :correspondence_post_mail_index, t(:post_mail_index, :scope => :main_navigation), '/'
-        correspondence.item :correspondence_new_e_mail, t_action(:new, EMail), new_e_mail_path
-        #correspondence.item :correspondence_new_post_mail, t_action(:new, PostMail), '/'
-      end
-
       primary.item :nav_people, t_model(Person), people_path, :if => lambda { can?(:index, Person) } do |person|
         person.item :student_index, t_model(Student), students_path, :highlights_on => /^\/students(\/|$)/, :if => lambda { can?(:index, Student) }
         person.item :teacher_index, t_model(Teacher), teachers_path, :highlights_on => /^\/teachers(\/|$)/, :if => lambda { can?(:index, Teacher) }
         person.item :parent_index, t_model(Parent), parents_path, :highlights_on => /^\/parents(\/|$)/, :if => lambda { can?(:index, Parent) }
         person.item :person_index, t('learnyt.all'), people_path, :if => lambda { can?(:index, Person) }
+        person.item :correspondence, t('correspondence', :scope => :main_navigation), e_mails_path, :if => lambda { can?(:index, EMail) } do |correspondence|
+          correspondence.item :correspondence_e_mail_index, t(:e_mail_index, :scope => :main_navigation), e_mails_path, :highlights_on => /\/e_mails/, :if => lambda { can?(:index, EMail) }
+          #correspondence.item :correspondence_post_mail_index, t(:post_mail_index, :scope => :main_navigation), '/'
+          correspondence.item :correspondence_new_e_mail, t_action(:new, EMail), new_e_mail_path
+          #correspondence.item :correspondence_new_post_mail, t_action(:new, PostMail), '/'
+        end
       end
 
       primary.item :nav_users, t('administration', :scope => :main_navigation), users_path, :if => lambda { can?(:index, User) } do |user|
