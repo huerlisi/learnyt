@@ -70,6 +70,7 @@ de:
         address:       Adresse
         user:          Login
         type:          Art
+        roles:         Rollen
 
       possible_answer:
         question: Frage
