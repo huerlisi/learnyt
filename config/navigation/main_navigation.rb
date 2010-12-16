@@ -31,7 +31,7 @@ SimpleNavigation::Configuration.run do |navigation|
         person.item :student_index, t_model(Student), students_path, :highlights_on => /^\/students(\/|$)/, :if => lambda { can?(:index, Student) }
         person.item :teacher_index, t_model(Teacher), teachers_path, :highlights_on => /^\/teachers(\/|$)/, :if => lambda { can?(:index, Teacher) }
         person.item :parent_index, t_model(Parent), parents_path, :highlights_on => /^\/parents(\/|$)/, :if => lambda { can?(:index, Parent) }
-        person.item :person_index, t('learnyt.all'), people_path, :if => lambda { can?(:index, Person) }
+        person.item :person_index, t('learnyt.all'), people_path, :highlights_on => /^\/people(\/|$)/, :if => lambda { can?(:index, Person) }
         person.item :correspondence, t('correspondence', :scope => :main_navigation), e_mails_path, :if => lambda { can?(:index, EMail) } do |correspondence|
           correspondence.item :correspondence_e_mail_index, t(:e_mail_index, :scope => :main_navigation), e_mails_path, :highlights_on => /\/e_mails/, :if => lambda { can?(:index, EMail) }
           #correspondence.item :correspondence_post_mail_index, t(:post_mail_index, :scope => :main_navigation), '/'
