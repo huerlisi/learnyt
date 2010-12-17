@@ -7,13 +7,5 @@
     -# f.input :current_password, :required => true unless can?(:manage, User)
     = f.input :role_texts, :as => :select, :collection => Ability.roles_for_collection, :include_blank => false, :input_html => {:multiple => 'multiple'}, :required => true if can?(:manage, Role)
 
-    - f.object.build_person unless f.object.person
-    = f.semantic_fields_for :person do |p|
-      = p.inputs t_attr(:address, Person) do
-        = render 'vcards/form', :f => p
-
-    = f.inputs t('learnyt.tags') do
-      = f.input :tag_list
-
   = f.buttons do
     = f.commit_button
