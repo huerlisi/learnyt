@@ -2,6 +2,7 @@ module ApplicationHelper
   # Tabs
   def ui_tab_link(name, options = {})
     return if options[:if] and not options[:if].call
+    return if options[:unless] and options[:unless].call
 
     content_tag 'li' do
       link_to t(name, :scope => 'tabs'), "#tab-#{name}"
@@ -10,6 +11,7 @@ module ApplicationHelper
 
   def ui_tab_content(name, options = {})
     return if options[:if] and !options[:if].call
+    return if options[:unless] and options[:unless].call
 
     partial = options.delete(:partial)
     partial ||= "tab_#{name}"

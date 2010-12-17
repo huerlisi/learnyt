@@ -6,7 +6,7 @@
   = ui_tabs [                                                                                 |
       {:name => 'address', :partial => 'people/tab_address' },                                |
       {:name => 'remarks', :partial => 'people/tab_remarks' },                                |
-      {:name => 'user', :partial => 'people/tab_user', :if => lambda { resource.user } },      |
+      {:name => 'user', :partial => 'people/tab_user', :if => lambda { resource.user } },     |
       {:name => 'create_user', :partial => 'people/tab_create_user', :unless => lambda { resource.user } }  |
     ]                                                                                         |
-  
+
