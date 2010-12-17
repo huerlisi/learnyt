@@ -1,3 +1,5 @@
-%h2= t('learnyt.address')
+= render 'people/tab_header'
 
+%h2
+  = t('learnyt.address')
 = full_address(resource.vcard)
