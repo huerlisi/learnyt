@@ -72,6 +72,15 @@ de:
         type:          Art
         roles:         Rollen
 
+      student:
+        roles:         Rollen
+
+      teacher:
+        roles:         Rollen
+
+      parent:
+        roles:         Rollen
+
       possible_answer:
         question: Frage
         answer: Antwort
