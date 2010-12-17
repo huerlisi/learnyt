@@ -70,6 +70,16 @@ de:
         address:       Adresse
         user:          Login
         type:          Art
+        roles:         Rollen
+
+      student:
+        roles:         Rollen
+
+      teacher:
+        roles:         Rollen
+
+      parent:
+        roles:         Rollen
 
       possible_answer:
         question: Frage
@@ -143,9 +153,10 @@ de:
       all: Alle Aufgaben
 
   tabs:
-    address: Personalien
-    remarks: Bemerkungen
-    user:    Login
+    address:     Personalien
+    remarks:     Bemerkungen
+    user:        Login
+    create_user: Benutzer anlegen
     
   formtastic:
     hints:
@@ -159,13 +170,14 @@ de:
       teacher: 'Lehrer'
       
   main_navigation:
-    settings: Einstellungen
-    overview: Übersicht
+    settings:                 Einstellungen
+    overview:                 Übersicht
     destroy_user_session:     Abmelden
     new_user_session:         Anmelden
-    correspondence: Korrespondenz
-    e_mail_index: E-Mails
-    post_mail_index: Briefe
+    correspondence:           Korrespondenz
+    e_mail_index:             E-Mails
+    post_mail_index:          Briefe
+    administration:           Administration
 
   crud:
     title:

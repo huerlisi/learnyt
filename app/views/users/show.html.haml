@@ -3,13 +3,6 @@
 %h1= @user
 
 #user
-  - @person = @user.person
-  = render 'people/show'
-
-  %h2= t('learnyt.tags')
-
-  = @user.tag_list
-
   %h2= t_attr(:roles)
 
   %ul#roles
