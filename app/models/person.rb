@@ -13,6 +13,10 @@ class Person < ActiveRecord::Base
   validates_date :date_of_birth, :date_of_death, :allow_nil => true, :allow_blank => true
   validates_presence_of :vcard
 
+  def self.gender
+    [[I18n.t('activerecord.values.person.male'), MALE], [I18n.t('activerecord.values.person.female'), FEMALE]]
+  end
+
   # Constructor  
   def initialize(attributes = nil)
     super
@@ -24,6 +28,10 @@ class Person < ActiveRecord::Base
   # Helpers
   def to_s
     "%s (%s)" % [vcard.try(:full_name), vcard.try(:locality)]
+  end
+
+  def sex_to_s
+    sex.eql?MALE ? I18n.t('activerecord.values.person.male') : I18n.t('activerecord.values.person.female')
   end
 
   # Tags

@@ -126,6 +126,11 @@ de:
         body:       Inhalt
         send_at:    Versandzeit
 
+    values:
+      person:
+        male:   Mann
+        female: Frau
+
   learnyt:
     all:              Alle
     edit:             Editieren
@@ -153,10 +158,13 @@ de:
       all: Alle Aufgaben
 
   tabs:
-    address:     Personalien
-    remarks:     Bemerkungen
-    user:        Login
-    create_user: Benutzer anlegen
+    address:      Personalien
+    remarks:      Bemerkungen
+    user:         Login
+    create_user:  Benutzer anlegen
+    form_address: Personalien
+    form_remarks: Bemerkungen
+    form_user:    Login
     
   formtastic:
     hints:
