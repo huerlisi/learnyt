@@ -126,6 +126,11 @@ de:
         body:       Inhalt
         send_at:    Versandzeit
 
+    values:
+      person:
+        male:   Mann
+        female: Frau
+
   learnyt:
     all:              Alle
     edit:             Editieren

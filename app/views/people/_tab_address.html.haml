@@ -1,5 +1,19 @@
 = render 'people/tab_header'
 
+- [:date_of_birth, :date_of_death].each do |attr|
+  - if resource.send(attr)
+    %h2
+      = t("activerecord.attributes.person.#{attr}")
+    %p
+      = resource.send(attr)
+    %br
+- if resource.sex
+  %h2
+    = t("activerecord.attributes.person.sex")
+  %p
+    = resource.sex_to_s
+  %br
+
 %h2
   = t('learnyt.address')
 = full_address(resource.vcard)
