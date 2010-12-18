@@ -1,6 +1,7 @@
-= contextual_links
-
-%h1= t_title
-
 %div[resource]
-  = render 'form'
+  = ui_tabs [                                                          |
+      {:name => 'form_address' },                                      |
+      {:name => 'form_remarks' },                                      |
+      {:name => 'form_user',    :if => lambda { resource.user } },     |
+      {:name => 'create_user',  :unless => lambda { resource.user } }  |
+    ]                                                                  |

@@ -1,0 +1,10 @@
+= render 'people/tab_header'
+
+= semantic_form_for resource do |f|
+  = f.semantic_errors
+  = f.inputs do
+    = f.input :remarks, :input_html => {"class" => 'autogrow signable', :rows => 1}
+    = button_to_function t('learnyt.add_signature'), "$('.signable').insertAtCaret('\\n#{t('learnyt.signature', :name => current_user.person.vcard.full_name, :date_time => DateTime.now)}')"
+
+  = f.buttons do
+    = f.commit_button
