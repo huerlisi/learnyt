@@ -153,10 +153,13 @@ de:
       all: Alle Aufgaben
 
   tabs:
-    address:     Personalien
-    remarks:     Bemerkungen
-    user:        Login
-    create_user: Benutzer anlegen
+    address:      Personalien
+    remarks:      Bemerkungen
+    user:         Login
+    create_user:  Benutzer anlegen
+    form_address: Personalien
+    form_remarks: Bemerkungen
+    form_user:    Login
     
   formtastic:
     hints:
