@@ -1,2 +1,2 @@
 page['#content .person'].html(render('edit'))
-page.call('addTabsBehaviour')
+page.call('initializeBehaviours')
