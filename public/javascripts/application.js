@@ -217,16 +217,19 @@ function addTabsBehaviour() {
   $("#tabs").tabs();
 }
 
+// Initialize behaviours
+function initializeBehaviours() {
+  addSelectableBehaviour();
+  addAutocompleteBehaviour();
+  addNestedFormsBehaviour();
+  addCorrectnessIndicatorBehaviour();
+  addQuestionSelectionBehaviour();
+  addAutogrowBehaviour();
+  addMultipleSelectBehaviourForQuizAssignments();
+  addMultipleSelectBehaviourForEMails();
+  addTabsBehaviour();
+}
+
 
 // Loads functions after DOM is ready
-$(document).ready(function() {
-    addSelectableBehaviour();
-    addAutocompleteBehaviour();
-    addNestedFormsBehaviour();
-    addCorrectnessIndicatorBehaviour();
-    addQuestionSelectionBehaviour();
-    addAutogrowBehaviour();
-    addMultipleSelectBehaviourForQuizAssignments();
-    addMultipleSelectBehaviourForEMails();
-    addTabsBehaviour();
-});
+$(document).ready(initializeBehaviours);
