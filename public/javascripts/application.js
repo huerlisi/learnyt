@@ -140,11 +140,6 @@ function addQuestionSelectionBehaviour() {
   updateQuestionSelections();
 }
 
-// Autogrow
-function addAutogrowBehaviour() {
-  $(".autogrow").elastic();
-}
-
 function addMultipleSelectBehaviourForQuizAssignments() {
     var addLink = $('a[data-multipleselect-add]');
     addLink.prev('li').append(addLink);
