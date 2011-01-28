@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :locked_at, :role_texts
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :locked_at
 
   # Authorization roles
   has_and_belongs_to_many :roles, :autosave => true
@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   end
   
   def role?(role)
-    return !!self.roles.find_by_name(role.to_s)
+    !!self.roles.find_by_name(role.to_s)
   end
 
   def role_texts
