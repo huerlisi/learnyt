@@ -4,6 +4,13 @@
 class UsersController < AuthorizedController
   # Scopes
   has_scope :tagged_with
+
+  def create
+    @user = User.new(params[:user])
+    @user.person = Person.create(:type => params[:user]['role_texts'].first.to_s.camelcase) if params[:user]['role_texts'].first
+
+    create!{ users_path }
+  end
   
   # Actions
   def update

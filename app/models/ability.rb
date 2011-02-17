@@ -8,7 +8,7 @@ class Ability
  
   # Available roles
   def self.roles
-    ['admin', 'student', 'teacher']
+    ['admin', 'pupil', 'teacher']
   end
   
   # Prepare roles to show in select inputs etc.

@@ -176,6 +176,7 @@ de:
       admin:   'Administrator'
       student:   'Schüler'
       teacher: 'Lehrer'
+      pupil:   'Schüler'
       
   main_navigation:
     settings:                 Einstellungen
