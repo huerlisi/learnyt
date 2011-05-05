@@ -1,18 +1,5 @@
 // learnyt
 
-// Add tooltips for overview
-function addTooltipBehaviour() {
-  $(".tooltip-title[title]").each(function() {
-    if ( $(this).attr('title') != '' ) {
-      $(this).tooltip({
-        position: 'top center',
-        predelay: 500,
-        effect: 'fade'
-      });
-    }
-  });
-};
-
 var selectables = $('#response form .possible_answer');
 selectables.css('cursor', "pointer");
 selectables.click(function(element) {
